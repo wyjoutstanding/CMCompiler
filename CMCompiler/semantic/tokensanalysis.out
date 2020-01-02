@@ -1,0 +1,40 @@
+<INT,int>   <ID,x>   <;,;>   
+<INT,int>   <ID,a>   <;,;>   
+<INT,int>   <ID,array>   <[,[>   <NUM,8>   <],]>   <;,;>   
+<INT,int>   <ID,fun>   <(,(>   <INT,int>   <ID,b>   <,,,>   <INT,int>   <ID,c>   <,,,>   <INT,int>   <ID,m>   <[,[>   <],]>   <),)>   <{,{>   
+<INT,int>   <ID,a>   <;,;>   
+<WHILE,while>   <(,(>   <ID,a>   <<,<>   <NUM,1>   <),)>   <{,{>   
+<INT,int>   <ID,aa>   <;,;>   <INT,int>   <ID,dd>   <;,;>   
+<IF,if>   <(,(>   <ID,a>   <<,<>   <NUM,2>   <),)>   <ID,x>   <=,=>   <NUM,1>   <;,;>   
+<ID,x>   <=,=>   <NUM,2>   <;,;>   
+<ID,aa>   <=,=>   <NUM,1>   <;,;>   
+<ID,b>   <=,=>   <NUM,1>   <;,;>   
+<IF,if>   <(,(>   <ID,b>   <EE,==>   <NUM,0>   <),)>   <{,{>   
+<INT,int>   <ID,cc>   <;,;>   
+<IF,if>   <(,(>   <ID,x>   <<,<>   <NUM,2>   <),)>   <{,{>   
+<INT,int>   <ID,cc>   <;,;>   
+<ID,x>   <=,=>   <NUM,2>   <;,;>   
+<},}>   
+<ELSE,else>   <{,{>   
+<ID,x>   <=,=>   <NUM,3>   <;,;>   
+<},}>   
+<RETURN,return>   <ID,x>   <;,;>   
+<},}>   
+<ELSE,else>   <{,{>   
+<RETURN,return>   <ID,fun>   <(,(>   <ID,b>   <,,,>   <ID,b>   <-,->   <ID,b>   </,/>   <ID,c>   <*,*>   <ID,c>   <,,,>   <ID,a>   <),)>   <;,;>   
+<},}>   
+<WHILE,while>   <(,(>   <ID,a>   <>,>>   <NUM,10>   <),)>   <{,{>   
+<ID,a>   <=,=>   <NUM,0>   <;,;>   
+<},}>   
+<},}>   
+<RETURN,return>   <ID,a>   <+,+>   <NUM,1>   <;,;>   
+<},}>   
+<VOID,void>   <ID,funvoid>   <(,(>   <VOID,void>   <),)>   <{,{>   
+<INT,int>   <ID,x1>   <;,;>   
+<INT,int>   <ID,x2>   <[,[>   <NUM,10>   <],]>   <;,;>   
+<ID,x>   <=,=>   <NUM,1>   <;,;>   
+<},}>   
+<VOID,void>   <ID,main>   <(,(>   <),)>   <{,{>   
+<INT,int>   <ID,mm>   <;,;>   
+<ID,x>   <=,=>   <ID,array>   <[,[>   <NUM,2>   <-,->   <ID,x>   <],]>   <+,+>   <ID,x>   <*,*>   <NUM,2>   <-,->   <(,(>   <NUM,5>   <-,->   <(,(>   <NUM,12>   <+,+>   <ID,a>   <),)>   <),)>   </,/>   <NUM,2>   <-,->   <(,(>   <ID,a>   <+,+>   <NUM,2>   <),)>   </,/>   <NUM,12>   <*,*>   <NUM,1>   <;,;>   
+<},}>   

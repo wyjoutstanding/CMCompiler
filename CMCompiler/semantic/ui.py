@@ -28,6 +28,8 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import*
 
+openfile = None
+
 #主界面
 class MainWidget(QDialog):
     def __init__(self):
@@ -77,9 +79,11 @@ class MainWidget(QDialog):
         mimedata = event.mimeData()
         urllist = mimedata.urls()
         filename = urllist[0].toLocalFile()
+        global openfile
         #判断文件是否为C语言文件
         isC = filename.endswith(".c")
         if(isC):
+            openfile = filename
             res = Gram.Analysis(filename)
             #文件打开失败
             if(res==2):
@@ -113,14 +117,29 @@ class ErrorWidget(QDialog):
         
     def initUI(self):
         #规定大小和标题
-        self.resize(600,400)
-        self.setMinimumSize(600,400)
-        self.setMaximumSize(600,400)
+        self.resize(900,400)
+        self.setMinimumSize(900,400)
+        self.setMaximumSize(900,400)
+
+        #
+        global openfile
+        txt = QTextEdit(self)
+        txt.setGeometry(590,20,290,360)
+        f = open(openfile,'r',encoding='UTF-8')
+        lines = f.readlines()
+        strline = ''
+        i=0
+        for line in lines:
+            strline+=(('{:<3}'.format(str(i+1)))+':  '+line)
+            i+=1
+        txt.setText(strline)
+        #设为只读模式
+        txt.setReadOnly(1)
         self.setWindowTitle('文件语句错误')
         #错误信息显示
         te = QTextEdit(self)
         te.setGeometry(20, 20, 480, 360)
-        f = open("error.out",'r')
+        f = open("error.out",'r',encoding='UTF-8')
         lines = f.readlines()
         strline = ''
         for line in lines:
@@ -147,16 +166,30 @@ class ResultWidget(QDialog):
     #界面设置
     def initUI(self):
         #规定大小和标题
-        self.resize(600,400)
-        self.setMinimumSize(600,400)
-        self.setMaximumSize(600,400)
+        self.resize(900,400)
+        self.setMinimumSize(900,400)
+        self.setMaximumSize(900,400)
         self.setWindowTitle('代码分析结果')
 
+        #
+        global openfile
+        txt = QTextEdit(self)
+        txt.setGeometry(590,20,290,360)
+        f = open(openfile,'r', encoding='utf-8')
+        lines = f.readlines()
+        strline = ''
+        i=0
+        for line in lines:
+            strline+=(('{:<3}'.format(str(i+1)))+':  '+line)
+            i+=1
+        txt.setText(strline)
+        #设为只读模式
+        txt.setReadOnly(1)
         #左侧列表信息
         leftlist = QListWidget(self)
         leftlist.insertItem(0, '词法分析结果')
         leftlist.insertItem(1, '语法分析流程')
-        leftlist.insertItem(2, '三地址代码')
+        leftlist.insertItem(2, '四元式结果')
         leftlist.setGeometry(20, 20, 90, 70)
         leftlist.setCurrentRow(0)
         
@@ -198,7 +231,21 @@ class ResultWidget(QDialog):
         #设为只读模式
         tes2.setReadOnly(1)
         #窗口stack3显示
-
+        f = open("code.out",'r')
+        lines = f.readlines()
+        tws3 = QTableWidget(int(lines[0]),4,stack3)
+        tws3.resize(470,360)
+        tws3.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        tws3.setHorizontalHeaderLabels(['Op','arg1','arg2','result'])
+        tws3.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        i=1
+        while i < int(lines[0]):
+            temp = lines[i].split()
+            tws3.setItem(i-1,0,QTableWidgetItem(temp[0]))
+            tws3.setItem(i-1,1,QTableWidgetItem(temp[1]))
+            tws3.setItem(i-1,2,QTableWidgetItem(temp[2]))
+            tws3.setItem(i-1,3,QTableWidgetItem(temp[3]))
+            i+=1
         #建立按钮被点击和btnClicked函数的连接
         btn.clicked.connect(self.btnClicked)
         #建立leftlist和Stack连接

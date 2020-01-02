@@ -1,0 +1,2901 @@
+
+State  : 0
+Stack  :.LexToken(INT,'int',4,21)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 6
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 6
+Stack  :type_specifier.LexToken(ID,'x',4,25)
+Action : Shift and goto state 12
+
+State  : 12
+Stack  :type_specifier ID.LexToken(;,';',4,26)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :type_specifier ID ;.LexToken(INT,'int',5,28)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with ['INT','x',';'] and goto state 4
+Result : <SymTabItem @ 0x19d6f5f5860> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 4
+Stack  :var_declaration.LexToken(INT,'int',5,28)
+Action : Reduce rule [declaration -> var_declaration] with [<SymTabItem @ 0x19d6f5f5860>] and goto state 3
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 3
+Stack  :declaration.LexToken(INT,'int',5,28)
+Action : Reduce rule [declaration_list -> declaration] with [None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken(INT,'int',5,28)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 6
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 6
+Stack  :declaration_list type_specifier.LexToken(ID,'a',5,32)
+Action : Shift and goto state 12
+
+State  : 12
+Stack  :declaration_list type_specifier ID.LexToken(;,';',5,33)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :declaration_list type_specifier ID ;.LexToken(INT,'int',6,35)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with ['INT','a',';'] and goto state 4
+Result : <SymTabItem @ 0x19d6f5f54e0> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 4
+Stack  :declaration_list var_declaration.LexToken(INT,'int',6,35)
+Action : Reduce rule [declaration -> var_declaration] with [<SymTabItem @ 0x19d6f5f54e0>] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.LexToken(INT,'int',6,35)
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken(INT,'int',6,35)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 6
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 6
+Stack  :declaration_list type_specifier.LexToken(ID,'array',6,39)
+Action : Shift and goto state 12
+
+State  : 12
+Stack  :declaration_list type_specifier ID.LexToken([,'[',6,44)
+Action : Shift and goto state 15
+
+State  : 15
+Stack  :declaration_list type_specifier ID [.LexToken(NUM,'8',6,45)
+Action : Shift and goto state 18
+
+State  : 18
+Stack  :declaration_list type_specifier ID [ NUM.LexToken(],']',6,46)
+Action : Shift and goto state 27
+
+State  : 27
+Stack  :declaration_list type_specifier ID [ NUM ].LexToken(;,';',6,47)
+Action : Shift and goto state 53
+
+State  : 53
+Stack  :declaration_list type_specifier ID [ NUM ] ;.LexToken(INT,'int',7,49)
+Action : Reduce rule [var_declaration -> type_specifier ID [ NUM ] ;] with ['INT','array','[','8',']',';'] and goto state 4
+Result : <SymTabItem @ 0x19d6f5f5e48> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 4
+Stack  :declaration_list var_declaration.LexToken(INT,'int',7,49)
+Action : Reduce rule [declaration -> var_declaration] with [<SymTabItem @ 0x19d6f5f5e48>] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.LexToken(INT,'int',7,49)
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken(INT,'int',7,49)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 6
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 6
+Stack  :declaration_list type_specifier.LexToken(ID,'fun',7,53)
+Action : Shift and goto state 12
+
+State  : 12
+Stack  :declaration_list type_specifier ID.LexToken((,'(',7,56)
+Action : Shift and goto state 16
+
+State  : 16
+Stack  :declaration_list type_specifier ID (.LexToken(INT,'int',7,57)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list type_specifier ID ( INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 19
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 19
+Stack  :declaration_list type_specifier ID ( type_specifier.LexToken(ID,'b',7,61)
+Action : Shift and goto state 28
+
+State  : 28
+Stack  :declaration_list type_specifier ID ( type_specifier ID.LexToken(,,',',7,62)
+Action : Reduce rule [param -> type_specifier ID] with ['INT','b'] and goto state 23
+Result : <list @ 0x19d6f603a08> (['var', 'INT', 'b'])
+
+State  : 23
+Stack  :declaration_list type_specifier ID ( param.LexToken(,,',',7,62)
+Action : Reduce rule [param_list -> param] with [<list @ 0x19d6f603a08>] and goto state 21
+Result : <list @ 0x19d6f602a88> ([['var', 'INT', 'b']])
+
+State  : 21
+Stack  :declaration_list type_specifier ID ( param_list.LexToken(,,',',7,62)
+Action : Shift and goto state 30
+
+State  : 30
+Stack  :declaration_list type_specifier ID ( param_list ,.LexToken(INT,'int',7,63)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list type_specifier ID ( param_list , INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 19
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 19
+Stack  :declaration_list type_specifier ID ( param_list , type_specifier.LexToken(ID,'c',7,67)
+Action : Shift and goto state 28
+
+State  : 28
+Stack  :declaration_list type_specifier ID ( param_list , type_specifier ID.LexToken(,,',',7,68)
+Action : Reduce rule [param -> type_specifier ID] with ['INT','c'] and goto state 55
+Result : <list @ 0x19d6f602d48> (['var', 'INT', 'c'])
+
+State  : 55
+Stack  :declaration_list type_specifier ID ( param_list , param.LexToken(,,',',7,68)
+Action : Reduce rule [param_list -> param_list , param] with [<list @ 0x19d6f602a88>,',',<list @ 0x19d6f602d48>] and goto state 21
+Result : <list @ 0x19d6f602a88> ([['var', 'INT', 'b'], ['var', 'INT', 'c' ...)
+
+State  : 21
+Stack  :declaration_list type_specifier ID ( param_list.LexToken(,,',',7,68)
+Action : Shift and goto state 30
+
+State  : 30
+Stack  :declaration_list type_specifier ID ( param_list ,.LexToken(INT,'int',7,70)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list type_specifier ID ( param_list , INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 19
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 19
+Stack  :declaration_list type_specifier ID ( param_list , type_specifier.LexToken(ID,'m',7,74)
+Action : Shift and goto state 28
+
+State  : 28
+Stack  :declaration_list type_specifier ID ( param_list , type_specifier ID.LexToken([,'[',7,75)
+Action : Shift and goto state 54
+
+State  : 54
+Stack  :declaration_list type_specifier ID ( param_list , type_specifier ID [.LexToken(],']',7,76)
+Action : Shift and goto state 78
+
+State  : 78
+Stack  :declaration_list type_specifier ID ( param_list , type_specifier ID [ ].LexToken(),')',7,77)
+Action : Reduce rule [param -> type_specifier ID [ ]] with ['INT','m','[',']'] and goto state 55
+Result : <list @ 0x19d6f602c48> (['array', 'INT', 'm'])
+
+State  : 55
+Stack  :declaration_list type_specifier ID ( param_list , param.LexToken(),')',7,77)
+Action : Reduce rule [param_list -> param_list , param] with [<list @ 0x19d6f602a88>,',',<list @ 0x19d6f602c48>] and goto state 21
+Result : <list @ 0x19d6f602a88> ([['var', 'INT', 'b'], ['var', 'INT', 'c' ...)
+
+State  : 21
+Stack  :declaration_list type_specifier ID ( param_list.LexToken(),')',7,77)
+Action : Reduce rule [params -> param_list] with [<list @ 0x19d6f602a88>] and goto state 20
+Result : <list @ 0x19d6f602a88> ([['var', 'INT', 'b'], ['var', 'INT', 'c' ...)
+
+State  : 20
+Stack  :declaration_list type_specifier ID ( params.LexToken(),')',7,77)
+Action : Shift and goto state 29
+
+State  : 29
+Stack  :declaration_list type_specifier ID ( params ).LexToken({,'{',7,79)
+Action : Reduce rule [fun_declaration -> type_specifier ID ( params )] with ['INT','fun','(',<list @ 0x19d6f602a88>,')'] and goto state 5
+Result : <SymTabItem @ 0x19d6f5f56d8> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 5
+Stack  :declaration_list fun_declaration.LexToken({,'{',7,79)
+Action : Reduce rule [declaration -> fun_declaration] with [<SymTabItem @ 0x19d6f5f56d8>] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.LexToken({,'{',7,79)
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken({,'{',7,79)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list {.LexToken(INT,'int',8,85)
+Action : Reduce rule [E1 -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { E1.LexToken(INT,'int',8,85)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations.LexToken(INT,'int',8,85)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list { E1 local_declarations INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 26
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 26
+Stack  :declaration_list { E1 local_declarations type_specifier.LexToken(ID,'a',8,89)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { E1 local_declarations type_specifier ID.LexToken(;,';',8,90)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :declaration_list { E1 local_declarations type_specifier ID ;.LexToken(WHILE,'while',9,96)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with ['INT','a',';'] and goto state 25
+Result : <SymTabItem @ 0x19d6f5f5c88> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 25
+Stack  :declaration_list { E1 local_declarations var_declaration.LexToken(WHILE,'while',9,96)
+Action : Reduce rule [local_declarations -> local_declarations var_declaration] with [None,<SymTabItem @ 0x19d6f5f5c88>] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations.LexToken(WHILE,'while',9,96)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 24
+Result : <Node @ 0x19d6f5f59b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list.LexToken(WHILE,'while',9,96)
+Action : Shift and goto state 42
+
+State  : 42
+Defaulted state 42: Reduce using 34
+Stack  :declaration_list { E1 local_declarations statement_list WHILE.None
+Action : Reduce rule [M -> <empty>] with [] and goto state 59
+Result : <int @ 0x5ec26de0> (1)
+
+State  : 59
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M.LexToken((,'(',9,101)
+Action : Shift and goto state 81
+
+State  : 81
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M (.LexToken(ID,'a',9,102)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( ID.LexToken(<,'<',9,103)
+Action : Reduce rule [var -> ID] with ['a'] and goto state 44
+Result : <Node @ 0x19d6f5f5978> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( var.LexToken(<,'<',9,103)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f5f5978>] and goto state 49
+Result : <Node @ 0x19d6f5f5cf8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( factor.LexToken(<,'<',9,103)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5f5cf8>] and goto state 48
+Result : <Node @ 0x19d6f5f5cf8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( term.LexToken(<,'<',9,103)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5f5cf8>] and goto state 47
+Result : <Node @ 0x19d6f5f5cf8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( additive_expression.LexToken(<,'<',9,103)
+Action : Shift and goto state 68
+
+State  : 68
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( additive_expression <.LexToken(NUM,'1',9,104)
+Action : Reduce rule [relop -> <] with ['<'] and goto state 65
+Result : <str @ 0x19d6630d6f8> ('<')
+
+State  : 65
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( additive_expression relop.LexToken(NUM,'1',9,104)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( additive_expression relop NUM.LexToken(),')',9,105)
+Action : Reduce rule [factor -> NUM] with ['1'] and goto state 49
+Result : <Node @ 0x19d6f5f5898> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( additive_expression relop factor.LexToken(),')',9,105)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5f5898>] and goto state 48
+Result : <Node @ 0x19d6f5f5898> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( additive_expression relop term.LexToken(),')',9,105)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5f5898>] and goto state 88
+Result : <Node @ 0x19d6f5f5898> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 88
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( additive_expression relop additive_expression.LexToken(),')',9,105)
+Action : Reduce rule [simple_expression -> additive_expression relop additive_expression] with [<Node @ 0x19d6f5f5cf8>,'<',<Node @ 0x19d6f5f5898>] and goto state 45
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( simple_expression.LexToken(),')',9,105)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5f5f28>] and goto state 93
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 93
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression.LexToken(),')',9,105)
+Action : Shift and goto state 98
+
+State  : 98
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ).LexToken({,'{',9,107)
+Action : Reduce rule [M -> <empty>] with [] and goto state 101
+Result : <int @ 0x5ec26e20> (3)
+
+State  : 101
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M.LexToken({,'{',9,107)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M {.LexToken(INT,'int',10,117)
+Action : Reduce rule [E1 -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1.LexToken(INT,'int',10,117)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations.LexToken(INT,'int',10,117)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 26
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 26
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations type_specifier.LexToken(ID,'aa',10,121)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations type_specifier ID.LexToken(;,';',10,123)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations type_specifier ID ;.LexToken(INT,'int',10,124)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with ['INT','aa',';'] and goto state 25
+Result : <SymTabItem @ 0x19d6f5f5518> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 25
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations var_declaration.LexToken(INT,'int',10,124)
+Action : Reduce rule [local_declarations -> local_declarations var_declaration] with [None,<SymTabItem @ 0x19d6f5f5518>] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations.LexToken(INT,'int',10,124)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 26
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 26
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations type_specifier.LexToken(ID,'dd',10,128)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations type_specifier ID.LexToken(;,';',10,130)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations type_specifier ID ;.LexToken(IF,'if',11,140)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with ['INT','dd',';'] and goto state 25
+Result : <SymTabItem @ 0x19d6f5e5940> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 25
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations var_declaration.LexToken(IF,'if',11,140)
+Action : Reduce rule [local_declarations -> local_declarations var_declaration] with [None,<SymTabItem @ 0x19d6f5e5940>] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations.LexToken(IF,'if',11,140)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 24
+Result : <Node @ 0x19d6f5e5860> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list.LexToken(IF,'if',11,140)
+Action : Shift and goto state 40
+
+State  : 40
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF.LexToken((,'(',11,143)
+Action : Shift and goto state 57
+
+State  : 57
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF (.LexToken(ID,'a',11,144)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( ID.LexToken(<,'<',11,146)
+Action : Reduce rule [var -> ID] with ['a'] and goto state 44
+Result : <Node @ 0x19d6f5e5ac8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( var.LexToken(<,'<',11,146)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f5e5ac8>] and goto state 49
+Result : <Node @ 0x19d6f5e59b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( factor.LexToken(<,'<',11,146)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e59b0>] and goto state 48
+Result : <Node @ 0x19d6f5e59b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( term.LexToken(<,'<',11,146)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e59b0>] and goto state 47
+Result : <Node @ 0x19d6f5e59b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression.LexToken(<,'<',11,146)
+Action : Shift and goto state 68
+
+State  : 68
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression <.LexToken(NUM,'2',11,148)
+Action : Reduce rule [relop -> <] with ['<'] and goto state 65
+Result : <str @ 0x19d6630d6f8> ('<')
+
+State  : 65
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop.LexToken(NUM,'2',11,148)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop NUM.LexToken(),')',11,149)
+Action : Reduce rule [factor -> NUM] with ['2'] and goto state 49
+Result : <Node @ 0x19d6f5e5780> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop factor.LexToken(),')',11,149)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e5780>] and goto state 48
+Result : <Node @ 0x19d6f5e5780> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop term.LexToken(),')',11,149)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e5780>] and goto state 88
+Result : <Node @ 0x19d6f5e5780> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 88
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop additive_expression.LexToken(),')',11,149)
+Action : Reduce rule [simple_expression -> additive_expression relop additive_expression] with [<Node @ 0x19d6f5e59b0>,'<',<Node @ 0x19d6f5e5780>] and goto state 45
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( simple_expression.LexToken(),')',11,149)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5e5cc0>] and goto state 79
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 79
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression.LexToken(),')',11,149)
+Action : Shift and goto state 92
+
+State  : 92
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ).LexToken(ID,'x',11,151)
+Action : Reduce rule [M -> <empty>] with [] and goto state 97
+Result : <int @ 0x5ec26e60> (5)
+
+State  : 97
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M.LexToken(ID,'x',11,151)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M ID.LexToken(=,'=',11,153)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 44
+Result : <Node @ 0x19d6f91a518> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M var.LexToken(=,'=',11,153)
+Action : Shift and goto state 62
+
+State  : 62
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M var =.LexToken(NUM,'1',11,155)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M var = NUM.LexToken(;,';',11,156)
+Action : Reduce rule [factor -> NUM] with ['1'] and goto state 49
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M var = factor.LexToken(;,';',11,156)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e5a58>] and goto state 48
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M var = term.LexToken(;,';',11,156)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e5a58>] and goto state 47
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M var = additive_expression.LexToken(;,';',11,156)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f5e5a58>] and goto state 45
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M var = simple_expression.LexToken(;,';',11,156)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5e5a58>] and goto state 83
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 83
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M var = expression.LexToken(;,';',11,156)
+Action : Reduce rule [expression -> var = expression] with [<Node @ 0x19d6f91a518>,'=',<Node @ 0x19d6f5e5a58>] and goto state 38
+Result : <Node @ 0x19d6f91a1d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 38
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M expression.LexToken(;,';',11,156)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M expression ;.LexToken(ID,'x',12,182)
+Action : Reduce rule [expression_stmt -> expression ;] with [<Node @ 0x19d6f91a1d0>,';'] and goto state 33
+Result : <Node @ 0x19d6f91a1d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 33
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M expression_stmt.LexToken(ID,'x',12,182)
+Action : Reduce rule [statement -> expression_stmt] with [<Node @ 0x19d6f91a1d0>] and goto state 100
+Result : <Node @ 0x19d6f91a1d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 100
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement.LexToken(ID,'x',12,182)
+Action : Reduce rule [N -> <empty>] with [] and goto state 102
+Result : <list @ 0x19d6f92d208> ([6])
+
+State  : 102
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N.LexToken(ID,'x',12,182)
+Action : Reduce rule [selection_stmt -> IF ( expression ) M statement N] with ['if','(',<Node @ 0x19d6f5e5cc0>,')',5,<Node @ 0x19d6f91a1d0>,[6]] and goto state 35
+Result : <Node @ 0x19d6f91a080> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 35
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list selection_stmt.LexToken(ID,'x',12,182)
+Action : Reduce rule [statement -> selection_stmt] with [<Node @ 0x19d6f91a080>] and goto state 32
+Result : <Node @ 0x19d6f91a080> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list statement.LexToken(ID,'x',12,182)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f5e5860>,<Node @ 0x19d6f91a080>] and goto state 24
+Result : <Node @ 0x19d6f5e5860> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list.LexToken(ID,'x',12,182)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list ID.LexToken(=,'=',12,184)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 44
+Result : <Node @ 0x19d6f5e5e80> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var.LexToken(=,'=',12,184)
+Action : Shift and goto state 62
+
+State  : 62
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var =.LexToken(NUM,'2',12,186)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = NUM.LexToken(;,';',12,187)
+Action : Reduce rule [factor -> NUM] with ['2'] and goto state 49
+Result : <Node @ 0x19d6f5e5ac8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = factor.LexToken(;,';',12,187)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e5ac8>] and goto state 48
+Result : <Node @ 0x19d6f5e5ac8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = term.LexToken(;,';',12,187)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e5ac8>] and goto state 47
+Result : <Node @ 0x19d6f5e5ac8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = additive_expression.LexToken(;,';',12,187)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f5e5ac8>] and goto state 45
+Result : <Node @ 0x19d6f5e5ac8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = simple_expression.LexToken(;,';',12,187)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5e5ac8>] and goto state 83
+Result : <Node @ 0x19d6f5e5ac8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 83
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = expression.LexToken(;,';',12,187)
+Action : Reduce rule [expression -> var = expression] with [<Node @ 0x19d6f5e5e80>,'=',<Node @ 0x19d6f5e5ac8>] and goto state 38
+Result : <Node @ 0x19d6f5e5710> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 38
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression.LexToken(;,';',12,187)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression ;.LexToken(ID,'aa',13,197)
+Action : Reduce rule [expression_stmt -> expression ;] with [<Node @ 0x19d6f5e5710>,';'] and goto state 33
+Result : <Node @ 0x19d6f5e5710> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 33
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression_stmt.LexToken(ID,'aa',13,197)
+Action : Reduce rule [statement -> expression_stmt] with [<Node @ 0x19d6f5e5710>] and goto state 32
+Result : <Node @ 0x19d6f5e5710> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list statement.LexToken(ID,'aa',13,197)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f5e5860>,<Node @ 0x19d6f5e5710>] and goto state 24
+Result : <Node @ 0x19d6f5e5860> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list.LexToken(ID,'aa',13,197)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list ID.LexToken(=,'=',13,200)
+Action : Reduce rule [var -> ID] with ['aa'] and goto state 44
+Result : <Node @ 0x19d6f949b70> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var.LexToken(=,'=',13,200)
+Action : Shift and goto state 62
+
+State  : 62
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var =.LexToken(NUM,'1',13,202)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = NUM.LexToken(;,';',13,203)
+Action : Reduce rule [factor -> NUM] with ['1'] and goto state 49
+Result : <Node @ 0x19d6f5e57b8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = factor.LexToken(;,';',13,203)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e57b8>] and goto state 48
+Result : <Node @ 0x19d6f5e57b8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = term.LexToken(;,';',13,203)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e57b8>] and goto state 47
+Result : <Node @ 0x19d6f5e57b8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = additive_expression.LexToken(;,';',13,203)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f5e57b8>] and goto state 45
+Result : <Node @ 0x19d6f5e57b8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = simple_expression.LexToken(;,';',13,203)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5e57b8>] and goto state 83
+Result : <Node @ 0x19d6f5e57b8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 83
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = expression.LexToken(;,';',13,203)
+Action : Reduce rule [expression -> var = expression] with [<Node @ 0x19d6f949b70>,'=',<Node @ 0x19d6f5e57b8>] and goto state 38
+Result : <Node @ 0x19d6f5e5710> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 38
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression.LexToken(;,';',13,203)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression ;.LexToken(ID,'b',14,222)
+Action : Reduce rule [expression_stmt -> expression ;] with [<Node @ 0x19d6f5e5710>,';'] and goto state 33
+Result : <Node @ 0x19d6f5e5710> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 33
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression_stmt.LexToken(ID,'b',14,222)
+Action : Reduce rule [statement -> expression_stmt] with [<Node @ 0x19d6f5e5710>] and goto state 32
+Result : <Node @ 0x19d6f5e5710> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list statement.LexToken(ID,'b',14,222)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f5e5860>,<Node @ 0x19d6f5e5710>] and goto state 24
+Result : <Node @ 0x19d6f5e5860> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list.LexToken(ID,'b',14,222)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list ID.LexToken(=,'=',14,224)
+Action : Reduce rule [var -> ID] with ['b'] and goto state 44
+Result : <Node @ 0x19d6f949b70> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var.LexToken(=,'=',14,224)
+Action : Shift and goto state 62
+
+State  : 62
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var =.LexToken(NUM,'1',14,226)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = NUM.LexToken(;,';',14,227)
+Action : Reduce rule [factor -> NUM] with ['1'] and goto state 49
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = factor.LexToken(;,';',14,227)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e5cc0>] and goto state 48
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = term.LexToken(;,';',14,227)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e5cc0>] and goto state 47
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = additive_expression.LexToken(;,';',14,227)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f5e5cc0>] and goto state 45
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = simple_expression.LexToken(;,';',14,227)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5e5cc0>] and goto state 83
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 83
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = expression.LexToken(;,';',14,227)
+Action : Reduce rule [expression -> var = expression] with [<Node @ 0x19d6f949b70>,'=',<Node @ 0x19d6f5e5cc0>] and goto state 38
+Result : <Node @ 0x19d6f5e5898> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 38
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression.LexToken(;,';',14,227)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression ;.LexToken(IF,'if',17,296)
+Action : Reduce rule [expression_stmt -> expression ;] with [<Node @ 0x19d6f5e5898>,';'] and goto state 33
+Result : <Node @ 0x19d6f5e5898> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 33
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression_stmt.LexToken(IF,'if',17,296)
+Action : Reduce rule [statement -> expression_stmt] with [<Node @ 0x19d6f5e5898>] and goto state 32
+Result : <Node @ 0x19d6f5e5898> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list statement.LexToken(IF,'if',17,296)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f5e5860>,<Node @ 0x19d6f5e5898>] and goto state 24
+Result : <Node @ 0x19d6f5e5860> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list.LexToken(IF,'if',17,296)
+Action : Shift and goto state 40
+
+State  : 40
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF.LexToken((,'(',17,299)
+Action : Shift and goto state 57
+
+State  : 57
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF (.LexToken(ID,'b',17,300)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( ID.LexToken(EE,'==',17,302)
+Action : Reduce rule [var -> ID] with ['b'] and goto state 44
+Result : <Node @ 0x19d6f949b70> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( var.LexToken(EE,'==',17,302)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f949b70>] and goto state 49
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( factor.LexToken(EE,'==',17,302)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e5a58>] and goto state 48
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( term.LexToken(EE,'==',17,302)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e5a58>] and goto state 47
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression.LexToken(EE,'==',17,302)
+Action : Shift and goto state 71
+
+State  : 71
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression EE.LexToken(NUM,'0',17,305)
+Action : Reduce rule [relop -> EE] with ['=='] and goto state 65
+Result : <str @ 0x19d6f91a068> ('==')
+
+State  : 65
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop.LexToken(NUM,'0',17,305)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop NUM.LexToken(),')',17,306)
+Action : Reduce rule [factor -> NUM] with ['0'] and goto state 49
+Result : <Node @ 0x19d6f5e5a20> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop factor.LexToken(),')',17,306)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e5a20>] and goto state 48
+Result : <Node @ 0x19d6f5e5a20> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop term.LexToken(),')',17,306)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e5a20>] and goto state 88
+Result : <Node @ 0x19d6f5e5a20> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 88
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop additive_expression.LexToken(),')',17,306)
+Action : Reduce rule [simple_expression -> additive_expression relop additive_expression] with [<Node @ 0x19d6f5e5a58>,'==',<Node @ 0x19d6f5e5a20>] and goto state 45
+Result : <Node @ 0x19d6f5e5e80> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( simple_expression.LexToken(),')',17,306)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5e5e80>] and goto state 79
+Result : <Node @ 0x19d6f5e5e80> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 79
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression.LexToken(),')',17,306)
+Action : Shift and goto state 92
+
+State  : 92
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ).LexToken({,'{',17,308)
+Action : Reduce rule [M -> <empty>] with [] and goto state 97
+Result : <int @ 0x5ec26f20> (11)
+
+State  : 97
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M.LexToken({,'{',17,308)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M {.LexToken(INT,'int',18,335)
+Action : Reduce rule [E1 -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1.LexToken(INT,'int',18,335)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations.LexToken(INT,'int',18,335)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 26
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 26
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations type_specifier.LexToken(ID,'cc',18,339)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations type_specifier ID.LexToken(;,';',18,341)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations type_specifier ID ;.LexToken(IF,'if',19,355)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with ['INT','cc',';'] and goto state 25
+Result : <SymTabItem @ 0x19d6f5e59b0> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 25
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations var_declaration.LexToken(IF,'if',19,355)
+Action : Reduce rule [local_declarations -> local_declarations var_declaration] with [None,<SymTabItem @ 0x19d6f5e59b0>] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations.LexToken(IF,'if',19,355)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 24
+Result : <Node @ 0x19d6f91a1d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list.LexToken(IF,'if',19,355)
+Action : Shift and goto state 40
+
+State  : 40
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF.LexToken((,'(',19,358)
+Action : Shift and goto state 57
+
+State  : 57
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF (.LexToken(ID,'x',19,359)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( ID.LexToken(<,'<',19,361)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 44
+Result : <Node @ 0x19d6f91a5f8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( var.LexToken(<,'<',19,361)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f91a5f8>] and goto state 49
+Result : <Node @ 0x19d6f91a160> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( factor.LexToken(<,'<',19,361)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a160>] and goto state 48
+Result : <Node @ 0x19d6f91a160> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( term.LexToken(<,'<',19,361)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f91a160>] and goto state 47
+Result : <Node @ 0x19d6f91a160> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( additive_expression.LexToken(<,'<',19,361)
+Action : Shift and goto state 68
+
+State  : 68
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( additive_expression <.LexToken(NUM,'2',19,363)
+Action : Reduce rule [relop -> <] with ['<'] and goto state 65
+Result : <str @ 0x19d6630d6f8> ('<')
+
+State  : 65
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop.LexToken(NUM,'2',19,363)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop NUM.LexToken(),')',19,364)
+Action : Reduce rule [factor -> NUM] with ['2'] and goto state 49
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop factor.LexToken(),')',19,364)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a240>] and goto state 48
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop term.LexToken(),')',19,364)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f91a240>] and goto state 88
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 88
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( additive_expression relop additive_expression.LexToken(),')',19,364)
+Action : Reduce rule [simple_expression -> additive_expression relop additive_expression] with [<Node @ 0x19d6f91a160>,'<',<Node @ 0x19d6f91a240>] and goto state 45
+Result : <Node @ 0x19d6f91a080> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( simple_expression.LexToken(),')',19,364)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a080>] and goto state 79
+Result : <Node @ 0x19d6f91a080> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 79
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression.LexToken(),')',19,364)
+Action : Shift and goto state 92
+
+State  : 92
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ).LexToken({,'{',19,366)
+Action : Reduce rule [M -> <empty>] with [] and goto state 97
+Result : <int @ 0x5ec26f60> (13)
+
+State  : 97
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M.LexToken({,'{',19,366)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M {.LexToken(INT,'int',20,384)
+Action : Reduce rule [E1 -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1.LexToken(INT,'int',20,384)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations.LexToken(INT,'int',20,384)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 26
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 26
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations type_specifier.LexToken(ID,'cc',20,388)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations type_specifier ID.LexToken(;,';',20,390)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations type_specifier ID ;.LexToken(ID,'x',21,432)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with ['INT','cc',';'] and goto state 25
+Result : <SymTabItem @ 0x19d6f91a7f0> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 25
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations var_declaration.LexToken(ID,'x',21,432)
+Action : Reduce rule [local_declarations -> local_declarations var_declaration] with [None,<SymTabItem @ 0x19d6f91a7f0>] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations.LexToken(ID,'x',21,432)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 24
+Result : <Node @ 0x19d6f91ae80> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list.LexToken(ID,'x',21,432)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list ID.LexToken(=,'=',21,434)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 44
+Result : <Node @ 0x19d6f91ac18> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list var.LexToken(=,'=',21,434)
+Action : Shift and goto state 62
+
+State  : 62
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list var =.LexToken(NUM,'2',21,435)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list var = NUM.LexToken(;,';',21,436)
+Action : Reduce rule [factor -> NUM] with ['2'] and goto state 49
+Result : <Node @ 0x19d6f91a2b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list var = factor.LexToken(;,';',21,436)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a2b0>] and goto state 48
+Result : <Node @ 0x19d6f91a2b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list var = term.LexToken(;,';',21,436)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f91a2b0>] and goto state 47
+Result : <Node @ 0x19d6f91a2b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list var = additive_expression.LexToken(;,';',21,436)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f91a2b0>] and goto state 45
+Result : <Node @ 0x19d6f91a2b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list var = simple_expression.LexToken(;,';',21,436)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a2b0>] and goto state 83
+Result : <Node @ 0x19d6f91a2b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 83
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list var = expression.LexToken(;,';',21,436)
+Action : Reduce rule [expression -> var = expression] with [<Node @ 0x19d6f91ac18>,'=',<Node @ 0x19d6f91a2b0>] and goto state 38
+Result : <Node @ 0x19d6f94b630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 38
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list expression.LexToken(;,';',21,436)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list expression ;.LexToken(},'}',22,450)
+Action : Reduce rule [expression_stmt -> expression ;] with [<Node @ 0x19d6f94b630>,';'] and goto state 33
+Result : <Node @ 0x19d6f94b630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 33
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list expression_stmt.LexToken(},'}',22,450)
+Action : Reduce rule [statement -> expression_stmt] with [<Node @ 0x19d6f94b630>] and goto state 32
+Result : <Node @ 0x19d6f94b630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list statement.LexToken(},'}',22,450)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f91ae80>,<Node @ 0x19d6f94b630>] and goto state 24
+Result : <Node @ 0x19d6f91ae80> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list.LexToken(},'}',22,450)
+Action : Shift and goto state 31
+
+State  : 31
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list }.LexToken(ELSE,'else',23,464)
+Action : Reduce rule [compound_stmt -> { E1 local_declarations statement_list }] with ['{',None,None,<Node @ 0x19d6f91ae80>,'}'] and goto state 34
+Result : <Node @ 0x19d6f91ae80> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 34
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M compound_stmt.LexToken(ELSE,'else',23,464)
+Action : Reduce rule [statement -> compound_stmt] with [<Node @ 0x19d6f91ae80>] and goto state 100
+Result : <Node @ 0x19d6f91ae80> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 100
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement.LexToken(ELSE,'else',23,464)
+Action : Reduce rule [N -> <empty>] with [] and goto state 102
+Result : <list @ 0x19d6d98bd48> ([14])
+
+State  : 102
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N.LexToken(ELSE,'else',23,464)
+Action : Shift and goto state 104
+
+State  : 104
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE.LexToken({,'{',23,469)
+Action : Reduce rule [M -> <empty>] with [] and goto state 106
+Result : <int @ 0x5ec26fa0> (15)
+
+State  : 106
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M.LexToken({,'{',23,469)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M {.LexToken(ID,'x',24,487)
+Action : Reduce rule [E1 -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1.LexToken(ID,'x',24,487)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations.LexToken(ID,'x',24,487)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 24
+Result : <Node @ 0x19d6f91a0b8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list.LexToken(ID,'x',24,487)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list ID.LexToken(=,'=',24,489)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 44
+Result : <Node @ 0x19d6f94b630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list var.LexToken(=,'=',24,489)
+Action : Shift and goto state 62
+
+State  : 62
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list var =.LexToken(NUM,'3',24,491)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list var = NUM.LexToken(;,';',24,492)
+Action : Reduce rule [factor -> NUM] with ['3'] and goto state 49
+Result : <Node @ 0x19d6f91a7f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list var = factor.LexToken(;,';',24,492)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a7f0>] and goto state 48
+Result : <Node @ 0x19d6f91a7f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list var = term.LexToken(;,';',24,492)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f91a7f0>] and goto state 47
+Result : <Node @ 0x19d6f91a7f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list var = additive_expression.LexToken(;,';',24,492)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f91a7f0>] and goto state 45
+Result : <Node @ 0x19d6f91a7f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list var = simple_expression.LexToken(;,';',24,492)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a7f0>] and goto state 83
+Result : <Node @ 0x19d6f91a7f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 83
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list var = expression.LexToken(;,';',24,492)
+Action : Reduce rule [expression -> var = expression] with [<Node @ 0x19d6f94b630>,'=',<Node @ 0x19d6f91a7f0>] and goto state 38
+Result : <Node @ 0x19d6f94b470> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 38
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list expression.LexToken(;,';',24,492)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list expression ;.LexToken(},'}',25,506)
+Action : Reduce rule [expression_stmt -> expression ;] with [<Node @ 0x19d6f94b470>,';'] and goto state 33
+Result : <Node @ 0x19d6f94b470> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 33
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list expression_stmt.LexToken(},'}',25,506)
+Action : Reduce rule [statement -> expression_stmt] with [<Node @ 0x19d6f94b470>] and goto state 32
+Result : <Node @ 0x19d6f94b470> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list statement.LexToken(},'}',25,506)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f91a0b8>,<Node @ 0x19d6f94b470>] and goto state 24
+Result : <Node @ 0x19d6f91a0b8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list.LexToken(},'}',25,506)
+Action : Shift and goto state 31
+
+State  : 31
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list }.LexToken(RETURN,'return',26,520)
+Action : Reduce rule [compound_stmt -> { E1 local_declarations statement_list }] with ['{',None,None,<Node @ 0x19d6f91a0b8>,'}'] and goto state 34
+Result : <Node @ 0x19d6f91a0b8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 34
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M compound_stmt.LexToken(RETURN,'return',26,520)
+Action : Reduce rule [statement -> compound_stmt] with [<Node @ 0x19d6f91a0b8>] and goto state 107
+Result : <Node @ 0x19d6f91a0b8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 107
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M statement.LexToken(RETURN,'return',26,520)
+Action : Reduce rule [M -> <empty>] with [] and goto state 108
+Result : <int @ 0x5ec26fc0> (16)
+
+State  : 108
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M statement M.LexToken(RETURN,'return',26,520)
+Action : Reduce rule [selection_stmt -> IF ( expression ) M statement N ELSE M statement M] with ['if','(',<Node @ 0x19d6f91a080>,')',13,<Node @ 0x19d6f91ae80>,[14],'else',15,<Node @ 0x19d6f91a0b8>,16] and goto state 35
+Result : <Node @ 0x19d6f91ac18> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 35
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list selection_stmt.LexToken(RETURN,'return',26,520)
+Action : Reduce rule [statement -> selection_stmt] with [<Node @ 0x19d6f91ac18>] and goto state 32
+Result : <Node @ 0x19d6f91ac18> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list statement.LexToken(RETURN,'return',26,520)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f91a1d0>,<Node @ 0x19d6f91ac18>] and goto state 24
+Result : <Node @ 0x19d6f91a1d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list.LexToken(RETURN,'return',26,520)
+Action : Shift and goto state 43
+
+State  : 43
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list RETURN.LexToken(ID,'x',26,527)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list RETURN ID.LexToken(;,';',26,528)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 44
+Result : <Node @ 0x19d6f91a128> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list RETURN var.LexToken(;,';',26,528)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f91a128>] and goto state 49
+Result : <Node @ 0x19d6f91a278> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list RETURN factor.LexToken(;,';',26,528)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a278>] and goto state 48
+Result : <Node @ 0x19d6f91a278> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list RETURN term.LexToken(;,';',26,528)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f91a278>] and goto state 47
+Result : <Node @ 0x19d6f91a278> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list RETURN additive_expression.LexToken(;,';',26,528)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f91a278>] and goto state 45
+Result : <Node @ 0x19d6f91a278> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list RETURN simple_expression.LexToken(;,';',26,528)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a278>] and goto state 61
+Result : <Node @ 0x19d6f91a278> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 61
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list RETURN expression.LexToken(;,';',26,528)
+Action : Shift and goto state 82
+
+State  : 82
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list RETURN expression ;.LexToken(},'}',27,538)
+Action : Reduce rule [return_stmt -> RETURN expression ;] with ['return',<Node @ 0x19d6f91a278>,';'] and goto state 37
+Result : <Node @ 0x19d6f91a278> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 37
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list return_stmt.LexToken(},'}',27,538)
+Action : Reduce rule [statement -> return_stmt] with [<Node @ 0x19d6f91a278>] and goto state 32
+Result : <Node @ 0x19d6f91ac18> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list statement.LexToken(},'}',27,538)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f91a1d0>,<Node @ 0x19d6f91ac18>] and goto state 24
+Result : <Node @ 0x19d6f91a1d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list.LexToken(},'}',27,538)
+Action : Shift and goto state 31
+
+State  : 31
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M { E1 local_declarations statement_list }.LexToken(ELSE,'else',28,549)
+Action : Reduce rule [compound_stmt -> { E1 local_declarations statement_list }] with ['{',None,None,<Node @ 0x19d6f91a1d0>,'}'] and goto state 34
+Result : <Node @ 0x19d6f91a1d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 34
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M compound_stmt.LexToken(ELSE,'else',28,549)
+Action : Reduce rule [statement -> compound_stmt] with [<Node @ 0x19d6f91a1d0>] and goto state 100
+Result : <Node @ 0x19d6f91a1d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 100
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement.LexToken(ELSE,'else',28,549)
+Action : Reduce rule [N -> <empty>] with [] and goto state 102
+Result : <list @ 0x19d6d94ea08> ([17])
+
+State  : 102
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N.LexToken(ELSE,'else',28,549)
+Action : Shift and goto state 104
+
+State  : 104
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE.LexToken({,'{',28,554)
+Action : Reduce rule [M -> <empty>] with [] and goto state 106
+Result : <int @ 0x5ec27000> (18)
+
+State  : 106
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M.LexToken({,'{',28,554)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M {.LexToken(RETURN,'return',29,574)
+Action : Reduce rule [E1 -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1.LexToken(RETURN,'return',29,574)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations.LexToken(RETURN,'return',29,574)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 24
+Result : <Node @ 0x19d6f91a5c0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list.LexToken(RETURN,'return',29,574)
+Action : Shift and goto state 43
+
+State  : 43
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN.LexToken(ID,'fun',29,581)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID.LexToken((,'(',29,584)
+Action : Shift and goto state 64
+
+State  : 64
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID (.LexToken(ID,'b',29,585)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( ID.LexToken(,,',',29,586)
+Action : Reduce rule [var -> ID] with ['b'] and goto state 44
+Result : <Node @ 0x19d6f91a0f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( var.LexToken(,,',',29,586)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f91a0f0>] and goto state 49
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( factor.LexToken(,,',',29,586)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a630>] and goto state 48
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( term.LexToken(,,',',29,586)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f91a630>] and goto state 47
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( additive_expression.LexToken(,,',',29,586)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f91a630>] and goto state 45
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( simple_expression.LexToken(,,',',29,586)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a630>] and goto state 87
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 87
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( expression.LexToken(,,',',29,586)
+Action : Reduce rule [arg_list -> expression] with [<Node @ 0x19d6f91a630>] and goto state 86
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 86
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list.LexToken(,,',',29,586)
+Action : Shift and goto state 96
+
+State  : 96
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list ,.LexToken(ID,'b',29,588)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , ID.LexToken(-,'-',29,589)
+Action : Reduce rule [var -> ID] with ['b'] and goto state 44
+Result : <Node @ 0x19d6f91a3c8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , var.LexToken(-,'-',29,589)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f91a3c8>] and goto state 49
+Result : <Node @ 0x19d6f91a0f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , factor.LexToken(-,'-',29,589)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a0f0>] and goto state 48
+Result : <Node @ 0x19d6f91a0f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , term.LexToken(-,'-',29,589)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f91a0f0>] and goto state 47
+Result : <Node @ 0x19d6f91a0f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression.LexToken(-,'-',29,589)
+Action : Shift and goto state 74
+
+State  : 74
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression -.LexToken(ID,'b',29,590)
+Action : Reduce rule [addop -> -] with ['-'] and goto state 66
+Result : <str @ 0x19d6447b5e0> ('-')
+
+State  : 66
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop.LexToken(ID,'b',29,590)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop ID.LexToken(/,'/',29,591)
+Action : Reduce rule [var -> ID] with ['b'] and goto state 89
+Result : <Node @ 0x19d6f91ae80> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 89
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop var.LexToken(/,'/',29,591)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f91ae80>] and goto state 49
+Result : <Node @ 0x19d6f91a7f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop factor.LexToken(/,'/',29,591)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a7f0>] and goto state 90
+Result : <Node @ 0x19d6f91a7f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term.LexToken(/,'/',29,591)
+Action : Shift and goto state 77
+
+State  : 77
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term /.LexToken(ID,'c',29,592)
+Action : Reduce rule [mulop -> /] with ['/'] and goto state 75
+Result : <str @ 0x19d64457538> ('/')
+
+State  : 75
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop.LexToken(ID,'c',29,592)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop ID.LexToken(*,'*',29,593)
+Action : Reduce rule [var -> ID] with ['c'] and goto state 89
+Result : <Node @ 0x19d6f91af28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 89
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop var.LexToken(*,'*',29,593)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f91af28>] and goto state 91
+Result : <Node @ 0x19d6f91ae80> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 91
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop factor.LexToken(*,'*',29,593)
+Action : Reduce rule [term -> term mulop factor] with [<Node @ 0x19d6f91a7f0>,'/',<Node @ 0x19d6f91ae80>] and goto state 90
+Result : <Node @ 0x19d6f91af28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term.LexToken(*,'*',29,593)
+Action : Shift and goto state 76
+
+State  : 76
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term *.LexToken(ID,'c',29,594)
+Action : Reduce rule [mulop -> *] with ['*'] and goto state 75
+Result : <str @ 0x19d64426ca8> ('*')
+
+State  : 75
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop.LexToken(ID,'c',29,594)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop ID.LexToken(,,',',29,595)
+Action : Reduce rule [var -> ID] with ['c'] and goto state 89
+Result : <Node @ 0x19d6f91a0b8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 89
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop var.LexToken(,,',',29,595)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f91a0b8>] and goto state 91
+Result : <Node @ 0x19d6f94b390> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 91
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop factor.LexToken(,,',',29,595)
+Action : Reduce rule [term -> term mulop factor] with [<Node @ 0x19d6f91af28>,'*',<Node @ 0x19d6f94b390>] and goto state 90
+Result : <Node @ 0x19d6f91aef0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term.LexToken(,,',',29,595)
+Action : Reduce rule [additive_expression -> additive_expression addop term] with [<Node @ 0x19d6f91a0f0>,'-',<Node @ 0x19d6f91aef0>] and goto state 47
+Result : <Node @ 0x19d6f94b4e0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression.LexToken(,,',',29,595)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f94b4e0>] and goto state 45
+Result : <Node @ 0x19d6f94b4e0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , simple_expression.LexToken(,,',',29,595)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f94b4e0>] and goto state 99
+Result : <Node @ 0x19d6f94b4e0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 99
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , expression.LexToken(,,',',29,595)
+Action : Reduce rule [arg_list -> arg_list , expression] with [<Node @ 0x19d6f91a630>,',',<Node @ 0x19d6f94b4e0>] and goto state 86
+Result : <Node @ 0x19d6f94b438> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 86
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list.LexToken(,,',',29,595)
+Action : Shift and goto state 96
+
+State  : 96
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list ,.LexToken(ID,'a',29,596)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , ID.LexToken(),')',29,597)
+Action : Reduce rule [var -> ID] with ['a'] and goto state 44
+Result : <Node @ 0x19d6f91a470> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , var.LexToken(),')',29,597)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f91a470>] and goto state 49
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , factor.LexToken(),')',29,597)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a630>] and goto state 48
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , term.LexToken(),')',29,597)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f91a630>] and goto state 47
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , additive_expression.LexToken(),')',29,597)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f91a630>] and goto state 45
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , simple_expression.LexToken(),')',29,597)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a630>] and goto state 99
+Result : <Node @ 0x19d6f91a630> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 99
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list , expression.LexToken(),')',29,597)
+Action : Reduce rule [arg_list -> arg_list , expression] with [<Node @ 0x19d6f94b438>,',',<Node @ 0x19d6f91a630>] and goto state 86
+Result : <Node @ 0x19d6f91a470> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 86
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( arg_list.LexToken(),')',29,597)
+Action : Reduce rule [args -> arg_list] with [<Node @ 0x19d6f91a470>] and goto state 85
+Result : <Node @ 0x19d6f91a470> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 85
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( args.LexToken(),')',29,597)
+Action : Shift and goto state 95
+
+State  : 95
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN ID ( args ).LexToken(;,';',29,598)
+Action : Reduce rule [call -> ID ( args )] with ['fun','(',<Node @ 0x19d6f91a470>,')'] and goto state 50
+Result : <Node @ 0x19d6f91a0f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 50
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN call.LexToken(;,';',29,598)
+Action : Reduce rule [factor -> call] with [<Node @ 0x19d6f91a0f0>] and goto state 49
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN factor.LexToken(;,';',29,598)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a240>] and goto state 48
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN term.LexToken(;,';',29,598)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f91a240>] and goto state 47
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN additive_expression.LexToken(;,';',29,598)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f91a240>] and goto state 45
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN simple_expression.LexToken(;,';',29,598)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a240>] and goto state 61
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 61
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN expression.LexToken(;,';',29,598)
+Action : Shift and goto state 82
+
+State  : 82
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list RETURN expression ;.LexToken(},'}',30,608)
+Action : Reduce rule [return_stmt -> RETURN expression ;] with ['return',<Node @ 0x19d6f91a240>,';'] and goto state 37
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 37
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list return_stmt.LexToken(},'}',30,608)
+Action : Reduce rule [statement -> return_stmt] with [<Node @ 0x19d6f91a240>] and goto state 32
+Result : <Node @ 0x19d6f91a128> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list statement.LexToken(},'}',30,608)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f91a5c0>,<Node @ 0x19d6f91a128>] and goto state 24
+Result : <Node @ 0x19d6f91a5c0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list.LexToken(},'}',30,608)
+Action : Shift and goto state 31
+
+State  : 31
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M { E1 local_declarations statement_list }.LexToken(WHILE,'while',31,618)
+Action : Reduce rule [compound_stmt -> { E1 local_declarations statement_list }] with ['{',None,None,<Node @ 0x19d6f91a5c0>,'}'] and goto state 34
+Result : <Node @ 0x19d6f91a5c0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 34
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M compound_stmt.LexToken(WHILE,'while',31,618)
+Action : Reduce rule [statement -> compound_stmt] with [<Node @ 0x19d6f91a5c0>] and goto state 107
+Result : <Node @ 0x19d6f91a5c0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 107
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M statement.LexToken(WHILE,'while',31,618)
+Action : Reduce rule [M -> <empty>] with [] and goto state 108
+Result : <int @ 0x5ec27100> (26)
+
+State  : 108
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list IF ( expression ) M statement N ELSE M statement M.LexToken(WHILE,'while',31,618)
+Action : Reduce rule [selection_stmt -> IF ( expression ) M statement N ELSE M statement M] with ['if','(',<Node @ 0x19d6f5e5e80>,')',11,<Node @ 0x19d6f91a1d0>,[17],'else',18,<Node @ 0x19d6f91a5c0>,26] and goto state 35
+Result : <Node @ 0x19d6f91a390> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 35
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list selection_stmt.LexToken(WHILE,'while',31,618)
+Action : Reduce rule [statement -> selection_stmt] with [<Node @ 0x19d6f91a390>] and goto state 32
+Result : <Node @ 0x19d6f91a390> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list statement.LexToken(WHILE,'while',31,618)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f5e5860>,<Node @ 0x19d6f91a390>] and goto state 24
+Result : <Node @ 0x19d6f5e5860> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list.LexToken(WHILE,'while',31,618)
+Action : Shift and goto state 42
+
+State  : 42
+Defaulted state 42: Reduce using 34
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE.None
+Action : Reduce rule [M -> <empty>] with [] and goto state 59
+Result : <int @ 0x5ec27100> (26)
+
+State  : 59
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M.LexToken((,'(',31,623)
+Action : Shift and goto state 81
+
+State  : 81
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M (.LexToken(ID,'a',31,624)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( ID.LexToken(>,'>',31,626)
+Action : Reduce rule [var -> ID] with ['a'] and goto state 44
+Result : <Node @ 0x19d6f5e59b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( var.LexToken(>,'>',31,626)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f5e59b0>] and goto state 49
+Result : <Node @ 0x19d6f5e5710> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( factor.LexToken(>,'>',31,626)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e5710>] and goto state 48
+Result : <Node @ 0x19d6f5e5710> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( term.LexToken(>,'>',31,626)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e5710>] and goto state 47
+Result : <Node @ 0x19d6f5e5710> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( additive_expression.LexToken(>,'>',31,626)
+Action : Shift and goto state 69
+
+State  : 69
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( additive_expression >.LexToken(NUM,'10',31,628)
+Action : Reduce rule [relop -> >] with ['>'] and goto state 65
+Result : <str @ 0x19d6630d730> ('>')
+
+State  : 65
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( additive_expression relop.LexToken(NUM,'10',31,628)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( additive_expression relop NUM.LexToken(),')',31,630)
+Action : Reduce rule [factor -> NUM] with ['10'] and goto state 49
+Result : <Node @ 0x19d6f5e5898> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( additive_expression relop factor.LexToken(),')',31,630)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e5898>] and goto state 48
+Result : <Node @ 0x19d6f5e5898> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( additive_expression relop term.LexToken(),')',31,630)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e5898>] and goto state 88
+Result : <Node @ 0x19d6f5e5898> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 88
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( additive_expression relop additive_expression.LexToken(),')',31,630)
+Action : Reduce rule [simple_expression -> additive_expression relop additive_expression] with [<Node @ 0x19d6f5e5710>,'>',<Node @ 0x19d6f5e5898>] and goto state 45
+Result : <Node @ 0x19d6f91a0f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( simple_expression.LexToken(),')',31,630)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a0f0>] and goto state 93
+Result : <Node @ 0x19d6f91a0f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 93
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression.LexToken(),')',31,630)
+Action : Shift and goto state 98
+
+State  : 98
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ).LexToken({,'{',31,632)
+Action : Reduce rule [M -> <empty>] with [] and goto state 101
+Result : <int @ 0x5ec27140> (28)
+
+State  : 101
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M.LexToken({,'{',31,632)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M {.LexToken(ID,'a',32,656)
+Action : Reduce rule [E1 -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1.LexToken(ID,'a',32,656)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations.LexToken(ID,'a',32,656)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 24
+Result : <Node @ 0x19d6f91a198> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list.LexToken(ID,'a',32,656)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list ID.LexToken(=,'=',32,658)
+Action : Reduce rule [var -> ID] with ['a'] and goto state 44
+Result : <Node @ 0x19d6f91a5c0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var.LexToken(=,'=',32,658)
+Action : Shift and goto state 62
+
+State  : 62
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var =.LexToken(NUM,'0',32,660)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = NUM.LexToken(;,';',32,661)
+Action : Reduce rule [factor -> NUM] with ['0'] and goto state 49
+Result : <Node @ 0x19d6f91add8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = factor.LexToken(;,';',32,661)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91add8>] and goto state 48
+Result : <Node @ 0x19d6f91add8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = term.LexToken(;,';',32,661)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f91add8>] and goto state 47
+Result : <Node @ 0x19d6f91add8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = additive_expression.LexToken(;,';',32,661)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f91add8>] and goto state 45
+Result : <Node @ 0x19d6f91add8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = simple_expression.LexToken(;,';',32,661)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91add8>] and goto state 83
+Result : <Node @ 0x19d6f91add8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 83
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list var = expression.LexToken(;,';',32,661)
+Action : Reduce rule [expression -> var = expression] with [<Node @ 0x19d6f91a5c0>,'=',<Node @ 0x19d6f91add8>] and goto state 38
+Result : <Node @ 0x19d6f91af28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 38
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression.LexToken(;,';',32,661)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression ;.LexToken(},'}',33,671)
+Action : Reduce rule [expression_stmt -> expression ;] with [<Node @ 0x19d6f91af28>,';'] and goto state 33
+Result : <Node @ 0x19d6f91af28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 33
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list expression_stmt.LexToken(},'}',33,671)
+Action : Reduce rule [statement -> expression_stmt] with [<Node @ 0x19d6f91af28>] and goto state 32
+Result : <Node @ 0x19d6f91af28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list statement.LexToken(},'}',33,671)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f91a198>,<Node @ 0x19d6f91af28>] and goto state 24
+Result : <Node @ 0x19d6f91a198> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list.LexToken(},'}',33,671)
+Action : Shift and goto state 31
+
+State  : 31
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list }.LexToken(},'}',34,677)
+Action : Reduce rule [compound_stmt -> { E1 local_declarations statement_list }] with ['{',None,None,<Node @ 0x19d6f91a198>,'}'] and goto state 34
+Result : <Node @ 0x19d6f91a198> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 34
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M compound_stmt.LexToken(},'}',34,677)
+Action : Reduce rule [statement -> compound_stmt] with [<Node @ 0x19d6f91a198>] and goto state 103
+Result : <Node @ 0x19d6f91a198> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 103
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M statement.LexToken(},'}',34,677)
+Action : Reduce rule [M -> <empty>] with [] and goto state 105
+Result : <int @ 0x5ec27160> (29)
+
+State  : 105
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list WHILE M ( expression ) M statement M.LexToken(},'}',34,677)
+Action : Reduce rule [iteration_stmt -> WHILE M ( expression ) M statement M] with ['while',26,'(',<Node @ 0x19d6f91a0f0>,')',28,<Node @ 0x19d6f91a198>,29] and goto state 36
+Result : <Node @ 0x19d6f91a1d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 36
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list iteration_stmt.LexToken(},'}',34,677)
+Action : Reduce rule [statement -> iteration_stmt] with [<Node @ 0x19d6f91a1d0>] and goto state 32
+Result : <Node @ 0x19d6f91a1d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list statement.LexToken(},'}',34,677)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f5e5860>,<Node @ 0x19d6f91a1d0>] and goto state 24
+Result : <Node @ 0x19d6f5e5860> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list.LexToken(},'}',34,677)
+Action : Shift and goto state 31
+
+State  : 31
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M { E1 local_declarations statement_list }.LexToken(RETURN,'return',36,684)
+Action : Reduce rule [compound_stmt -> { E1 local_declarations statement_list }] with ['{',None,None,<Node @ 0x19d6f5e5860>,'}'] and goto state 34
+Result : <Node @ 0x19d6f5e5860> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 34
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M compound_stmt.LexToken(RETURN,'return',36,684)
+Action : Reduce rule [statement -> compound_stmt] with [<Node @ 0x19d6f5e5860>] and goto state 103
+Result : <Node @ 0x19d6f5e5860> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 103
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M statement.LexToken(RETURN,'return',36,684)
+Action : Reduce rule [M -> <empty>] with [] and goto state 105
+Result : <int @ 0x5ec27180> (30)
+
+State  : 105
+Stack  :declaration_list { E1 local_declarations statement_list WHILE M ( expression ) M statement M.LexToken(RETURN,'return',36,684)
+Action : Reduce rule [iteration_stmt -> WHILE M ( expression ) M statement M] with ['while',1,'(',<Node @ 0x19d6f5f5f28>,')',3,<Node @ 0x19d6f5e5860>,30] and goto state 36
+Result : <Node @ 0x19d6f5f5978> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 36
+Stack  :declaration_list { E1 local_declarations statement_list iteration_stmt.LexToken(RETURN,'return',36,684)
+Action : Reduce rule [statement -> iteration_stmt] with [<Node @ 0x19d6f5f5978>] and goto state 32
+Result : <Node @ 0x19d6f5f5978> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list statement.LexToken(RETURN,'return',36,684)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f5f59b0>,<Node @ 0x19d6f5f5978>] and goto state 24
+Result : <Node @ 0x19d6f5f59b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list.LexToken(RETURN,'return',36,684)
+Action : Shift and goto state 43
+
+State  : 43
+Stack  :declaration_list { E1 local_declarations statement_list RETURN.LexToken(ID,'a',36,691)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list RETURN ID.LexToken(+,'+',36,692)
+Action : Reduce rule [var -> ID] with ['a'] and goto state 44
+Result : <Node @ 0x19d6f5f5da0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list RETURN var.LexToken(+,'+',36,692)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f5f5da0>] and goto state 49
+Result : <Node @ 0x19d6f5f58d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list RETURN factor.LexToken(+,'+',36,692)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5f58d0>] and goto state 48
+Result : <Node @ 0x19d6f5f58d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list RETURN term.LexToken(+,'+',36,692)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5f58d0>] and goto state 47
+Result : <Node @ 0x19d6f5f58d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list RETURN additive_expression.LexToken(+,'+',36,692)
+Action : Shift and goto state 73
+
+State  : 73
+Stack  :declaration_list { E1 local_declarations statement_list RETURN additive_expression +.LexToken(NUM,'1',36,693)
+Action : Reduce rule [addop -> +] with ['+'] and goto state 66
+Result : <str @ 0x19d66345ce0> ('+')
+
+State  : 66
+Stack  :declaration_list { E1 local_declarations statement_list RETURN additive_expression addop.LexToken(NUM,'1',36,693)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list RETURN additive_expression addop NUM.LexToken(;,';',36,694)
+Action : Reduce rule [factor -> NUM] with ['1'] and goto state 49
+Result : <Node @ 0x19d6f5f57f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list RETURN additive_expression addop factor.LexToken(;,';',36,694)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5f57f0>] and goto state 90
+Result : <Node @ 0x19d6f5f57f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list RETURN additive_expression addop term.LexToken(;,';',36,694)
+Action : Reduce rule [additive_expression -> additive_expression addop term] with [<Node @ 0x19d6f5f58d0>,'+',<Node @ 0x19d6f5f57f0>] and goto state 47
+Result : <Node @ 0x19d6f5f5cf8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list RETURN additive_expression.LexToken(;,';',36,694)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f5f5cf8>] and goto state 45
+Result : <Node @ 0x19d6f5f5cf8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list RETURN simple_expression.LexToken(;,';',36,694)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5f5cf8>] and goto state 61
+Result : <Node @ 0x19d6f5f5cf8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 61
+Stack  :declaration_list { E1 local_declarations statement_list RETURN expression.LexToken(;,';',36,694)
+Action : Shift and goto state 82
+
+State  : 82
+Stack  :declaration_list { E1 local_declarations statement_list RETURN expression ;.LexToken(},'}',37,696)
+Action : Reduce rule [return_stmt -> RETURN expression ;] with ['return',<Node @ 0x19d6f5f5cf8>,';'] and goto state 37
+Result : <Node @ 0x19d6f5f5cf8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 37
+Stack  :declaration_list { E1 local_declarations statement_list return_stmt.LexToken(},'}',37,696)
+Action : Reduce rule [statement -> return_stmt] with [<Node @ 0x19d6f5f5cf8>] and goto state 32
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list statement.LexToken(},'}',37,696)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f5f59b0>,<Node @ 0x19d6f5f5f28>] and goto state 24
+Result : <Node @ 0x19d6f5f59b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list.LexToken(},'}',37,696)
+Action : Shift and goto state 31
+
+State  : 31
+Stack  :declaration_list { E1 local_declarations statement_list }.LexToken(VOID,'void',38,698)
+Action : Reduce rule [compound_stmt -> { E1 local_declarations statement_list }] with ['{',None,None,<Node @ 0x19d6f5f59b0>,'}'] and goto state 7
+Result : <Node @ 0x19d6f5f59b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 7
+Stack  :declaration_list compound_stmt.LexToken(VOID,'void',38,698)
+Action : Reduce rule [fun_declaration -> compound_stmt] with [<Node @ 0x19d6f5f59b0>] and goto state 5
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 5
+Stack  :declaration_list fun_declaration.LexToken(VOID,'void',38,698)
+Action : Reduce rule [declaration -> fun_declaration] with [None] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.LexToken(VOID,'void',38,698)
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken(VOID,'void',38,698)
+Action : Shift and goto state 9
+
+State  : 9
+Defaulted state 9: Reduce using 9
+Stack  :declaration_list VOID.None
+Action : Reduce rule [type_specifier -> VOID] with ['void'] and goto state 6
+Result : <str @ 0x19d666e48b8> ('VOID')
+
+State  : 6
+Stack  :declaration_list type_specifier.LexToken(ID,'funvoid',38,703)
+Action : Shift and goto state 12
+
+State  : 12
+Stack  :declaration_list type_specifier ID.LexToken((,'(',38,710)
+Action : Shift and goto state 16
+
+State  : 16
+Stack  :declaration_list type_specifier ID (.LexToken(VOID,'void',38,711)
+Action : Shift and goto state 22
+
+State  : 22
+Stack  :declaration_list type_specifier ID ( VOID.LexToken(),')',38,715)
+Action : Reduce rule [params -> VOID] with ['void'] and goto state 20
+Result : <list @ 0x19d6f940688> (['VOID'])
+
+State  : 20
+Stack  :declaration_list type_specifier ID ( params.LexToken(),')',38,715)
+Action : Shift and goto state 29
+
+State  : 29
+Stack  :declaration_list type_specifier ID ( params ).LexToken({,'{',38,717)
+Action : Reduce rule [fun_declaration -> type_specifier ID ( params )] with ['VOID','funvoid','(',['VOID'],')'] and goto state 5
+Result : <SymTabItem @ 0x19d6f5f5a90> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 5
+Stack  :declaration_list fun_declaration.LexToken({,'{',38,717)
+Action : Reduce rule [declaration -> fun_declaration] with [<SymTabItem @ 0x19d6f5f5a90>] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.LexToken({,'{',38,717)
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken({,'{',38,717)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list {.LexToken(INT,'int',39,723)
+Action : Reduce rule [E1 -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { E1.LexToken(INT,'int',39,723)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations.LexToken(INT,'int',39,723)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list { E1 local_declarations INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 26
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 26
+Stack  :declaration_list { E1 local_declarations type_specifier.LexToken(ID,'x1',39,727)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { E1 local_declarations type_specifier ID.LexToken(;,';',39,729)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :declaration_list { E1 local_declarations type_specifier ID ;.LexToken(INT,'int',40,735)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with ['INT','x1',';'] and goto state 25
+Result : <SymTabItem @ 0x19d6f5f5cf8> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 25
+Stack  :declaration_list { E1 local_declarations var_declaration.LexToken(INT,'int',40,735)
+Action : Reduce rule [local_declarations -> local_declarations var_declaration] with [None,<SymTabItem @ 0x19d6f5f5cf8>] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations.LexToken(INT,'int',40,735)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list { E1 local_declarations INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 26
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 26
+Stack  :declaration_list { E1 local_declarations type_specifier.LexToken(ID,'x2',40,739)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { E1 local_declarations type_specifier ID.LexToken([,'[',40,741)
+Action : Shift and goto state 15
+
+State  : 15
+Stack  :declaration_list { E1 local_declarations type_specifier ID [.LexToken(NUM,'10',40,742)
+Action : Shift and goto state 18
+
+State  : 18
+Stack  :declaration_list { E1 local_declarations type_specifier ID [ NUM.LexToken(],']',40,744)
+Action : Shift and goto state 27
+
+State  : 27
+Stack  :declaration_list { E1 local_declarations type_specifier ID [ NUM ].LexToken(;,';',40,745)
+Action : Shift and goto state 53
+
+State  : 53
+Stack  :declaration_list { E1 local_declarations type_specifier ID [ NUM ] ;.LexToken(ID,'x',41,751)
+Action : Reduce rule [var_declaration -> type_specifier ID [ NUM ] ;] with ['INT','x2','[','10',']',';'] and goto state 25
+Result : <SymTabItem @ 0x19d6f5f5ef0> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 25
+Stack  :declaration_list { E1 local_declarations var_declaration.LexToken(ID,'x',41,751)
+Action : Reduce rule [local_declarations -> local_declarations var_declaration] with [None,<SymTabItem @ 0x19d6f5f5ef0>] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations.LexToken(ID,'x',41,751)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 24
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list.LexToken(ID,'x',41,751)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list ID.LexToken(=,'=',41,753)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 44
+Result : <Node @ 0x19d6f5f5b00> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list var.LexToken(=,'=',41,753)
+Action : Shift and goto state 62
+
+State  : 62
+Stack  :declaration_list { E1 local_declarations statement_list var =.LexToken(NUM,'1',41,755)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list var = NUM.LexToken(;,';',41,756)
+Action : Reduce rule [factor -> NUM] with ['1'] and goto state 49
+Result : <Node @ 0x19d6f5f5908> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = factor.LexToken(;,';',41,756)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5f5908>] and goto state 48
+Result : <Node @ 0x19d6f5f5908> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list var = term.LexToken(;,';',41,756)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5f5908>] and goto state 47
+Result : <Node @ 0x19d6f5f5908> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression.LexToken(;,';',41,756)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f5f5908>] and goto state 45
+Result : <Node @ 0x19d6f5f5908> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list var = simple_expression.LexToken(;,';',41,756)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5f5908>] and goto state 83
+Result : <Node @ 0x19d6f5f5908> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 83
+Stack  :declaration_list { E1 local_declarations statement_list var = expression.LexToken(;,';',41,756)
+Action : Reduce rule [expression -> var = expression] with [<Node @ 0x19d6f5f5b00>,'=',<Node @ 0x19d6f5f5908>] and goto state 38
+Result : <Node @ 0x19d6f5f5c88> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 38
+Stack  :declaration_list { E1 local_declarations statement_list expression.LexToken(;,';',41,756)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  :declaration_list { E1 local_declarations statement_list expression ;.LexToken(},'}',45,816)
+Action : Reduce rule [expression_stmt -> expression ;] with [<Node @ 0x19d6f5f5c88>,';'] and goto state 33
+Result : <Node @ 0x19d6f5f5c88> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 33
+Stack  :declaration_list { E1 local_declarations statement_list expression_stmt.LexToken(},'}',45,816)
+Action : Reduce rule [statement -> expression_stmt] with [<Node @ 0x19d6f5f5c88>] and goto state 32
+Result : <Node @ 0x19d6f5f5c88> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list statement.LexToken(},'}',45,816)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f5f5f28>,<Node @ 0x19d6f5f5c88>] and goto state 24
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list.LexToken(},'}',45,816)
+Action : Shift and goto state 31
+
+State  : 31
+Stack  :declaration_list { E1 local_declarations statement_list }.LexToken(VOID,'void',46,818)
+Action : Reduce rule [compound_stmt -> { E1 local_declarations statement_list }] with ['{',None,None,<Node @ 0x19d6f5f5f28>,'}'] and goto state 7
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 7
+Stack  :declaration_list compound_stmt.LexToken(VOID,'void',46,818)
+Action : Reduce rule [fun_declaration -> compound_stmt] with [<Node @ 0x19d6f5f5f28>] and goto state 5
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 5
+Stack  :declaration_list fun_declaration.LexToken(VOID,'void',46,818)
+Action : Reduce rule [declaration -> fun_declaration] with [None] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.LexToken(VOID,'void',46,818)
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken(VOID,'void',46,818)
+Action : Shift and goto state 9
+
+State  : 9
+Defaulted state 9: Reduce using 9
+Stack  :declaration_list VOID.None
+Action : Reduce rule [type_specifier -> VOID] with ['void'] and goto state 6
+Result : <str @ 0x19d666e48b8> ('VOID')
+
+State  : 6
+Stack  :declaration_list type_specifier.LexToken(ID,'main',46,823)
+Action : Shift and goto state 12
+
+State  : 12
+Stack  :declaration_list type_specifier ID.LexToken((,'(',46,827)
+Action : Shift and goto state 16
+
+State  : 16
+Stack  :declaration_list type_specifier ID (.LexToken(),')',46,828)
+Action : Reduce rule [params -> <empty>] with [] and goto state 20
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 20
+Stack  :declaration_list type_specifier ID ( params.LexToken(),')',46,828)
+Action : Shift and goto state 29
+
+State  : 29
+Stack  :declaration_list type_specifier ID ( params ).LexToken({,'{',46,830)
+Action : Reduce rule [fun_declaration -> type_specifier ID ( params )] with ['VOID','main','(',None,')'] and goto state 5
+Result : <SymTabItem @ 0x19d6f5f59b0> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 5
+Stack  :declaration_list fun_declaration.LexToken({,'{',46,830)
+Action : Reduce rule [declaration -> fun_declaration] with [<SymTabItem @ 0x19d6f5f59b0>] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.LexToken({,'{',46,830)
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken({,'{',46,830)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list {.LexToken(INT,'int',47,836)
+Action : Reduce rule [E1 -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { E1.LexToken(INT,'int',47,836)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations.LexToken(INT,'int',47,836)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list { E1 local_declarations INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 26
+Result : <str @ 0x19d666eb110> ('INT')
+
+State  : 26
+Stack  :declaration_list { E1 local_declarations type_specifier.LexToken(ID,'mm',47,840)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { E1 local_declarations type_specifier ID.LexToken(;,';',47,842)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :declaration_list { E1 local_declarations type_specifier ID ;.LexToken(ID,'x',51,928)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with ['INT','mm',';'] and goto state 25
+Result : <SymTabItem @ 0x19d6f5f5be0> (<sematic_uiapi.SymTabItem object at 0x00 ...)
+
+State  : 25
+Stack  :declaration_list { E1 local_declarations var_declaration.LexToken(ID,'x',51,928)
+Action : Reduce rule [local_declarations -> local_declarations var_declaration] with [None,<SymTabItem @ 0x19d6f5f5be0>] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { E1 local_declarations.LexToken(ID,'x',51,928)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 24
+Result : <Node @ 0x19d6f5f5ef0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list.LexToken(ID,'x',51,928)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list ID.LexToken(=,'=',51,930)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 44
+Result : <Node @ 0x19d6f5f57f0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list var.LexToken(=,'=',51,930)
+Action : Shift and goto state 62
+
+State  : 62
+Stack  :declaration_list { E1 local_declarations statement_list var =.LexToken(ID,'array',51,932)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list var = ID.LexToken([,'[',51,937)
+Action : Shift and goto state 63
+
+State  : 63
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [.LexToken(NUM,'2',51,938)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ NUM.LexToken(-,'-',51,939)
+Action : Reduce rule [factor -> NUM] with ['2'] and goto state 49
+Result : <Node @ 0x19d6f5f5978> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ factor.LexToken(-,'-',51,939)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5f5978>] and goto state 48
+Result : <Node @ 0x19d6f5f5978> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ term.LexToken(-,'-',51,939)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5f5978>] and goto state 47
+Result : <Node @ 0x19d6f5f5978> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ additive_expression.LexToken(-,'-',51,939)
+Action : Shift and goto state 74
+
+State  : 74
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ additive_expression -.LexToken(ID,'x',51,940)
+Action : Reduce rule [addop -> -] with ['-'] and goto state 66
+Result : <str @ 0x19d6447b5e0> ('-')
+
+State  : 66
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ additive_expression addop.LexToken(ID,'x',51,940)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ additive_expression addop ID.LexToken(],']',51,941)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 89
+Result : <Node @ 0x19d6f5f5908> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 89
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ additive_expression addop var.LexToken(],']',51,941)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f5f5908>] and goto state 49
+Result : <Node @ 0x19d6f5e59b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ additive_expression addop factor.LexToken(],']',51,941)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e59b0>] and goto state 90
+Result : <Node @ 0x19d6f5e59b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ additive_expression addop term.LexToken(],']',51,941)
+Action : Reduce rule [additive_expression -> additive_expression addop term] with [<Node @ 0x19d6f5f5978>,'-',<Node @ 0x19d6f5e59b0>] and goto state 47
+Result : <Node @ 0x19d6f5e5748> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ additive_expression.LexToken(],']',51,941)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f5e5748>] and goto state 45
+Result : <Node @ 0x19d6f5e5748> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ simple_expression.LexToken(],']',51,941)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5e5748>] and goto state 84
+Result : <Node @ 0x19d6f5e5748> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 84
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ expression.LexToken(],']',51,941)
+Action : Shift and goto state 94
+
+State  : 94
+Stack  :declaration_list { E1 local_declarations statement_list var = ID [ expression ].LexToken(+,'+',51,942)
+Action : Reduce rule [var -> ID [ expression ]] with ['array','[',<Node @ 0x19d6f5e5748>,']'] and goto state 44
+Result : <Node @ 0x19d6f5e5a90> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list var = var.LexToken(+,'+',51,942)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f5e5a90>] and goto state 49
+Result : <Node @ 0x19d6f5f58d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = factor.LexToken(+,'+',51,942)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5f58d0>] and goto state 48
+Result : <Node @ 0x19d6f5f58d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list var = term.LexToken(+,'+',51,942)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5f58d0>] and goto state 47
+Result : <Node @ 0x19d6f5f58d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression.LexToken(+,'+',51,942)
+Action : Shift and goto state 73
+
+State  : 73
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression +.LexToken(ID,'x',51,943)
+Action : Reduce rule [addop -> +] with ['+'] and goto state 66
+Result : <str @ 0x19d66345ce0> ('+')
+
+State  : 66
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop.LexToken(ID,'x',51,943)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ID.LexToken(*,'*',51,944)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 89
+Result : <Node @ 0x19d6f5f5908> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 89
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop var.LexToken(*,'*',51,944)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f5f5908>] and goto state 49
+Result : <Node @ 0x19d6f5f5978> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop factor.LexToken(*,'*',51,944)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5f5978>] and goto state 90
+Result : <Node @ 0x19d6f5f5978> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term.LexToken(*,'*',51,944)
+Action : Shift and goto state 76
+
+State  : 76
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term *.LexToken(NUM,'2',51,945)
+Action : Reduce rule [mulop -> *] with ['*'] and goto state 75
+Result : <str @ 0x19d64426ca8> ('*')
+
+State  : 75
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop.LexToken(NUM,'2',51,945)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop NUM.LexToken(-,'-',51,946)
+Action : Reduce rule [factor -> NUM] with ['2'] and goto state 91
+Result : <Node @ 0x19d6f5f5b00> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 91
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop factor.LexToken(-,'-',51,946)
+Action : Reduce rule [term -> term mulop factor] with [<Node @ 0x19d6f5f5978>,'*',<Node @ 0x19d6f5f5b00>] and goto state 90
+Result : <Node @ 0x19d6f5e5a90> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term.LexToken(-,'-',51,946)
+Action : Reduce rule [additive_expression -> additive_expression addop term] with [<Node @ 0x19d6f5f58d0>,'+',<Node @ 0x19d6f5e5a90>] and goto state 47
+Result : <Node @ 0x19d6f5f5908> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression.LexToken(-,'-',51,946)
+Action : Shift and goto state 74
+
+State  : 74
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression -.LexToken((,'(',51,947)
+Action : Reduce rule [addop -> -] with ['-'] and goto state 66
+Result : <str @ 0x19d6447b5e0> ('-')
+
+State  : 66
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop.LexToken((,'(',51,947)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop (.LexToken(NUM,'5',51,948)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( NUM.LexToken(-,'-',51,949)
+Action : Reduce rule [factor -> NUM] with ['5'] and goto state 49
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( factor.LexToken(-,'-',51,949)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e5a58>] and goto state 48
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( term.LexToken(-,'-',51,949)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e5a58>] and goto state 47
+Result : <Node @ 0x19d6f5e5a58> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression.LexToken(-,'-',51,949)
+Action : Shift and goto state 74
+
+State  : 74
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression -.LexToken((,'(',51,950)
+Action : Reduce rule [addop -> -] with ['-'] and goto state 66
+Result : <str @ 0x19d6447b5e0> ('-')
+
+State  : 66
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop.LexToken((,'(',51,950)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop (.LexToken(NUM,'12',51,951)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( NUM.LexToken(+,'+',51,953)
+Action : Reduce rule [factor -> NUM] with ['12'] and goto state 49
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( factor.LexToken(+,'+',51,953)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5f5f28>] and goto state 48
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( term.LexToken(+,'+',51,953)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5f5f28>] and goto state 47
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( additive_expression.LexToken(+,'+',51,953)
+Action : Shift and goto state 73
+
+State  : 73
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( additive_expression +.LexToken(ID,'a',51,954)
+Action : Reduce rule [addop -> +] with ['+'] and goto state 66
+Result : <str @ 0x19d66345ce0> ('+')
+
+State  : 66
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( additive_expression addop.LexToken(ID,'a',51,954)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( additive_expression addop ID.LexToken(),')',51,955)
+Action : Reduce rule [var -> ID] with ['a'] and goto state 89
+Result : <Node @ 0x19d6f5e5a20> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 89
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( additive_expression addop var.LexToken(),')',51,955)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f5e5a20>] and goto state 49
+Result : <Node @ 0x19d6f91a518> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( additive_expression addop factor.LexToken(),')',51,955)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a518>] and goto state 90
+Result : <Node @ 0x19d6f91a518> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( additive_expression addop term.LexToken(),')',51,955)
+Action : Reduce rule [additive_expression -> additive_expression addop term] with [<Node @ 0x19d6f5f5f28>,'+',<Node @ 0x19d6f91a518>] and goto state 47
+Result : <Node @ 0x19d6f91a2b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( additive_expression.LexToken(),')',51,955)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f91a2b0>] and goto state 45
+Result : <Node @ 0x19d6f91a2b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( simple_expression.LexToken(),')',51,955)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a2b0>] and goto state 58
+Result : <Node @ 0x19d6f91a2b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 58
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( expression.LexToken(),')',51,955)
+Action : Shift and goto state 80
+
+State  : 80
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop ( expression ).LexToken(),')',51,956)
+Action : Reduce rule [factor -> ( expression )] with ['(',<Node @ 0x19d6f91a2b0>,')'] and goto state 49
+Result : <Node @ 0x19d6f91a278> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop factor.LexToken(),')',51,956)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a278>] and goto state 90
+Result : <Node @ 0x19d6f91a278> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop term.LexToken(),')',51,956)
+Action : Reduce rule [additive_expression -> additive_expression addop term] with [<Node @ 0x19d6f5e5a58>,'-',<Node @ 0x19d6f91a278>] and goto state 47
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression.LexToken(),')',51,956)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f5f5f28>] and goto state 45
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( simple_expression.LexToken(),')',51,956)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f5f5f28>] and goto state 58
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 58
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( expression.LexToken(),')',51,956)
+Action : Shift and goto state 80
+
+State  : 80
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( expression ).LexToken(/,'/',51,957)
+Action : Reduce rule [factor -> ( expression )] with ['(',<Node @ 0x19d6f5f5f28>,')'] and goto state 49
+Result : <Node @ 0x19d6f91a2b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop factor.LexToken(/,'/',51,957)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91a2b0>] and goto state 90
+Result : <Node @ 0x19d6f91a2b0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term.LexToken(/,'/',51,957)
+Action : Shift and goto state 77
+
+State  : 77
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term /.LexToken(NUM,'2',51,958)
+Action : Reduce rule [mulop -> /] with ['/'] and goto state 75
+Result : <str @ 0x19d64457538> ('/')
+
+State  : 75
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop.LexToken(NUM,'2',51,958)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop NUM.LexToken(-,'-',51,959)
+Action : Reduce rule [factor -> NUM] with ['2'] and goto state 91
+Result : <Node @ 0x19d6f5e5e80> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 91
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop factor.LexToken(-,'-',51,959)
+Action : Reduce rule [term -> term mulop factor] with [<Node @ 0x19d6f91a2b0>,'/',<Node @ 0x19d6f5e5e80>] and goto state 90
+Result : <Node @ 0x19d6f5e56d8> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term.LexToken(-,'-',51,959)
+Action : Reduce rule [additive_expression -> additive_expression addop term] with [<Node @ 0x19d6f5f5908>,'-',<Node @ 0x19d6f5e56d8>] and goto state 47
+Result : <Node @ 0x19d6f5f5f28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression.LexToken(-,'-',51,959)
+Action : Shift and goto state 74
+
+State  : 74
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression -.LexToken((,'(',51,960)
+Action : Reduce rule [addop -> -] with ['-'] and goto state 66
+Result : <str @ 0x19d6447b5e0> ('-')
+
+State  : 66
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop.LexToken((,'(',51,960)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop (.LexToken(ID,'a',51,961)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( ID.LexToken(+,'+',51,962)
+Action : Reduce rule [var -> ID] with ['a'] and goto state 44
+Result : <Node @ 0x19d6f5f5780> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 44
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( var.LexToken(+,'+',51,962)
+Action : Reduce rule [factor -> var] with [<Node @ 0x19d6f5f5780>] and goto state 49
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( factor.LexToken(+,'+',51,962)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e5cc0>] and goto state 48
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 48
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( term.LexToken(+,'+',51,962)
+Action : Reduce rule [additive_expression -> term] with [<Node @ 0x19d6f5e5cc0>] and goto state 47
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression.LexToken(+,'+',51,962)
+Action : Shift and goto state 73
+
+State  : 73
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression +.LexToken(NUM,'2',51,963)
+Action : Reduce rule [addop -> +] with ['+'] and goto state 66
+Result : <str @ 0x19d66345ce0> ('+')
+
+State  : 66
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop.LexToken(NUM,'2',51,963)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop NUM.LexToken(),')',51,964)
+Action : Reduce rule [factor -> NUM] with ['2'] and goto state 49
+Result : <Node @ 0x19d6f5e58d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop factor.LexToken(),')',51,964)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f5e58d0>] and goto state 90
+Result : <Node @ 0x19d6f5e58d0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression addop term.LexToken(),')',51,964)
+Action : Reduce rule [additive_expression -> additive_expression addop term] with [<Node @ 0x19d6f5e5cc0>,'+',<Node @ 0x19d6f5e58d0>] and goto state 47
+Result : <Node @ 0x19d6f91a320> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( additive_expression.LexToken(),')',51,964)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f91a320>] and goto state 45
+Result : <Node @ 0x19d6f91a320> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( simple_expression.LexToken(),')',51,964)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a320>] and goto state 58
+Result : <Node @ 0x19d6f91a320> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 58
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( expression.LexToken(),')',51,964)
+Action : Shift and goto state 80
+
+State  : 80
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop ( expression ).LexToken(/,'/',51,965)
+Action : Reduce rule [factor -> ( expression )] with ['(',<Node @ 0x19d6f91a320>,')'] and goto state 49
+Result : <Node @ 0x19d6f91af28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 49
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop factor.LexToken(/,'/',51,965)
+Action : Reduce rule [term -> factor] with [<Node @ 0x19d6f91af28>] and goto state 90
+Result : <Node @ 0x19d6f91af28> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term.LexToken(/,'/',51,965)
+Action : Shift and goto state 77
+
+State  : 77
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term /.LexToken(NUM,'12',51,966)
+Action : Reduce rule [mulop -> /] with ['/'] and goto state 75
+Result : <str @ 0x19d64457538> ('/')
+
+State  : 75
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop.LexToken(NUM,'12',51,966)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop NUM.LexToken(*,'*',51,968)
+Action : Reduce rule [factor -> NUM] with ['12'] and goto state 91
+Result : <Node @ 0x19d6f5f5780> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 91
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop factor.LexToken(*,'*',51,968)
+Action : Reduce rule [term -> term mulop factor] with [<Node @ 0x19d6f91af28>,'/',<Node @ 0x19d6f5f5780>] and goto state 90
+Result : <Node @ 0x19d6f5e5cc0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term.LexToken(*,'*',51,968)
+Action : Shift and goto state 76
+
+State  : 76
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term *.LexToken(NUM,'1',51,969)
+Action : Reduce rule [mulop -> *] with ['*'] and goto state 75
+Result : <str @ 0x19d64426ca8> ('*')
+
+State  : 75
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop.LexToken(NUM,'1',51,969)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop NUM.LexToken(;,';',51,970)
+Action : Reduce rule [factor -> NUM] with ['1'] and goto state 91
+Result : <Node @ 0x19d6f91a080> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 91
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term mulop factor.LexToken(;,';',51,970)
+Action : Reduce rule [term -> term mulop factor] with [<Node @ 0x19d6f5e5cc0>,'*',<Node @ 0x19d6f91a080>] and goto state 90
+Result : <Node @ 0x19d6f91a278> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 90
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression addop term.LexToken(;,';',51,970)
+Action : Reduce rule [additive_expression -> additive_expression addop term] with [<Node @ 0x19d6f5f5f28>,'-',<Node @ 0x19d6f91a278>] and goto state 47
+Result : <Node @ 0x19d6f91a518> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 47
+Stack  :declaration_list { E1 local_declarations statement_list var = additive_expression.LexToken(;,';',51,970)
+Action : Reduce rule [simple_expression -> additive_expression] with [<Node @ 0x19d6f91a518>] and goto state 45
+Result : <Node @ 0x19d6f91a518> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 45
+Stack  :declaration_list { E1 local_declarations statement_list var = simple_expression.LexToken(;,';',51,970)
+Action : Reduce rule [expression -> simple_expression] with [<Node @ 0x19d6f91a518>] and goto state 83
+Result : <Node @ 0x19d6f91a518> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 83
+Stack  :declaration_list { E1 local_declarations statement_list var = expression.LexToken(;,';',51,970)
+Action : Reduce rule [expression -> var = expression] with [<Node @ 0x19d6f5f57f0>,'=',<Node @ 0x19d6f91a518>] and goto state 38
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 38
+Stack  :declaration_list { E1 local_declarations statement_list expression.LexToken(;,';',51,970)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  :declaration_list { E1 local_declarations statement_list expression ;.LexToken(},'}',53,1019)
+Action : Reduce rule [expression_stmt -> expression ;] with [<Node @ 0x19d6f91a240>,';'] and goto state 33
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 33
+Stack  :declaration_list { E1 local_declarations statement_list expression_stmt.LexToken(},'}',53,1019)
+Action : Reduce rule [statement -> expression_stmt] with [<Node @ 0x19d6f91a240>] and goto state 32
+Result : <Node @ 0x19d6f91a240> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 32
+Stack  :declaration_list { E1 local_declarations statement_list statement.LexToken(},'}',53,1019)
+Action : Reduce rule [statement_list -> statement_list statement] with [<Node @ 0x19d6f5f5ef0>,<Node @ 0x19d6f91a240>] and goto state 24
+Result : <Node @ 0x19d6f5f5ef0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 24
+Stack  :declaration_list { E1 local_declarations statement_list.LexToken(},'}',53,1019)
+Action : Shift and goto state 31
+
+State  : 31
+Stack  :declaration_list { E1 local_declarations statement_list }.$end
+Action : Reduce rule [compound_stmt -> { E1 local_declarations statement_list }] with ['{',None,None,<Node @ 0x19d6f5f5ef0>,'}'] and goto state 7
+Result : <Node @ 0x19d6f5f5ef0> (<sematic_uiapi.Node object at 0x0000019D ...)
+
+State  : 7
+Stack  :declaration_list compound_stmt.$end
+Action : Reduce rule [fun_declaration -> compound_stmt] with [<Node @ 0x19d6f5f5ef0>] and goto state 5
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 5
+Stack  :declaration_list fun_declaration.$end
+Action : Reduce rule [declaration -> fun_declaration] with [None] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.$end
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.$end
+Action : Reduce rule [program -> declaration_list] with [None] and goto state 1
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 1
+Stack  :program.$end
+Done   : Returning <NoneType @ 0x5ebba490> (None)
+PLY: PARSE DEBUG END

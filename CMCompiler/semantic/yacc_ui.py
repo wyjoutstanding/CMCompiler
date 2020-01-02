@@ -448,7 +448,7 @@ class LRParser:
                         elif(tokensfileline!=lookahead.lineno):
                             tokensfileline = lookahead.lineno
                             tokensfile.write('\n')
-                        tokensfile.write('<'+lookahead.type+'.'+lookahead.value+'>')
+                        tokensfile.write('<'+lookahead.type+','+lookahead.value+'>   ')
                     #--!outfile
                     symstack.append(lookahead)
                     lookahead = None
