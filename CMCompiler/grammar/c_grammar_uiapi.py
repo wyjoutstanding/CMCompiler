@@ -1,15 +1,15 @@
 # =============================================================================
-# 文件名：c_grammar.py
-# 功能：基于python-lex和python-yacc的C-语法分析器
-# 作者： 武起龙，张峥
-# 时间：2019/12/29
+# 文件名：c_grammar_uiapi.py
+# 功能：基于python-lex和python-yacc的C-语法分析器，作为图形界面接口
+# 作者： 武起龙
+# 时间：2020/1/1
 #==============================================================================
 # *接口说明*
-#   - getGrammar() : 生成parsetab.py和parse.out文件
+#   - Analysis(file) : file为所分析文件路径
 #
 #
 # *如何使用*
-#   - 作为模块使用时注释/关闭末尾的测试代码，调用getGrammar即可
+#   - 在ui.py中作为语法分析模块调用
 #
 # *有用参考*
 #   - 英文文档：http://www.dabeaz.com/ply/ply.html （强烈推荐）
@@ -20,9 +20,12 @@
 #   2.定义注释和回车的忽略规则
 #   3.设置递进规约规则
 #   4.输入产生式列表
+#   5.如有错误则记录错误信息
 # =============================================================================
 
 error_num = 0 #用于记录错误次数
+errorfile = None
+parser = 0
 
 # =============================================================================
 # 1. tokens 列表定义
@@ -61,8 +64,7 @@ t_NE = r'!='
 
 #定义忽略注释的正则表达式
 def t_ANNOTATION(t):
-#    r'/\*([a-zA-Z0-9 _]|\r|\n|\t)*\*/' # 第一行写正则表达式
-    r'(/\*(.|\n)*?\*/)|(\/\/.*)'
+    r'/\*(.|\n)*?\*/' # 第一行写正则表达式
     t.lexer.lineno += t.value.count('\n') # 累计行数
     pass # 表示忽略该token
 
@@ -84,16 +86,15 @@ def t_newline(t):
 # 错误处理：输出错误符号，行数，列数后跳过当前错误继续扫描
 def t_error(t):
     global error_num
-    error_num += 1
-    #print("Illegal character '%s'" % t.value[0])
-    tmp = t.lexpos - data.rfind('\n',0,t.lexpos)
-    print(f"========Illegal character: {t.value[0]}   line: {str(t.lineno)}   col: {str(tmp)}")
-    #print("(%d," % t.lexer.lineno, "%d)" % t.lexer.lexpos)
+    global errorfile
+    if(errorfile is None):
+        errorfile = open("error.out",'w')
+    errorfile.write("Illegal character : "+t.value[0]+"    line :"+str(t.lexer.lineno)+'\n')
+    error_num+=1
     t.lexer.skip(1)
 
 import ply.lex as lex # 导入python lex模块
 
-lex.lex()# 调用Lex模块，构建词法分析器
 
 #==============================================================================
 #产生式列表
@@ -122,13 +123,9 @@ def p_type_specifier_2(p):
     '''type_specifier : VOID'''
 
 def p_fun_declaration_1(p):
-    '''fun_declaration : type_specifier ID '(' params ')' compound_stmt'''
-#def p_fun_declaration_2(p):
-#    '''fun_declaration : '''
-#def p_fun_declaration_1(p):
-#    '''fun_declaration : type_specifier ID '(' params ')' '''
-#def p_fun_declaration_2(p):
-#    '''fun_declaration : compound_stmt'''
+    '''fun_declaration : type_specifier ID '(' params ')' '''
+def p_fun_declaration_2(p):
+    '''fun_declaration : compound_stmt'''
 
 def p_params_1(p):
     '''params : param_list'''
@@ -176,15 +173,11 @@ def p_expression_stmt_1(p):
 def p_expression_stmt_2(p):
     '''expression_stmt : ';' '''
 
-def p_selection_stmt_2(p):
-    '''selection_stmt : IF '(' expression ')' M statement N ELSE M statement'''
 def p_selection_stmt_1(p):
-    '''selection_stmt : IF '(' expression ')' M statement N'''
+    '''selection_stmt : IF '(' expression ')' statement'''
+def p_selection_stmt_2(p):
+    '''selection_stmt : IF '(' expression ')' statement ELSE statement'''
 
-def p_M(p):
-    '''M : '''
-def p_N(p):
-    '''N : '''
 def p_iteration_stmt_1(p):
     '''iteration_stmt : WHILE '(' expression ')' statement'''
 
@@ -233,6 +226,7 @@ def p_addop_2(p):
 
 def p_term_1(p):
     '''term : term mulop factor'''
+
 def p_term_2(p):
     '''term : factor'''
 
@@ -264,35 +258,40 @@ def p_arg_list_2(p):
     ''' arg_list : expression'''
 
 #错误处理，输出错误所在单词
+
 def p_error(p):
     global error_num
-    error_num+=1
-    if p:
-        print("Syntax error at '%s'" %p.value," line:%d"%p.lexer.lineno)
-
+    global errorfile
+    global parser
+    if(errorfile is None):
+        errorfile = open("error.out",'w')
+    if p :
+        parser.errok()
+        errorfile.write("Syntax error at `" + p.value+"`   line : "+str(p.lineno)+'\n')
     else:
-        print("Syntax error at EOF")
+        errorfile.write("Syntax error at EOF \n")
+    error_num+=1
 
-# =============================================================================
-# 接口：运行时生成相应的parse.out和parsetab.py文件供之后使用
-# =============================================================================
-import ply.yacc as yacc
-def get_Grammar():
-    yacc.yacc()
+import yacc_ui as yacc
+#import ply.yacc_ui as yacc
 
-# =============================================================================
-# 测试部分：真正运行时将其注释掉 / 将ISTEST设为False
-# =============================================================================
-ISTEST = True # 打开测试
-#ISTEST = False # 关闭测试
-if ISTEST:
+def Analysis(file):
+    lexer = lex.lex()# 调用Lex模块，构建词法分析器
+    global parser
+    global errorfile
+    errorfile = None
+    parser = yacc.yacc()
     try:
-        get_Grammar()
-        with open('test.c')as f:
+
+        with open(file)as f:
             contents = f.read()
-            data = contents # 计算错误所在列数
-        yacc.parse(contents)
+        parser.parse(contents,debug=1)
+        #语法正确
         if(error_num==0):
-            print("grammar is true")
+            return 0
+        #语法错误
+        else:
+            errorfile.close()
+            return 1
     except EOFError:
-        print("Can't open file")
+        return 2

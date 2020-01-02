@@ -1,0 +1,1182 @@
+
+State  : 0
+Stack  :.LexToken(INT,'int',5,65)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 6
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 6
+Stack  :type_specifier.LexToken(ID,'gcd',5,69)
+Action : Shift and goto state 12
+
+State  : 12
+Stack  :type_specifier ID.LexToken((,'(',5,72)
+Action : Shift and goto state 16
+
+State  : 16
+Stack  :type_specifier ID (.LexToken(INT,'int',5,73)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :type_specifier ID ( INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 21
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 21
+Stack  :type_specifier ID ( type_specifier.LexToken(ID,'u',5,77)
+Action : Shift and goto state 49
+
+State  : 49
+Stack  :type_specifier ID ( type_specifier ID.LexToken(,,',',5,78)
+Action : Reduce rule [param -> type_specifier ID] with [None,'u'] and goto state 25
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 25
+Stack  :type_specifier ID ( param.LexToken(,,',',5,78)
+Action : Reduce rule [param_list -> param] with [None] and goto state 23
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 23
+Stack  :type_specifier ID ( param_list.LexToken(,,',',5,78)
+Action : Shift and goto state 51
+
+State  : 51
+Stack  :type_specifier ID ( param_list ,.LexToken(INT,'int',5,80)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :type_specifier ID ( param_list , INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 21
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 21
+Stack  :type_specifier ID ( param_list , type_specifier.LexToken(ID,'v',5,84)
+Action : Shift and goto state 49
+
+State  : 49
+Stack  :type_specifier ID ( param_list , type_specifier ID.LexToken(),')',5,85)
+Action : Reduce rule [param -> type_specifier ID] with [None,'v'] and goto state 76
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 76
+Stack  :type_specifier ID ( param_list , param.LexToken(),')',5,85)
+Action : Reduce rule [param_list -> param_list , param] with [None,',',None] and goto state 23
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 23
+Stack  :type_specifier ID ( param_list.LexToken(),')',5,85)
+Action : Reduce rule [params -> param_list] with [None] and goto state 22
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 22
+Stack  :type_specifier ID ( params.LexToken(),')',5,85)
+Action : Shift and goto state 50
+
+State  : 50
+Stack  :type_specifier ID ( params ).LexToken({,'{',5,87)
+Action : Reduce rule [fun_declaration -> type_specifier ID ( params )] with [None,'gcd','(',None,')'] and goto state 5
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 5
+Stack  :fun_declaration.LexToken({,'{',5,87)
+Action : Reduce rule [declaration -> fun_declaration] with [None] and goto state 3
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 3
+Stack  :declaration.LexToken({,'{',5,87)
+Action : Reduce rule [declaration_list -> declaration] with [None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken({,'{',5,87)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list {.LexToken(IF,'if',6,93)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { local_declarations.LexToken(IF,'if',6,93)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list.LexToken(IF,'if',6,93)
+Action : Shift and goto state 35
+
+State  : 35
+Stack  :declaration_list { local_declarations statement_list IF.LexToken((,'(',6,96)
+Action : Shift and goto state 53
+
+State  : 53
+Stack  :declaration_list { local_declarations statement_list IF (.LexToken(ID,'v',6,97)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list IF ( ID.LexToken(EE,'==',6,99)
+Action : Reduce rule [var -> ID] with ['v'] and goto state 39
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 39
+Stack  :declaration_list { local_declarations statement_list IF ( var.LexToken(EE,'==',6,99)
+Action : Reduce rule [factor -> var] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list IF ( factor.LexToken(EE,'==',6,99)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list IF ( term.LexToken(EE,'==',6,99)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list IF ( additive_expression.LexToken(EE,'==',6,99)
+Action : Shift and goto state 67
+
+State  : 67
+Stack  :declaration_list { local_declarations statement_list IF ( additive_expression EE.LexToken(NUM,'0',6,102)
+Action : Reduce rule [relop -> EE] with ['=='] and goto state 61
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 61
+Stack  :declaration_list { local_declarations statement_list IF ( additive_expression relop.LexToken(NUM,'0',6,102)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { local_declarations statement_list IF ( additive_expression relop NUM.LexToken(),')',6,103)
+Action : Reduce rule [factor -> NUM] with ['0'] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list IF ( additive_expression relop factor.LexToken(),')',6,103)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list IF ( additive_expression relop term.LexToken(),')',6,103)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 86
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 86
+Stack  :declaration_list { local_declarations statement_list IF ( additive_expression relop additive_expression.LexToken(),')',6,103)
+Action : Reduce rule [simple_expression -> additive_expression relop additive_expression] with [None,None,None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list IF ( simple_expression.LexToken(),')',6,103)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 77
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 77
+Stack  :declaration_list { local_declarations statement_list IF ( expression.LexToken(),')',6,103)
+Action : Shift and goto state 91
+
+State  : 91
+Stack  :declaration_list { local_declarations statement_list IF ( expression ).LexToken({,'{',6,105)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) {.LexToken(RETURN,'return',7,115)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations.LexToken(RETURN,'return',7,115)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list.LexToken(RETURN,'return',7,115)
+Action : Shift and goto state 38
+
+State  : 38
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list RETURN.LexToken(ID,'u',7,122)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list RETURN ID.LexToken(;,';',7,123)
+Action : Reduce rule [var -> ID] with ['u'] and goto state 39
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 39
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list RETURN var.LexToken(;,';',7,123)
+Action : Reduce rule [factor -> var] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list RETURN factor.LexToken(;,';',7,123)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list RETURN term.LexToken(;,';',7,123)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list RETURN additive_expression.LexToken(;,';',7,123)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list RETURN simple_expression.LexToken(;,';',7,123)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 57
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 57
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list RETURN expression.LexToken(;,';',7,123)
+Action : Shift and goto state 80
+
+State  : 80
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list RETURN expression ;.LexToken(},'}',8,129)
+Action : Reduce rule [return_stmt -> RETURN expression ;] with ['return',None,';'] and goto state 32
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 32
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list return_stmt.LexToken(},'}',8,129)
+Action : Reduce rule [statement -> return_stmt] with [None] and goto state 27
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 27
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list statement.LexToken(},'}',8,129)
+Action : Reduce rule [statement_list -> statement_list statement] with [None,None] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list.LexToken(},'}',8,129)
+Action : Shift and goto state 26
+
+State  : 26
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) { local_declarations statement_list }.LexToken(ELSE,'else',8,131)
+Action : Reduce rule [compound_stmt -> { local_declarations statement_list }] with ['{',None,None,'}'] and goto state 29
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 29
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) compound_stmt.LexToken(ELSE,'else',8,131)
+Action : Reduce rule [statement -> compound_stmt] with [None] and goto state 96
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 96
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement.LexToken(ELSE,'else',8,131)
+Action : Shift and goto state 99
+
+State  : 99
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE.LexToken({,'{',8,136)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE {.LexToken(RETURN,'return',9,146)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations.LexToken(RETURN,'return',9,146)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list.LexToken(RETURN,'return',9,146)
+Action : Shift and goto state 38
+
+State  : 38
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN.LexToken(ID,'gcd',9,153)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID.LexToken((,'(',9,156)
+Action : Shift and goto state 60
+
+State  : 60
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID (.LexToken(ID,'v',9,157)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( ID.LexToken(,,',',9,158)
+Action : Reduce rule [var -> ID] with ['v'] and goto state 39
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 39
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( var.LexToken(,,',',9,158)
+Action : Reduce rule [factor -> var] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( factor.LexToken(,,',',9,158)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( term.LexToken(,,',',9,158)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( additive_expression.LexToken(,,',',9,158)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( simple_expression.LexToken(,,',',9,158)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 85
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 85
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( expression.LexToken(,,',',9,158)
+Action : Reduce rule [arg_list -> expression] with [None] and goto state 84
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 84
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list.LexToken(,,',',9,158)
+Action : Shift and goto state 95
+
+State  : 95
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list ,.LexToken(ID,'u',9,160)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , ID.LexToken(-,'-',9,161)
+Action : Reduce rule [var -> ID] with ['u'] and goto state 39
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 39
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , var.LexToken(-,'-',9,161)
+Action : Reduce rule [factor -> var] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , factor.LexToken(-,'-',9,161)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , term.LexToken(-,'-',9,161)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression.LexToken(-,'-',9,161)
+Action : Shift and goto state 70
+
+State  : 70
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression -.LexToken(ID,'u',9,162)
+Action : Reduce rule [addop -> -] with ['-'] and goto state 62
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 62
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop.LexToken(ID,'u',9,162)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop ID.LexToken(/,'/',9,163)
+Action : Reduce rule [var -> ID] with ['u'] and goto state 87
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 87
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop var.LexToken(/,'/',9,163)
+Action : Reduce rule [factor -> var] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop factor.LexToken(/,'/',9,163)
+Action : Reduce rule [term -> factor] with [None] and goto state 88
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 88
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term.LexToken(/,'/',9,163)
+Action : Shift and goto state 73
+
+State  : 73
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term /.LexToken(ID,'v',9,164)
+Action : Reduce rule [mulop -> /] with ['/'] and goto state 71
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 71
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop.LexToken(ID,'v',9,164)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop ID.LexToken(*,'*',9,165)
+Action : Reduce rule [var -> ID] with ['v'] and goto state 87
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 87
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop var.LexToken(*,'*',9,165)
+Action : Reduce rule [factor -> var] with [None] and goto state 89
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 89
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop factor.LexToken(*,'*',9,165)
+Action : Reduce rule [term -> term mulop factor] with [None,None,None] and goto state 88
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 88
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term.LexToken(*,'*',9,165)
+Action : Shift and goto state 72
+
+State  : 72
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term *.LexToken(ID,'v',9,166)
+Action : Reduce rule [mulop -> *] with ['*'] and goto state 71
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 71
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop.LexToken(ID,'v',9,166)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop ID.LexToken(),')',9,167)
+Action : Reduce rule [var -> ID] with ['v'] and goto state 87
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 87
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop var.LexToken(),')',9,167)
+Action : Reduce rule [factor -> var] with [None] and goto state 89
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 89
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term mulop factor.LexToken(),')',9,167)
+Action : Reduce rule [term -> term mulop factor] with [None,None,None] and goto state 88
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 88
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression addop term.LexToken(),')',9,167)
+Action : Reduce rule [additive_expression -> additive_expression addop term] with [None,None,None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , additive_expression.LexToken(),')',9,167)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , simple_expression.LexToken(),')',9,167)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 98
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 98
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list , expression.LexToken(),')',9,167)
+Action : Reduce rule [arg_list -> arg_list , expression] with [None,',',None] and goto state 84
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 84
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( arg_list.LexToken(),')',9,167)
+Action : Reduce rule [args -> arg_list] with [None] and goto state 83
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 83
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( args.LexToken(),')',9,167)
+Action : Shift and goto state 94
+
+State  : 94
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN ID ( args ).LexToken(;,';',9,168)
+Action : Reduce rule [call -> ID ( args )] with ['gcd','(',None,')'] and goto state 45
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 45
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN call.LexToken(;,';',9,168)
+Action : Reduce rule [factor -> call] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN factor.LexToken(;,';',9,168)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN term.LexToken(;,';',9,168)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN additive_expression.LexToken(;,';',9,168)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN simple_expression.LexToken(;,';',9,168)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 57
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 57
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN expression.LexToken(;,';',9,168)
+Action : Shift and goto state 80
+
+State  : 80
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list RETURN expression ;.LexToken(},'}',10,174)
+Action : Reduce rule [return_stmt -> RETURN expression ;] with ['return',None,';'] and goto state 32
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 32
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list return_stmt.LexToken(},'}',10,174)
+Action : Reduce rule [statement -> return_stmt] with [None] and goto state 27
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 27
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list statement.LexToken(},'}',10,174)
+Action : Reduce rule [statement_list -> statement_list statement] with [None,None] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list.LexToken(},'}',10,174)
+Action : Shift and goto state 26
+
+State  : 26
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE { local_declarations statement_list }.LexToken(},'}',12,206)
+Action : Reduce rule [compound_stmt -> { local_declarations statement_list }] with ['{',None,None,'}'] and goto state 29
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 29
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE compound_stmt.LexToken(},'}',12,206)
+Action : Reduce rule [statement -> compound_stmt] with [None] and goto state 100
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 100
+Stack  :declaration_list { local_declarations statement_list IF ( expression ) statement ELSE statement.LexToken(},'}',12,206)
+Action : Reduce rule [selection_stmt -> IF ( expression ) statement ELSE statement] with ['if','(',None,')',None,'else',None] and goto state 30
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 30
+Stack  :declaration_list { local_declarations statement_list selection_stmt.LexToken(},'}',12,206)
+Action : Reduce rule [statement -> selection_stmt] with [None] and goto state 27
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 27
+Stack  :declaration_list { local_declarations statement_list statement.LexToken(},'}',12,206)
+Action : Reduce rule [statement_list -> statement_list statement] with [None,None] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list.LexToken(},'}',12,206)
+Action : Shift and goto state 26
+
+State  : 26
+Stack  :declaration_list { local_declarations statement_list }.LexToken(VOID,'void',14,209)
+Action : Reduce rule [compound_stmt -> { local_declarations statement_list }] with ['{',None,None,'}'] and goto state 7
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 7
+Stack  :declaration_list compound_stmt.LexToken(VOID,'void',14,209)
+Action : Reduce rule [fun_declaration -> compound_stmt] with [None] and goto state 5
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 5
+Stack  :declaration_list fun_declaration.LexToken(VOID,'void',14,209)
+Action : Reduce rule [declaration -> fun_declaration] with [None] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.LexToken(VOID,'void',14,209)
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken(VOID,'void',14,209)
+Action : Shift and goto state 9
+
+State  : 9
+Defaulted state 9: Reduce using 9
+Stack  :declaration_list VOID.None
+Action : Reduce rule [type_specifier -> VOID] with ['void'] and goto state 6
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 6
+Stack  :declaration_list type_specifier.LexToken(ID,'main',14,214)
+Action : Shift and goto state 12
+
+State  : 12
+Stack  :declaration_list type_specifier ID.LexToken((,'(',14,218)
+Action : Shift and goto state 16
+
+State  : 16
+Stack  :declaration_list type_specifier ID (.LexToken(),')',14,219)
+Action : Reduce rule [params -> <empty>] with [] and goto state 22
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 22
+Stack  :declaration_list type_specifier ID ( params.LexToken(),')',14,219)
+Action : Shift and goto state 50
+
+State  : 50
+Stack  :declaration_list type_specifier ID ( params ).LexToken({,'{',14,221)
+Action : Reduce rule [fun_declaration -> type_specifier ID ( params )] with [None,'main','(',None,')'] and goto state 5
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 5
+Stack  :declaration_list fun_declaration.LexToken({,'{',14,221)
+Action : Reduce rule [declaration -> fun_declaration] with [None] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.LexToken({,'{',14,221)
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.LexToken({,'{',14,221)
+Action : Shift and goto state 10
+
+State  : 10
+Stack  :declaration_list {.LexToken(INT,'int',15,227)
+Action : Reduce rule [local_declarations -> <empty>] with [] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { local_declarations.LexToken(INT,'int',15,227)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list { local_declarations INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 19
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 19
+Stack  :declaration_list { local_declarations type_specifier.LexToken(ID,'x',15,231)
+Action : Shift and goto state 47
+
+State  : 47
+Stack  :declaration_list { local_declarations type_specifier ID.LexToken(;,';',15,232)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :declaration_list { local_declarations type_specifier ID ;.LexToken(INT,'int',16,238)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with [None,'x',';'] and goto state 18
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 18
+Stack  :declaration_list { local_declarations var_declaration.LexToken(INT,'int',16,238)
+Action : Reduce rule [local_declarations -> local_declarations var_declaration] with [None,None] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { local_declarations.LexToken(INT,'int',16,238)
+Action : Shift and goto state 8
+
+State  : 8
+Defaulted state 8: Reduce using 8
+Stack  :declaration_list { local_declarations INT.None
+Action : Reduce rule [type_specifier -> INT] with ['int'] and goto state 19
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 19
+Stack  :declaration_list { local_declarations type_specifier.LexToken(ID,'y',16,242)
+Action : Shift and goto state 47
+
+State  : 47
+Stack  :declaration_list { local_declarations type_specifier ID.LexToken(;,';',16,243)
+Action : Shift and goto state 14
+
+State  : 14
+Stack  :declaration_list { local_declarations type_specifier ID ;.LexToken(ID,'x',17,247)
+Action : Reduce rule [var_declaration -> type_specifier ID ;] with [None,'y',';'] and goto state 18
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 18
+Stack  :declaration_list { local_declarations var_declaration.LexToken(ID,'x',17,247)
+Action : Reduce rule [local_declarations -> local_declarations var_declaration] with [None,None] and goto state 13
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 13
+Stack  :declaration_list { local_declarations.LexToken(ID,'x',17,247)
+Action : Reduce rule [statement_list -> <empty>] with [] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list.LexToken(ID,'x',17,247)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list ID.LexToken(=,'=',17,249)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 39
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 39
+Stack  :declaration_list { local_declarations statement_list var.LexToken(=,'=',17,249)
+Action : Shift and goto state 58
+
+State  : 58
+Stack  :declaration_list { local_declarations statement_list var =.LexToken(NUM,'2',17,251)
+Action : Shift and goto state 46
+
+State  : 46
+Stack  :declaration_list { local_declarations statement_list var = NUM.LexToken(;,';',17,252)
+Action : Reduce rule [factor -> NUM] with ['2'] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list var = factor.LexToken(;,';',17,252)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list var = term.LexToken(;,';',17,252)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list var = additive_expression.LexToken(;,';',17,252)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list var = simple_expression.LexToken(;,';',17,252)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 81
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 81
+Stack  :declaration_list { local_declarations statement_list var = expression.LexToken(;,';',17,252)
+Action : Reduce rule [expression -> var = expression] with [None,'=',None] and goto state 33
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 33
+Stack  :declaration_list { local_declarations statement_list expression.LexToken(;,';',17,252)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { local_declarations statement_list expression ;.LexToken(ID,'x',18,258)
+Action : Reduce rule [expression_stmt -> expression ;] with [None,';'] and goto state 28
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 28
+Stack  :declaration_list { local_declarations statement_list expression_stmt.LexToken(ID,'x',18,258)
+Action : Reduce rule [statement -> expression_stmt] with [None] and goto state 27
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 27
+Stack  :declaration_list { local_declarations statement_list statement.LexToken(ID,'x',18,258)
+Action : Reduce rule [statement_list -> statement_list statement] with [None,None] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list.LexToken(ID,'x',18,258)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list ID.LexToken(=,'=',18,260)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 39
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 39
+Stack  :declaration_list { local_declarations statement_list var.LexToken(=,'=',18,260)
+Action : Shift and goto state 58
+
+State  : 58
+Stack  :declaration_list { local_declarations statement_list var =.LexToken(ID,'input',18,262)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list var = ID.LexToken((,'(',18,267)
+Action : Shift and goto state 60
+
+State  : 60
+Stack  :declaration_list { local_declarations statement_list var = ID (.LexToken(),')',18,268)
+Action : Reduce rule [args -> <empty>] with [] and goto state 83
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 83
+Stack  :declaration_list { local_declarations statement_list var = ID ( args.LexToken(),')',18,268)
+Action : Shift and goto state 94
+
+State  : 94
+Stack  :declaration_list { local_declarations statement_list var = ID ( args ).LexToken(;,';',18,269)
+Action : Reduce rule [call -> ID ( args )] with ['input','(',None,')'] and goto state 45
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 45
+Stack  :declaration_list { local_declarations statement_list var = call.LexToken(;,';',18,269)
+Action : Reduce rule [factor -> call] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list var = factor.LexToken(;,';',18,269)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list var = term.LexToken(;,';',18,269)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list var = additive_expression.LexToken(;,';',18,269)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list var = simple_expression.LexToken(;,';',18,269)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 81
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 81
+Stack  :declaration_list { local_declarations statement_list var = expression.LexToken(;,';',18,269)
+Action : Reduce rule [expression -> var = expression] with [None,'=',None] and goto state 33
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 33
+Stack  :declaration_list { local_declarations statement_list expression.LexToken(;,';',18,269)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { local_declarations statement_list expression ;.LexToken(ID,'y',19,275)
+Action : Reduce rule [expression_stmt -> expression ;] with [None,';'] and goto state 28
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 28
+Stack  :declaration_list { local_declarations statement_list expression_stmt.LexToken(ID,'y',19,275)
+Action : Reduce rule [statement -> expression_stmt] with [None] and goto state 27
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 27
+Stack  :declaration_list { local_declarations statement_list statement.LexToken(ID,'y',19,275)
+Action : Reduce rule [statement_list -> statement_list statement] with [None,None] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list.LexToken(ID,'y',19,275)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list ID.LexToken(=,'=',19,277)
+Action : Reduce rule [var -> ID] with ['y'] and goto state 39
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 39
+Stack  :declaration_list { local_declarations statement_list var.LexToken(=,'=',19,277)
+Action : Shift and goto state 58
+
+State  : 58
+Stack  :declaration_list { local_declarations statement_list var =.LexToken(ID,'input',19,279)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list var = ID.LexToken((,'(',19,284)
+Action : Shift and goto state 60
+
+State  : 60
+Stack  :declaration_list { local_declarations statement_list var = ID (.LexToken(),')',19,285)
+Action : Reduce rule [args -> <empty>] with [] and goto state 83
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 83
+Stack  :declaration_list { local_declarations statement_list var = ID ( args.LexToken(),')',19,285)
+Action : Shift and goto state 94
+
+State  : 94
+Stack  :declaration_list { local_declarations statement_list var = ID ( args ).LexToken(;,';',19,286)
+Action : Reduce rule [call -> ID ( args )] with ['input','(',None,')'] and goto state 45
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 45
+Stack  :declaration_list { local_declarations statement_list var = call.LexToken(;,';',19,286)
+Action : Reduce rule [factor -> call] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list var = factor.LexToken(;,';',19,286)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list var = term.LexToken(;,';',19,286)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list var = additive_expression.LexToken(;,';',19,286)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list var = simple_expression.LexToken(;,';',19,286)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 81
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 81
+Stack  :declaration_list { local_declarations statement_list var = expression.LexToken(;,';',19,286)
+Action : Reduce rule [expression -> var = expression] with [None,'=',None] and goto state 33
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 33
+Stack  :declaration_list { local_declarations statement_list expression.LexToken(;,';',19,286)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { local_declarations statement_list expression ;.LexToken(ID,'output',20,292)
+Action : Reduce rule [expression_stmt -> expression ;] with [None,';'] and goto state 28
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 28
+Stack  :declaration_list { local_declarations statement_list expression_stmt.LexToken(ID,'output',20,292)
+Action : Reduce rule [statement -> expression_stmt] with [None] and goto state 27
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 27
+Stack  :declaration_list { local_declarations statement_list statement.LexToken(ID,'output',20,292)
+Action : Reduce rule [statement_list -> statement_list statement] with [None,None] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list.LexToken(ID,'output',20,292)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list ID.LexToken((,'(',20,298)
+Action : Shift and goto state 60
+
+State  : 60
+Stack  :declaration_list { local_declarations statement_list ID (.LexToken(ID,'gcd',20,299)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list ID ( ID.LexToken((,'(',20,302)
+Action : Shift and goto state 60
+
+State  : 60
+Stack  :declaration_list { local_declarations statement_list ID ( ID (.LexToken(ID,'x',20,303)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( ID.LexToken(,,',',20,304)
+Action : Reduce rule [var -> ID] with ['x'] and goto state 39
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 39
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( var.LexToken(,,',',20,304)
+Action : Reduce rule [factor -> var] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( factor.LexToken(,,',',20,304)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( term.LexToken(,,',',20,304)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( additive_expression.LexToken(,,',',20,304)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( simple_expression.LexToken(,,',',20,304)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 85
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 85
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( expression.LexToken(,,',',20,304)
+Action : Reduce rule [arg_list -> expression] with [None] and goto state 84
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 84
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( arg_list.LexToken(,,',',20,304)
+Action : Shift and goto state 95
+
+State  : 95
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( arg_list ,.LexToken(ID,'y',20,306)
+Action : Shift and goto state 41
+
+State  : 41
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( arg_list , ID.LexToken(),')',20,307)
+Action : Reduce rule [var -> ID] with ['y'] and goto state 39
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 39
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( arg_list , var.LexToken(),')',20,307)
+Action : Reduce rule [factor -> var] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( arg_list , factor.LexToken(),')',20,307)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( arg_list , term.LexToken(),')',20,307)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( arg_list , additive_expression.LexToken(),')',20,307)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( arg_list , simple_expression.LexToken(),')',20,307)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 98
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 98
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( arg_list , expression.LexToken(),')',20,307)
+Action : Reduce rule [arg_list -> arg_list , expression] with [None,',',None] and goto state 84
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 84
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( arg_list.LexToken(),')',20,307)
+Action : Reduce rule [args -> arg_list] with [None] and goto state 83
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 83
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( args.LexToken(),')',20,307)
+Action : Shift and goto state 94
+
+State  : 94
+Stack  :declaration_list { local_declarations statement_list ID ( ID ( args ).LexToken(),')',20,308)
+Action : Reduce rule [call -> ID ( args )] with ['gcd','(',None,')'] and goto state 45
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 45
+Stack  :declaration_list { local_declarations statement_list ID ( call.LexToken(),')',20,308)
+Action : Reduce rule [factor -> call] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list ID ( factor.LexToken(),')',20,308)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list ID ( term.LexToken(),')',20,308)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list ID ( additive_expression.LexToken(),')',20,308)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list ID ( simple_expression.LexToken(),')',20,308)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 85
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 85
+Stack  :declaration_list { local_declarations statement_list ID ( expression.LexToken(),')',20,308)
+Action : Reduce rule [arg_list -> expression] with [None] and goto state 84
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 84
+Stack  :declaration_list { local_declarations statement_list ID ( arg_list.LexToken(),')',20,308)
+Action : Reduce rule [args -> arg_list] with [None] and goto state 83
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 83
+Stack  :declaration_list { local_declarations statement_list ID ( args.LexToken(),')',20,308)
+Action : Shift and goto state 94
+
+State  : 94
+Stack  :declaration_list { local_declarations statement_list ID ( args ).LexToken(;,';',20,309)
+Action : Reduce rule [call -> ID ( args )] with ['output','(',None,')'] and goto state 45
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 45
+Stack  :declaration_list { local_declarations statement_list call.LexToken(;,';',20,309)
+Action : Reduce rule [factor -> call] with [None] and goto state 44
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 44
+Stack  :declaration_list { local_declarations statement_list factor.LexToken(;,';',20,309)
+Action : Reduce rule [term -> factor] with [None] and goto state 43
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 43
+Stack  :declaration_list { local_declarations statement_list term.LexToken(;,';',20,309)
+Action : Reduce rule [additive_expression -> term] with [None] and goto state 42
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 42
+Stack  :declaration_list { local_declarations statement_list additive_expression.LexToken(;,';',20,309)
+Action : Reduce rule [simple_expression -> additive_expression] with [None] and goto state 40
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 40
+Stack  :declaration_list { local_declarations statement_list simple_expression.LexToken(;,';',20,309)
+Action : Reduce rule [expression -> simple_expression] with [None] and goto state 33
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 33
+Stack  :declaration_list { local_declarations statement_list expression.LexToken(;,';',20,309)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  :declaration_list { local_declarations statement_list expression ;.LexToken(RETURN,'return',21,315)
+Action : Reduce rule [expression_stmt -> expression ;] with [None,';'] and goto state 28
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 28
+Stack  :declaration_list { local_declarations statement_list expression_stmt.LexToken(RETURN,'return',21,315)
+Action : Reduce rule [statement -> expression_stmt] with [None] and goto state 27
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 27
+Stack  :declaration_list { local_declarations statement_list statement.LexToken(RETURN,'return',21,315)
+Action : Reduce rule [statement_list -> statement_list statement] with [None,None] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list.LexToken(RETURN,'return',21,315)
+Action : Shift and goto state 38
+
+State  : 38
+Stack  :declaration_list { local_declarations statement_list RETURN.LexToken(;,';',21,321)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  :declaration_list { local_declarations statement_list RETURN ;.LexToken(},'}',22,323)
+Action : Reduce rule [return_stmt -> RETURN ;] with ['return',';'] and goto state 32
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 32
+Stack  :declaration_list { local_declarations statement_list return_stmt.LexToken(},'}',22,323)
+Action : Reduce rule [statement -> return_stmt] with [None] and goto state 27
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 27
+Stack  :declaration_list { local_declarations statement_list statement.LexToken(},'}',22,323)
+Action : Reduce rule [statement_list -> statement_list statement] with [None,None] and goto state 17
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 17
+Stack  :declaration_list { local_declarations statement_list.LexToken(},'}',22,323)
+Action : Shift and goto state 26
+
+State  : 26
+Stack  :declaration_list { local_declarations statement_list }.$end
+Action : Reduce rule [compound_stmt -> { local_declarations statement_list }] with ['{',None,None,'}'] and goto state 7
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 7
+Stack  :declaration_list compound_stmt.$end
+Action : Reduce rule [fun_declaration -> compound_stmt] with [None] and goto state 5
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 5
+Stack  :declaration_list fun_declaration.$end
+Action : Reduce rule [declaration -> fun_declaration] with [None] and goto state 11
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 11
+Stack  :declaration_list declaration.$end
+Action : Reduce rule [declaration_list -> declaration_list declaration] with [None,None] and goto state 2
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 2
+Stack  :declaration_list.$end
+Action : Reduce rule [program -> declaration_list] with [None] and goto state 1
+Result : <NoneType @ 0x5ebba490> (None)
+
+State  : 1
+Stack  :program.$end
+Done   : Returning <NoneType @ 0x5ebba490> (None)
+PLY: PARSE DEBUG END

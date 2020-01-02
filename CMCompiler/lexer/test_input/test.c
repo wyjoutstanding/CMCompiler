@@ -1,6 +1,7 @@
 /* A program to perform Euclid's
 Algorithm to compute gcd. */
-d12:12
+test=1;
+/* u-u/v*v == u mod v */
 int gcd (int u, int v)
 {  if (v == 0) return u ;
 else return gcd(v,u-u/v*v);

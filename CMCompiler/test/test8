@@ -1,0 +1,13 @@
+int a;
+int b;
+int n(int x)
+{
+   return x*x;
+}
+int main(void)
+{
+a=5;
+b=10;
+a=n(a);
+a=n(b);
+}

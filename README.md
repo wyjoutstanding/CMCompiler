@@ -1,6 +1,6 @@
 # CMCompiler说明文档
 
-[toc]
+[TOC]
 
 ## 实现功能
 
@@ -74,7 +74,7 @@ declaration-list -> declaration-list declaration | declaration
 declaration -> var-declaration | fun-declaration
 var-declaration -> type-specifier ID; | type-specifier ID [ NUM ];
 type-specifier -> int | void
-fun-declaration -> type-specifier ID ( params ) | compound-stmt
+fun-declaration -> type-specifier ID ( params ) compound-stmt // ！！注意这里|去除了
 params -> params-list | void
 params-list -> params-list, param | param
 param -> type-specifier ID | type-specifier ID [ ]
@@ -98,5 +98,54 @@ factor -> ( expression ) | var | call | NUM
 call -> ID ( args )
 args -> arg-list | empty
 arg-list -> arg-list, expression | expression
+```
+
+
+
+## 语义分析-翻译模式生成四元式
+
+### 四元式
+
+简单表达式，=》赋值=》
+
+#### 表达式
+
+- 说明语句：
+
+  - [ ] 变量定义：`int a`
+  - [ ] 函数定义：`void fun(prams)`（作用域问题）
+  - [ ] 一维数组定义：`int a[num]`
+
+- 简单表达式：
+
+  - [x] 括号，四则运算：`a-2*(2+1)/3`
+  - [x] 一维数组引用：`a[3]-2`
+  - [x] 函数调用：`fun(12)`（4元式直接跳转相应位置？？还是先记录在符号表？）
+  - [x] 函数返回
++ 复杂语句
+  - [x] 赋值
+  - [x] 条件（可嵌套）
+  - [x] 循环（可嵌套）
+
+
+
+### 测试
+
+```
+// 变量定义，括号，四则运算表达式，赋值语句测试
+int x;
+void main() {
+   x = a-(5-(12+a))/2-(a+2)/12*1;
+} 
+// 输出
+1) :  ('+', '12', 'a', 'T1')
+2) :  ('-', '5', 'T1', 'T2')
+3) :  ('/', 'T2', '2', 'T3')
+4) :  ('-', 'a', 'T3', 'T4')
+5) :  ('+', 'a', '2', 'T5')
+6) :  ('/', 'T5', '12', 'T6')
+7) :  ('*', 'T6', '1', 'T7')
+8) :  ('-', 'T4', 'T7', 'T8')
+9) :  ('=', 'T8', '_', 'x')
 ```
 
