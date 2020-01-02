@@ -1,12 +1,24 @@
-int x;
-int a;
+/* A program to perform Euclid s Algorithm to compute gcd.
 
-int fun(int b,int c) {
-    return a+1;
+
+ */
+int gcd(int u, int v) {
+    if (v == 0) {
+        return u;
+    } else {
+        return gcd(v, u-u/v*v);
+    }
+    /* u-u/v*v* == u mod v */
 }
-
+void test(void){
+    
+}
 void main() {
-    fun(1,2,4,x);
-   x = a+x[a+1]*2-(5-(12+a))/2-(a+2)/12*1;
-   return;
+    int x;
+    int y;
+	 x = 2;
+    x = input();
+    y = input();
+    output(gcd(x, y));
+    return;
 }

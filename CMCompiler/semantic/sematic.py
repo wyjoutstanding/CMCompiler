@@ -410,7 +410,10 @@ def p_call_1(p):
         for arg in p[3].name: # 遍历实参，生成param代码
             printQtua(newLabel(), 'Param', arg, '_', '_')
     tmpLabel = newTmp()
-    printQtua(newLabel(), 'Call', p[1], str(len(p[3].name)), tmpLabel) # 需输出函数名和参数个数
+    plen = 0 # 参数个数
+    if p[3]: # 处理无参情况
+        plen = len(p[3].name)
+    printQtua(newLabel(), 'Call', p[1], plen, tmpLabel) # 需输出函数名和参数个数
     # 建树
     p[0] = Node('call', tmpLabel)
 def p_args_1(p):
@@ -516,7 +519,7 @@ ISTEST = True # 打开测试
 if ISTEST:
     try:
         get_Grammar()
-        with open('test1.c')as f:
+        with open('test1.c', encoding='UTF-8')as f:
             contents = f.read()
             data = contents # 计算错误所在列数
         yacc.parse(contents)
