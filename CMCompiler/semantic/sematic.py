@@ -99,12 +99,57 @@ lex.lex()# 调用Lex模块，构建词法分析器
 # 符号表
 # =============================================================================
 class SymTabItem:
-    def __init__(self, type=None, name=None, value=None):
-        self.type = type
-        self.name = name
-        self.value = value
+    def __init__(self, _type=None, dataType=None, name=None, arrayLen=None, args=None, returnType=None):
+        self._type = _type # ID类型，变量，数组，函数
+        self.dataType = dataType # 变量和数组的数据类型
+        self.name = name # ID名字
+        self.arrayLen = arrayLen # 数组长度
+        self.args = args # 函数参数列表
+        self.returnType = returnType # 函数返回值类型
+        
+    def __str__(self): # 打印输出
+        if self._type == 'var':
+            ret = [('type',self._type), ('dataType', self.dataType), ('name', self.name)]
+        elif self._type == 'array':
+            ret = [('type',self._type), ('dataType', self.dataType), ('name', self.name), ('arrayLen', self.arrayLen)]
+        else :
+            ret = [('type',self._type), ('returnType', self.returnType), ('name', self.name), ('args', self.args)]
+        return str(ret)
 #a = SymTabItem(1,2,3)
-symTab = dict()
+staticSymTab = dict() # 全局符号表，存放静态声明的变量，数组，函数
+funcSymTab = [] # 过程的符号表，不同作用域以$分割
+# =============================================================================
+# 根据ID查询符号表，存在则返回相应表项，否则返回None
+# 先从当前过程的符号表开始逆序查询，找到第一个立即返回；若当前表不存在，到全局静态区继续找
+# =============================================================================
+def getID(ID):
+    for i in range(len(funcSymTab)-1, -1, -1):
+        t = funcSymTab[i]
+        if t != '$' and t.name == ID:
+            return t
+    if staticSymTab.get(ID):
+        return staticSymTab[ID]
+#    for i in range(len(staticSymTab)-1, -1, -1):
+#        t = staticSymTab[i]
+#        if t.name == ID:
+#            return t
+    return None
+
+def errNoDefine(messType, IDName, mess2='未定义',lineNo=0):
+    global error_num
+    error_num += 1
+    print('Error'+str(error_num)+'   行号:'+str(lex.lexer.lineno+lineNo) + '   '+messType+': 【'+IDName+'】'+ mess2)
+# 判断ID在当前作用域是否已定义，若是，返回相应item，否则返回空
+def existDef(table=[], ID=None):
+    if type(table) == dict:
+        print('dict',table.get(ID))
+        return table.get(ID)
+    for i in range(len(table)-1,-1,-1):
+        if table[i] == '$':
+            return None
+        if table[i].name == ID:
+            return table[i]
+    return None
 #==============================================================================
 #产生式列表
 #==============================================================================
@@ -121,17 +166,34 @@ def p_declaration_list_2(p):
 # 变量和函数声明
 def p_declaration_1(p):
     '''declaration : var_declaration'''
+    # 全局变量重定义检查
+    item = existDef(staticSymTab, p[1].name)
+#    print('item', item)
+    if item: # 重定义
+        errNoDefine('标识符',p[1].name,'重定义',lineNo=-1) # 行号多一行？
+        
+    staticSymTab[p[1].name] = p[1] # 全局静态符号表    
+    print('---staticVar----',p[1])
 def p_declaration_2(p):
     '''declaration : fun_declaration'''
-
+    if p[1]:
+        staticSymTab[p[1].name] = p[1] # 全局静态符号表    
+        print('----staticfunc----',p[1])
+    
 # 变量声明具体定义：普通变量；一维数组
 def p_var_declaration_1(p):
     '''var_declaration : type_specifier ID ';' '''
 #    print(p[1]+" " +p[2])
-    symTab[p[2]] = SymTabItem(p[1], p[2])
+#    symTab[p[2]] = SymTabItem(p[1], p[2])
+#    item = existDef(staticSymTab, p[2])
+#    print('item', item)
+#    if item: # 重定义
+#        errNoDefine('标识符',p[2],'重定义')
+    p[0] = SymTabItem(_type='var', dataType=p[1], name=p[2])
+        
 def p_var_declaration_2(p):
     '''var_declaration : type_specifier ID '[' NUM ']' ';' '''
-
+    p[0] = SymTabItem(_type='array', dataType=p[1], name=p[2], arrayLen=p[4])
 # 变量/函数声明类型：INT;VOID
 def p_type_specifier_1(p):
     '''type_specifier : INT'''
@@ -142,40 +204,82 @@ def p_type_specifier_2(p):
 
 # 函数声明：头部；过程体
 def p_fun_declaration_1(p):
-    '''fun_declaration : type_specifier ID '(' params ')' compound_stmt'''
-#def p_fun_declaration_2(p):
-#    '''fun_declaration : compound_stmt'''
+    '''fun_declaration : type_specifier ID '(' params ')' '''
+    p[0] = SymTabItem(_type='func', name=p[2], returnType=p[1], args=p[4])
+    funcSymTab.append('$')
+    if p[4] and p[4][0] != '$' and p[4][0] != 'VOID':
+        for arg in p[4]: #保存函数形式参数与当前作用域
+            funcSymTab.append(SymTabItem(_type=arg[0], dataType=arg[1], name=arg[2]))
+#            print('arg',arg)
+def p_fun_declaration_2(p):
+    '''fun_declaration : compound_stmt'''
+    print('****')
+    for i in funcSymTab:
+        if i != '$':
+            print('fd==',i)
+    funcSymTab.clear() # 函数结束，清空当前过程的符号表
 
-# 参数定义
+#def p_E1(p): # 记录函数声明
+#    '''E1 : '''
+#    
+# 参数定义:二维数组存放[[type,dataType,name],[]]
 def p_params_1(p):
     '''params : param_list'''
     p[0] = p[1]
 def p_params_2(p):
     '''params : VOID'''
-    p[0] = 'VOID'
+    p[0] = ['VOID']
 def p_params_empty(p):
     '''params : '''
-
+    
 def p_param_list_1(p):
     '''param_list : param_list ',' param'''
+    p[1].append(p[3]) # 不可直接赋值，append无返回值
+    p[0] = p[1]
+#    print('p1list', p[1], p[0])
 def p_param_list_2(p):
     '''param_list : param'''
-    p[0] = p[1]
+    p[0] = [p[1]]
+#    print('p1', p[1])
 
 def p_param_1(p):
     '''param : type_specifier ID'''
-    p[0] = p[2]
+#    p[0] = p[2]
+    p[0] = ['var',p[1],p[2]]
 def p_param_2(p):
     '''param : type_specifier ID '[' ']' '''
-    p[0] = p[2]
+#    p[0] = p[2]
+    p[0] = ['array',p[1],p[2]]
 
 # 函数体
 def p_compound_stmt_1(p):
-    '''compound_stmt : '{' local_declarations statement_list '}' '''
-    p[0] = p[3]
-
+    '''compound_stmt : '{' E1 local_declarations statement_list '}' '''
+#    '''compound_stmt : '{' local_declarations statement_list '}' '''
+    p[0] = p[4]
+    l = len(funcSymTab)
+    for i in range(l-1, -1, -1): # 逆序查找，直到$出现，删除这之间所有变量（模拟栈）
+        print('          ---localFunc[i]',funcSymTab[i])
+        if funcSymTab[i] == '$':
+            funcSymTab.pop()
+            break
+        else:
+            funcSymTab.pop()
+            
+def p_E1(p): # 作用域控制标记，{}
+    ''' E1 : '''
+    funcSymTab.append('$')
+    print('$$$$$$$$$$$$$$$$$$$$$$$$$')
 def p_local_declarations_1(p):
     '''local_declarations : local_declarations var_declaration'''
+    # 局部变量重定义检查
+    item = existDef(funcSymTab, p[2].name)
+#    print('item', item)
+    if item: # 重定义
+        errNoDefine('标识符',p[2].name,'重定义', -1) # 行号减一？？
+    # 填入符号表
+    funcSymTab.append(p[2])
+#    print('local',p[2])
+#    print("p2", p[2]._type, p[2].dataType, p[2].name)
 def p_local_declarations_empty(p):
     '''local_declarations : '''
 # 语句列表
@@ -226,7 +330,7 @@ def p_selection_stmt_1(p):
     '''selection_stmt : IF '(' expression ')' M statement N'''
     backPatch(p[3].trueList, p[5])
     p[0] = Node('selection_stmt', 'selec_stmt')
-    print('p6', p[3], p[6], p[5], p[7])
+#    print('p6', p[3], p[6], p[5], p[7])
     code.pop() # 删除N推入多余的记录
     global labelNum
     labelNum -= 1 # 标号位置也要回退1
@@ -291,6 +395,17 @@ def p_var_1(p):
 #    p[0] = p[1]
 #    print('ID:',p[1])
     p[0] = Node('var', p[1])
+    item = getID(p[1])
+    if not item:
+        errNoDefine('变量', p[1])
+    elif item._type != 'var':
+        if item._type == 'array':
+            errNoDefine('变量', p[1], '已定义为 数组')
+        else:
+            errNoDefine('变量', p[1], '已定义为 函数，不可作为左值')
+#        global error_num
+#        error_num += 1
+#        print('Error'+str(error_num)+'   行号:'+str(lex.lexer.lineno) + '   变量: 【'+p[1]+'】 未定义')
 #    print('name',p[0].name)
 # 一维数组引用：a[m] => T = a[m*dataType.width]，[]中填偏移量
 def p_var_2(p):
@@ -301,7 +416,17 @@ def p_var_2(p):
     p[0] = tmp2 # 其实并不需要记录tmp2的标号内有什么，只要记住他的索引即可
     printQtua(newLabel(), '[]', p[1], tmp1, tmp2) # 引用：T2 = ID[T1]
     # 建树
-    p[0] = Node('var', tmp2) 
+    p[0] = Node('var', tmp2)
+    
+    # 检查数组是否定义，是否越界
+    item = getID(p[1])
+    if not item:
+        errNoDefine('数组', p[1])
+    elif item._type != 'array':
+        errNoDefine('变量', p[1], '不是数组类型')
+    if p[3].ttype == 'NUM' and int(item.arrayLen) <= int(p[3].name):
+        errNoDefine('数组', p[1], '下标越界'+' 最大长度:'+str(item.arrayLen))
+        
 #=====================================
 # 以下为表达式定义：优先级：关系符 < 加减 < 乘除
 # 简单表达式：关系表达式
@@ -319,7 +444,8 @@ def p_simple_expression_2(p):
 #    p[0] = Node('simple_expression', p[1].name, children = [p[1]])
 #    p[0].type = 'simple_expression'
 #    p[0] = RelOpExpr('simple_expression', name=p[1].name)
-    p[0] = Node('simple_expression', name=p[1].name)
+#    p[0] = Node('simple_expression', name=p[1].name)
+    p[0] = p[1]
 
 # 6种关系符号
 def p_relop_1(p):
@@ -400,7 +526,7 @@ def p_factor_3(p):
 def p_factor_4(p):
     '''factor : NUM'''
 #    p[0] = p[1]
-    p[0] = Node('factor', p[1])
+    p[0] = Node('NUM', p[1])
 #    print('factor : NUM', p[1])
 
 # 调用函数
@@ -408,7 +534,7 @@ def p_call_1(p):
     ''' call : ID '(' args ')' '''
     if p[3]: # 存在实参    
         for arg in p[3].name: # 遍历实参，生成param代码
-            printQtua(newLabel(), 'Param', arg, '_', '_')
+            printQtua(newLabel(), 'Param', arg[1], '_', '_')
     tmpLabel = newTmp()
     plen = 0 # 参数个数
     if p[3]: # 处理无参情况
@@ -416,6 +542,18 @@ def p_call_1(p):
     printQtua(newLabel(), 'Call', p[1], plen, tmpLabel) # 需输出函数名和参数个数
     # 建树
     p[0] = Node('call', tmpLabel)
+    # 参数个数检查与类型检查
+    item = getID(p[1])
+    if not item: # 函数未定义
+        errNoDefine('函数', p[1])
+    else:
+        if p[3] != None and len(item.args) == len(p[3].name):
+            for i in range(0, len(p[3].name)):
+                if item[i].args[i][0] != p[3][0]:
+                    errNoDefine('函数参数类型不匹配',p[3][0], str(item[i].args[i][0]))
+                
+        else:
+            errNoDefine('函数参数个数不一致', '_','_')
 def p_args_1(p):
     '''args : arg_list'''
     p[0] = p[1]
@@ -424,7 +562,7 @@ def p_args_empty(p):
 # 实参拼接
 def p_arg_list_1(p):
     ''' arg_list : arg_list ',' expression'''
-    p[1].name.append(p[3].name)
+    p[1].name.append((p[3].ttype, p[3].name))
     p[0] = Node('arg_list', name=p[1].name)
 #    print("p[0]",p[0].name, p[1].name, p[3].name)
 #    p[0] = p[1] + p[3] # 拼接参数
@@ -433,7 +571,8 @@ def p_arg_list_1(p):
 def p_arg_list_2(p):
     ''' arg_list : expression'''
     p[0] = p[1]
-    p[0].name = [p[0].name]
+#    p[0].name = [p[0].name]
+    p[0].name = [(p[1].ttype, p[0].name)]
 #    p[0] = Node('arg_list',leaf=[p[1]])
 #    print("expression"+p[1])
 
@@ -505,9 +644,9 @@ class RelOpExpr(Node):
 # =============================================================================
 # 接口：运行时生成相应的parse.out和parsetab.py文件供之后使用
 # =============================================================================
-import ply.yacc as yacc
+#import ply.yacc as yacc
 #import ply as yacc
-#import grammar.yacc_ui as yacc
+import yacc_ui as yacc # 包含界面处理的yacc
 def get_Grammar():
     yacc.yacc()
 
@@ -523,8 +662,8 @@ if ISTEST:
             contents = f.read()
             data = contents # 计算错误所在列数
         yacc.parse(contents)
-        showQuad()
-        print(symTab.keys())
+        showQuad() # 打印四元式
+#        print(symTab.keys())
         if(error_num==0):
             print("grammar is true")
     except EOFError:

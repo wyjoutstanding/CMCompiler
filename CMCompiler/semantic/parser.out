@@ -1,4 +1,4 @@
-Created by PLY version 3.10 (http://www.dabeaz.com/ply)
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
 
 Unused terminals:
 
@@ -16,128 +16,131 @@ Rule 6     var_declaration -> type_specifier ID ;
 Rule 7     var_declaration -> type_specifier ID [ NUM ] ;
 Rule 8     type_specifier -> INT
 Rule 9     type_specifier -> VOID
-Rule 10    fun_declaration -> type_specifier ID ( params ) compound_stmt
-Rule 11    params -> param_list
-Rule 12    params -> VOID
-Rule 13    params -> <empty>
-Rule 14    param_list -> param_list , param
-Rule 15    param_list -> param
-Rule 16    param -> type_specifier ID
-Rule 17    param -> type_specifier ID [ ]
-Rule 18    compound_stmt -> { local_declarations statement_list }
-Rule 19    local_declarations -> local_declarations var_declaration
-Rule 20    local_declarations -> <empty>
-Rule 21    statement_list -> statement_list statement
-Rule 22    statement_list -> <empty>
-Rule 23    statement -> expression_stmt
-Rule 24    statement -> compound_stmt
-Rule 25    statement -> selection_stmt
-Rule 26    statement -> iteration_stmt
-Rule 27    statement -> return_stmt
-Rule 28    expression_stmt -> expression ;
-Rule 29    expression_stmt -> ;
-Rule 30    selection_stmt -> IF ( expression ) M statement N
-Rule 31    selection_stmt -> IF ( expression ) M statement N ELSE M statement M
-Rule 32    M -> <empty>
-Rule 33    N -> <empty>
-Rule 34    iteration_stmt -> WHILE M ( expression ) M statement M
-Rule 35    return_stmt -> RETURN ;
-Rule 36    return_stmt -> RETURN expression ;
-Rule 37    expression -> var = expression
-Rule 38    expression -> simple_expression
-Rule 39    var -> ID
-Rule 40    var -> ID [ expression ]
-Rule 41    simple_expression -> additive_expression relop additive_expression
-Rule 42    simple_expression -> additive_expression
-Rule 43    relop -> LE
-Rule 44    relop -> <
-Rule 45    relop -> >
-Rule 46    relop -> GE
-Rule 47    relop -> EE
-Rule 48    relop -> NE
-Rule 49    additive_expression -> additive_expression addop term
-Rule 50    additive_expression -> term
-Rule 51    addop -> +
-Rule 52    addop -> -
-Rule 53    term -> term mulop factor
-Rule 54    term -> factor
-Rule 55    mulop -> *
-Rule 56    mulop -> /
-Rule 57    factor -> ( expression )
-Rule 58    factor -> var
-Rule 59    factor -> call
-Rule 60    factor -> NUM
-Rule 61    call -> ID ( args )
-Rule 62    args -> arg_list
-Rule 63    args -> <empty>
-Rule 64    arg_list -> arg_list , expression
-Rule 65    arg_list -> expression
+Rule 10    fun_declaration -> type_specifier ID ( params )
+Rule 11    fun_declaration -> compound_stmt
+Rule 12    params -> param_list
+Rule 13    params -> VOID
+Rule 14    params -> <empty>
+Rule 15    param_list -> param_list , param
+Rule 16    param_list -> param
+Rule 17    param -> type_specifier ID
+Rule 18    param -> type_specifier ID [ ]
+Rule 19    compound_stmt -> { E1 local_declarations statement_list }
+Rule 20    E1 -> <empty>
+Rule 21    local_declarations -> local_declarations var_declaration
+Rule 22    local_declarations -> <empty>
+Rule 23    statement_list -> statement_list statement
+Rule 24    statement_list -> <empty>
+Rule 25    statement -> expression_stmt
+Rule 26    statement -> compound_stmt
+Rule 27    statement -> selection_stmt
+Rule 28    statement -> iteration_stmt
+Rule 29    statement -> return_stmt
+Rule 30    expression_stmt -> expression ;
+Rule 31    expression_stmt -> ;
+Rule 32    selection_stmt -> IF ( expression ) M statement N
+Rule 33    selection_stmt -> IF ( expression ) M statement N ELSE M statement M
+Rule 34    M -> <empty>
+Rule 35    N -> <empty>
+Rule 36    iteration_stmt -> WHILE M ( expression ) M statement M
+Rule 37    return_stmt -> RETURN ;
+Rule 38    return_stmt -> RETURN expression ;
+Rule 39    expression -> var = expression
+Rule 40    expression -> simple_expression
+Rule 41    var -> ID
+Rule 42    var -> ID [ expression ]
+Rule 43    simple_expression -> additive_expression relop additive_expression
+Rule 44    simple_expression -> additive_expression
+Rule 45    relop -> LE
+Rule 46    relop -> <
+Rule 47    relop -> >
+Rule 48    relop -> GE
+Rule 49    relop -> EE
+Rule 50    relop -> NE
+Rule 51    additive_expression -> additive_expression addop term
+Rule 52    additive_expression -> term
+Rule 53    addop -> +
+Rule 54    addop -> -
+Rule 55    term -> term mulop factor
+Rule 56    term -> factor
+Rule 57    mulop -> *
+Rule 58    mulop -> /
+Rule 59    factor -> ( expression )
+Rule 60    factor -> var
+Rule 61    factor -> call
+Rule 62    factor -> NUM
+Rule 63    call -> ID ( args )
+Rule 64    args -> arg_list
+Rule 65    args -> <empty>
+Rule 66    arg_list -> arg_list , expression
+Rule 67    arg_list -> expression
 
 Terminals, with rules where they appear
 
-(                    : 10 30 31 34 57 61
-)                    : 10 30 31 34 57 61
-*                    : 55
-+                    : 51
-,                    : 14 64
--                    : 52
-/                    : 56
-;                    : 6 7 28 29 35 36
-<                    : 44
-=                    : 37
->                    : 45
+(                    : 10 32 33 36 59 63
+)                    : 10 32 33 36 59 63
+*                    : 57
++                    : 53
+,                    : 15 66
+-                    : 54
+/                    : 58
+;                    : 6 7 30 31 37 38
+<                    : 46
+=                    : 39
+>                    : 47
 ANNOTATION           : 
-EE                   : 47
-ELSE                 : 31
-GE                   : 46
-ID                   : 6 7 10 16 17 39 40 61
-IF                   : 30 31
+EE                   : 49
+ELSE                 : 33
+GE                   : 48
+ID                   : 6 7 10 17 18 41 42 63
+IF                   : 32 33
 INT                  : 8
-LE                   : 43
-NE                   : 48
-NUM                  : 7 60
-RETURN               : 35 36
-VOID                 : 9 12
-WHILE                : 34
-[                    : 7 17 40
-]                    : 7 17 40
+LE                   : 45
+NE                   : 50
+NUM                  : 7 62
+RETURN               : 37 38
+VOID                 : 9 13
+WHILE                : 36
+[                    : 7 18 42
+]                    : 7 18 42
 error                : 
-{                    : 18
-}                    : 18
+{                    : 19
+}                    : 19
 
 Nonterminals, with rules where they appear
 
-M                    : 30 31 31 31 34 34 34
-N                    : 30 31
-additive_expression  : 41 41 42 49
-addop                : 49
-arg_list             : 62 64
-args                 : 61
-call                 : 59
-compound_stmt        : 10 24
+E1                   : 19
+M                    : 32 33 33 33 36 36 36
+N                    : 32 33
+additive_expression  : 43 43 44 51
+addop                : 51
+arg_list             : 64 66
+args                 : 63
+call                 : 61
+compound_stmt        : 11 26
 declaration          : 2 3
 declaration_list     : 1 2
-expression           : 28 30 31 34 36 37 40 57 64 65
-expression_stmt      : 23
-factor               : 53 54
+expression           : 30 32 33 36 38 39 42 59 66 67
+expression_stmt      : 25
+factor               : 55 56
 fun_declaration      : 5
-iteration_stmt       : 26
-local_declarations   : 18 19
-mulop                : 53
-param                : 14 15
-param_list           : 11 14
+iteration_stmt       : 28
+local_declarations   : 19 21
+mulop                : 55
+param                : 15 16
+param_list           : 12 15
 params               : 10
 program              : 0
-relop                : 41
-return_stmt          : 27
-selection_stmt       : 25
-simple_expression    : 38
-statement            : 21 30 31 31 34
-statement_list       : 18 21
-term                 : 49 50 53
-type_specifier       : 6 7 10 16 17
-var                  : 37 58
-var_declaration      : 4 19
+relop                : 43
+return_stmt          : 29
+selection_stmt       : 27
+simple_expression    : 40
+statement            : 23 32 33 33 36
+statement_list       : 19 23
+term                 : 51 52 55
+type_specifier       : 6 7 10 17 18
+var                  : 39 60
+var_declaration      : 4 21
 
 Parsing method: LALR
 
@@ -151,12 +154,15 @@ state 0
     (5) declaration -> . fun_declaration
     (6) var_declaration -> . type_specifier ID ;
     (7) var_declaration -> . type_specifier ID [ NUM ] ;
-    (10) fun_declaration -> . type_specifier ID ( params ) compound_stmt
+    (10) fun_declaration -> . type_specifier ID ( params )
+    (11) fun_declaration -> . compound_stmt
     (8) type_specifier -> . INT
     (9) type_specifier -> . VOID
+    (19) compound_stmt -> . { E1 local_declarations statement_list }
 
-    INT             shift and go to state 7
-    VOID            shift and go to state 8
+    INT             shift and go to state 8
+    VOID            shift and go to state 9
+    {               shift and go to state 10
 
     program                        shift and go to state 1
     declaration_list               shift and go to state 2
@@ -164,6 +170,7 @@ state 0
     var_declaration                shift and go to state 4
     fun_declaration                shift and go to state 5
     type_specifier                 shift and go to state 6
+    compound_stmt                  shift and go to state 7
 
 state 1
 
@@ -179,18 +186,22 @@ state 2
     (5) declaration -> . fun_declaration
     (6) var_declaration -> . type_specifier ID ;
     (7) var_declaration -> . type_specifier ID [ NUM ] ;
-    (10) fun_declaration -> . type_specifier ID ( params ) compound_stmt
+    (10) fun_declaration -> . type_specifier ID ( params )
+    (11) fun_declaration -> . compound_stmt
     (8) type_specifier -> . INT
     (9) type_specifier -> . VOID
+    (19) compound_stmt -> . { E1 local_declarations statement_list }
 
     $end            reduce using rule 1 (program -> declaration_list .)
-    INT             shift and go to state 7
-    VOID            shift and go to state 8
+    INT             shift and go to state 8
+    VOID            shift and go to state 9
+    {               shift and go to state 10
 
-    declaration                    shift and go to state 9
+    declaration                    shift and go to state 11
     var_declaration                shift and go to state 4
     fun_declaration                shift and go to state 5
     type_specifier                 shift and go to state 6
+    compound_stmt                  shift and go to state 7
 
 state 3
 
@@ -198,6 +209,7 @@ state 3
 
     INT             reduce using rule 3 (declaration_list -> declaration .)
     VOID            reduce using rule 3 (declaration_list -> declaration .)
+    {               reduce using rule 3 (declaration_list -> declaration .)
     $end            reduce using rule 3 (declaration_list -> declaration .)
 
 
@@ -207,6 +219,7 @@ state 4
 
     INT             reduce using rule 4 (declaration -> var_declaration .)
     VOID            reduce using rule 4 (declaration -> var_declaration .)
+    {               reduce using rule 4 (declaration -> var_declaration .)
     $end            reduce using rule 4 (declaration -> var_declaration .)
 
 
@@ -216,6 +229,7 @@ state 5
 
     INT             reduce using rule 5 (declaration -> fun_declaration .)
     VOID            reduce using rule 5 (declaration -> fun_declaration .)
+    {               reduce using rule 5 (declaration -> fun_declaration .)
     $end            reduce using rule 5 (declaration -> fun_declaration .)
 
 
@@ -223,55 +237,105 @@ state 6
 
     (6) var_declaration -> type_specifier . ID ;
     (7) var_declaration -> type_specifier . ID [ NUM ] ;
-    (10) fun_declaration -> type_specifier . ID ( params ) compound_stmt
+    (10) fun_declaration -> type_specifier . ID ( params )
 
-    ID              shift and go to state 10
+    ID              shift and go to state 12
 
 
 state 7
+
+    (11) fun_declaration -> compound_stmt .
+
+    INT             reduce using rule 11 (fun_declaration -> compound_stmt .)
+    VOID            reduce using rule 11 (fun_declaration -> compound_stmt .)
+    {               reduce using rule 11 (fun_declaration -> compound_stmt .)
+    $end            reduce using rule 11 (fun_declaration -> compound_stmt .)
+
+
+state 8
 
     (8) type_specifier -> INT .
 
     ID              reduce using rule 8 (type_specifier -> INT .)
 
 
-state 8
+state 9
 
     (9) type_specifier -> VOID .
 
     ID              reduce using rule 9 (type_specifier -> VOID .)
 
 
-state 9
+state 10
+
+    (19) compound_stmt -> { . E1 local_declarations statement_list }
+    (20) E1 -> .
+
+    INT             reduce using rule 20 (E1 -> .)
+    VOID            reduce using rule 20 (E1 -> .)
+    }               reduce using rule 20 (E1 -> .)
+    ;               reduce using rule 20 (E1 -> .)
+    {               reduce using rule 20 (E1 -> .)
+    IF              reduce using rule 20 (E1 -> .)
+    WHILE           reduce using rule 20 (E1 -> .)
+    RETURN          reduce using rule 20 (E1 -> .)
+    ID              reduce using rule 20 (E1 -> .)
+    (               reduce using rule 20 (E1 -> .)
+    NUM             reduce using rule 20 (E1 -> .)
+
+    E1                             shift and go to state 13
+
+state 11
 
     (2) declaration_list -> declaration_list declaration .
 
     INT             reduce using rule 2 (declaration_list -> declaration_list declaration .)
     VOID            reduce using rule 2 (declaration_list -> declaration_list declaration .)
+    {               reduce using rule 2 (declaration_list -> declaration_list declaration .)
     $end            reduce using rule 2 (declaration_list -> declaration_list declaration .)
 
 
-state 10
+state 12
 
     (6) var_declaration -> type_specifier ID . ;
     (7) var_declaration -> type_specifier ID . [ NUM ] ;
-    (10) fun_declaration -> type_specifier ID . ( params ) compound_stmt
+    (10) fun_declaration -> type_specifier ID . ( params )
 
-    ;               shift and go to state 11
-    [               shift and go to state 12
-    (               shift and go to state 13
+    ;               shift and go to state 14
+    [               shift and go to state 15
+    (               shift and go to state 16
 
 
-state 11
+state 13
+
+    (19) compound_stmt -> { E1 . local_declarations statement_list }
+    (21) local_declarations -> . local_declarations var_declaration
+    (22) local_declarations -> .
+
+    INT             reduce using rule 22 (local_declarations -> .)
+    VOID            reduce using rule 22 (local_declarations -> .)
+    }               reduce using rule 22 (local_declarations -> .)
+    ;               reduce using rule 22 (local_declarations -> .)
+    {               reduce using rule 22 (local_declarations -> .)
+    IF              reduce using rule 22 (local_declarations -> .)
+    WHILE           reduce using rule 22 (local_declarations -> .)
+    RETURN          reduce using rule 22 (local_declarations -> .)
+    ID              reduce using rule 22 (local_declarations -> .)
+    (               reduce using rule 22 (local_declarations -> .)
+    NUM             reduce using rule 22 (local_declarations -> .)
+
+    local_declarations             shift and go to state 17
+
+state 14
 
     (6) var_declaration -> type_specifier ID ; .
 
     INT             reduce using rule 6 (var_declaration -> type_specifier ID ; .)
     VOID            reduce using rule 6 (var_declaration -> type_specifier ID ; .)
+    {               reduce using rule 6 (var_declaration -> type_specifier ID ; .)
     $end            reduce using rule 6 (var_declaration -> type_specifier ID ; .)
     }               reduce using rule 6 (var_declaration -> type_specifier ID ; .)
     ;               reduce using rule 6 (var_declaration -> type_specifier ID ; .)
-    {               reduce using rule 6 (var_declaration -> type_specifier ID ; .)
     IF              reduce using rule 6 (var_declaration -> type_specifier ID ; .)
     WHILE           reduce using rule 6 (var_declaration -> type_specifier ID ; .)
     RETURN          reduce using rule 6 (var_declaration -> type_specifier ID ; .)
@@ -280,595 +344,526 @@ state 11
     NUM             reduce using rule 6 (var_declaration -> type_specifier ID ; .)
 
 
-state 12
+state 15
 
     (7) var_declaration -> type_specifier ID [ . NUM ] ;
 
-    NUM             shift and go to state 14
-
-
-state 13
-
-    (10) fun_declaration -> type_specifier ID ( . params ) compound_stmt
-    (11) params -> . param_list
-    (12) params -> . VOID
-    (13) params -> .
-    (14) param_list -> . param_list , param
-    (15) param_list -> . param
-    (16) param -> . type_specifier ID
-    (17) param -> . type_specifier ID [ ]
-    (8) type_specifier -> . INT
-    (9) type_specifier -> . VOID
-
-    VOID            shift and go to state 18
-    )               reduce using rule 13 (params -> .)
-    INT             shift and go to state 7
-
-    type_specifier                 shift and go to state 15
-    params                         shift and go to state 16
-    param_list                     shift and go to state 17
-    param                          shift and go to state 19
-
-state 14
-
-    (7) var_declaration -> type_specifier ID [ NUM . ] ;
-
-    ]               shift and go to state 20
-
-
-state 15
-
-    (16) param -> type_specifier . ID
-    (17) param -> type_specifier . ID [ ]
-
-    ID              shift and go to state 21
+    NUM             shift and go to state 18
 
 
 state 16
 
-    (10) fun_declaration -> type_specifier ID ( params . ) compound_stmt
-
-    )               shift and go to state 22
-
-
-state 17
-
-    (11) params -> param_list .
-    (14) param_list -> param_list . , param
-
-    )               reduce using rule 11 (params -> param_list .)
-    ,               shift and go to state 23
-
-
-state 18
-
-    (12) params -> VOID .
-    (9) type_specifier -> VOID .
-
-    )               reduce using rule 12 (params -> VOID .)
-    ID              reduce using rule 9 (type_specifier -> VOID .)
-
-
-state 19
-
-    (15) param_list -> param .
-
-    ,               reduce using rule 15 (param_list -> param .)
-    )               reduce using rule 15 (param_list -> param .)
-
-
-state 20
-
-    (7) var_declaration -> type_specifier ID [ NUM ] . ;
-
-    ;               shift and go to state 24
-
-
-state 21
-
-    (16) param -> type_specifier ID .
-    (17) param -> type_specifier ID . [ ]
-
-    ,               reduce using rule 16 (param -> type_specifier ID .)
-    )               reduce using rule 16 (param -> type_specifier ID .)
-    [               shift and go to state 25
-
-
-state 22
-
-    (10) fun_declaration -> type_specifier ID ( params ) . compound_stmt
-    (18) compound_stmt -> . { local_declarations statement_list }
-
-    {               shift and go to state 27
-
-    compound_stmt                  shift and go to state 26
-
-state 23
-
-    (14) param_list -> param_list , . param
-    (16) param -> . type_specifier ID
-    (17) param -> . type_specifier ID [ ]
+    (10) fun_declaration -> type_specifier ID ( . params )
+    (12) params -> . param_list
+    (13) params -> . VOID
+    (14) params -> .
+    (15) param_list -> . param_list , param
+    (16) param_list -> . param
+    (17) param -> . type_specifier ID
+    (18) param -> . type_specifier ID [ ]
     (8) type_specifier -> . INT
     (9) type_specifier -> . VOID
 
-    INT             shift and go to state 7
-    VOID            shift and go to state 8
+    VOID            shift and go to state 22
+    )               reduce using rule 14 (params -> .)
+    INT             shift and go to state 8
 
-    param                          shift and go to state 28
-    type_specifier                 shift and go to state 15
+    type_specifier                 shift and go to state 19
+    params                         shift and go to state 20
+    param_list                     shift and go to state 21
+    param                          shift and go to state 23
 
-state 24
+state 17
 
-    (7) var_declaration -> type_specifier ID [ NUM ] ; .
-
-    INT             reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    VOID            reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    $end            reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    }               reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    ;               reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    {               reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    IF              reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    WHILE           reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    RETURN          reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    ID              reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    (               reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-    NUM             reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
-
-
-state 25
-
-    (17) param -> type_specifier ID [ . ]
-
-    ]               shift and go to state 29
-
-
-state 26
-
-    (10) fun_declaration -> type_specifier ID ( params ) compound_stmt .
-
-    INT             reduce using rule 10 (fun_declaration -> type_specifier ID ( params ) compound_stmt .)
-    VOID            reduce using rule 10 (fun_declaration -> type_specifier ID ( params ) compound_stmt .)
-    $end            reduce using rule 10 (fun_declaration -> type_specifier ID ( params ) compound_stmt .)
-
-
-state 27
-
-    (18) compound_stmt -> { . local_declarations statement_list }
-    (19) local_declarations -> . local_declarations var_declaration
-    (20) local_declarations -> .
-
-    INT             reduce using rule 20 (local_declarations -> .)
-    VOID            reduce using rule 20 (local_declarations -> .)
-    }               reduce using rule 20 (local_declarations -> .)
-    ;               reduce using rule 20 (local_declarations -> .)
-    {               reduce using rule 20 (local_declarations -> .)
-    IF              reduce using rule 20 (local_declarations -> .)
-    WHILE           reduce using rule 20 (local_declarations -> .)
-    RETURN          reduce using rule 20 (local_declarations -> .)
-    ID              reduce using rule 20 (local_declarations -> .)
-    (               reduce using rule 20 (local_declarations -> .)
-    NUM             reduce using rule 20 (local_declarations -> .)
-
-    local_declarations             shift and go to state 30
-
-state 28
-
-    (14) param_list -> param_list , param .
-
-    ,               reduce using rule 14 (param_list -> param_list , param .)
-    )               reduce using rule 14 (param_list -> param_list , param .)
-
-
-state 29
-
-    (17) param -> type_specifier ID [ ] .
-
-    ,               reduce using rule 17 (param -> type_specifier ID [ ] .)
-    )               reduce using rule 17 (param -> type_specifier ID [ ] .)
-
-
-state 30
-
-    (18) compound_stmt -> { local_declarations . statement_list }
-    (19) local_declarations -> local_declarations . var_declaration
-    (21) statement_list -> . statement_list statement
-    (22) statement_list -> .
+    (19) compound_stmt -> { E1 local_declarations . statement_list }
+    (21) local_declarations -> local_declarations . var_declaration
+    (23) statement_list -> . statement_list statement
+    (24) statement_list -> .
     (6) var_declaration -> . type_specifier ID ;
     (7) var_declaration -> . type_specifier ID [ NUM ] ;
     (8) type_specifier -> . INT
     (9) type_specifier -> . VOID
 
-    }               reduce using rule 22 (statement_list -> .)
-    ;               reduce using rule 22 (statement_list -> .)
-    {               reduce using rule 22 (statement_list -> .)
-    IF              reduce using rule 22 (statement_list -> .)
-    WHILE           reduce using rule 22 (statement_list -> .)
-    RETURN          reduce using rule 22 (statement_list -> .)
-    ID              reduce using rule 22 (statement_list -> .)
-    (               reduce using rule 22 (statement_list -> .)
-    NUM             reduce using rule 22 (statement_list -> .)
-    INT             shift and go to state 7
-    VOID            shift and go to state 8
+    }               reduce using rule 24 (statement_list -> .)
+    ;               reduce using rule 24 (statement_list -> .)
+    {               reduce using rule 24 (statement_list -> .)
+    IF              reduce using rule 24 (statement_list -> .)
+    WHILE           reduce using rule 24 (statement_list -> .)
+    RETURN          reduce using rule 24 (statement_list -> .)
+    ID              reduce using rule 24 (statement_list -> .)
+    (               reduce using rule 24 (statement_list -> .)
+    NUM             reduce using rule 24 (statement_list -> .)
+    INT             shift and go to state 8
+    VOID            shift and go to state 9
 
-    statement_list                 shift and go to state 31
-    var_declaration                shift and go to state 32
-    type_specifier                 shift and go to state 33
+    statement_list                 shift and go to state 24
+    var_declaration                shift and go to state 25
+    type_specifier                 shift and go to state 26
 
-state 31
+state 18
 
-    (18) compound_stmt -> { local_declarations statement_list . }
-    (21) statement_list -> statement_list . statement
-    (23) statement -> . expression_stmt
-    (24) statement -> . compound_stmt
-    (25) statement -> . selection_stmt
-    (26) statement -> . iteration_stmt
-    (27) statement -> . return_stmt
-    (28) expression_stmt -> . expression ;
-    (29) expression_stmt -> . ;
-    (18) compound_stmt -> . { local_declarations statement_list }
-    (30) selection_stmt -> . IF ( expression ) M statement N
-    (31) selection_stmt -> . IF ( expression ) M statement N ELSE M statement M
-    (34) iteration_stmt -> . WHILE M ( expression ) M statement M
-    (35) return_stmt -> . RETURN ;
-    (36) return_stmt -> . RETURN expression ;
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (7) var_declaration -> type_specifier ID [ NUM . ] ;
 
-    }               shift and go to state 34
-    ;               shift and go to state 42
-    {               shift and go to state 27
-    IF              shift and go to state 43
-    WHILE           shift and go to state 45
-    RETURN          shift and go to state 46
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
-
-    statement                      shift and go to state 35
-    expression_stmt                shift and go to state 36
-    compound_stmt                  shift and go to state 37
-    selection_stmt                 shift and go to state 38
-    iteration_stmt                 shift and go to state 39
-    return_stmt                    shift and go to state 40
-    expression                     shift and go to state 41
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
-
-state 32
-
-    (19) local_declarations -> local_declarations var_declaration .
-
-    INT             reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
-    VOID            reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
-    }               reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
-    ;               reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
-    {               reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
-    IF              reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
-    WHILE           reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
-    RETURN          reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
-    ID              reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
-    (               reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
-    NUM             reduce using rule 19 (local_declarations -> local_declarations var_declaration .)
+    ]               shift and go to state 27
 
 
-state 33
+state 19
+
+    (17) param -> type_specifier . ID
+    (18) param -> type_specifier . ID [ ]
+
+    ID              shift and go to state 28
+
+
+state 20
+
+    (10) fun_declaration -> type_specifier ID ( params . )
+
+    )               shift and go to state 29
+
+
+state 21
+
+    (12) params -> param_list .
+    (15) param_list -> param_list . , param
+
+    )               reduce using rule 12 (params -> param_list .)
+    ,               shift and go to state 30
+
+
+state 22
+
+    (13) params -> VOID .
+    (9) type_specifier -> VOID .
+
+    )               reduce using rule 13 (params -> VOID .)
+    ID              reduce using rule 9 (type_specifier -> VOID .)
+
+
+state 23
+
+    (16) param_list -> param .
+
+    ,               reduce using rule 16 (param_list -> param .)
+    )               reduce using rule 16 (param_list -> param .)
+
+
+state 24
+
+    (19) compound_stmt -> { E1 local_declarations statement_list . }
+    (23) statement_list -> statement_list . statement
+    (25) statement -> . expression_stmt
+    (26) statement -> . compound_stmt
+    (27) statement -> . selection_stmt
+    (28) statement -> . iteration_stmt
+    (29) statement -> . return_stmt
+    (30) expression_stmt -> . expression ;
+    (31) expression_stmt -> . ;
+    (19) compound_stmt -> . { E1 local_declarations statement_list }
+    (32) selection_stmt -> . IF ( expression ) M statement N
+    (33) selection_stmt -> . IF ( expression ) M statement N ELSE M statement M
+    (36) iteration_stmt -> . WHILE M ( expression ) M statement M
+    (37) return_stmt -> . RETURN ;
+    (38) return_stmt -> . RETURN expression ;
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
+
+    }               shift and go to state 31
+    ;               shift and go to state 39
+    {               shift and go to state 10
+    IF              shift and go to state 40
+    WHILE           shift and go to state 42
+    RETURN          shift and go to state 43
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
+
+    statement                      shift and go to state 32
+    expression_stmt                shift and go to state 33
+    compound_stmt                  shift and go to state 34
+    selection_stmt                 shift and go to state 35
+    iteration_stmt                 shift and go to state 36
+    return_stmt                    shift and go to state 37
+    expression                     shift and go to state 38
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
+
+state 25
+
+    (21) local_declarations -> local_declarations var_declaration .
+
+    INT             reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+    VOID            reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+    }               reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+    ;               reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+    {               reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+    IF              reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+    WHILE           reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+    RETURN          reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+    ID              reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+    (               reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+    NUM             reduce using rule 21 (local_declarations -> local_declarations var_declaration .)
+
+
+state 26
 
     (6) var_declaration -> type_specifier . ID ;
     (7) var_declaration -> type_specifier . ID [ NUM ] ;
 
-    ID              shift and go to state 55
+    ID              shift and go to state 52
+
+
+state 27
+
+    (7) var_declaration -> type_specifier ID [ NUM ] . ;
+
+    ;               shift and go to state 53
+
+
+state 28
+
+    (17) param -> type_specifier ID .
+    (18) param -> type_specifier ID . [ ]
+
+    ,               reduce using rule 17 (param -> type_specifier ID .)
+    )               reduce using rule 17 (param -> type_specifier ID .)
+    [               shift and go to state 54
+
+
+state 29
+
+    (10) fun_declaration -> type_specifier ID ( params ) .
+
+    INT             reduce using rule 10 (fun_declaration -> type_specifier ID ( params ) .)
+    VOID            reduce using rule 10 (fun_declaration -> type_specifier ID ( params ) .)
+    {               reduce using rule 10 (fun_declaration -> type_specifier ID ( params ) .)
+    $end            reduce using rule 10 (fun_declaration -> type_specifier ID ( params ) .)
+
+
+state 30
+
+    (15) param_list -> param_list , . param
+    (17) param -> . type_specifier ID
+    (18) param -> . type_specifier ID [ ]
+    (8) type_specifier -> . INT
+    (9) type_specifier -> . VOID
+
+    INT             shift and go to state 8
+    VOID            shift and go to state 9
+
+    param                          shift and go to state 55
+    type_specifier                 shift and go to state 19
+
+state 31
+
+    (19) compound_stmt -> { E1 local_declarations statement_list } .
+
+    INT             reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    VOID            reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    {               reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    $end            reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    }               reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    ;               reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    IF              reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    WHILE           reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    RETURN          reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    ID              reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    (               reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    NUM             reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+    ELSE            reduce using rule 19 (compound_stmt -> { E1 local_declarations statement_list } .)
+
+
+state 32
+
+    (23) statement_list -> statement_list statement .
+
+    }               reduce using rule 23 (statement_list -> statement_list statement .)
+    ;               reduce using rule 23 (statement_list -> statement_list statement .)
+    {               reduce using rule 23 (statement_list -> statement_list statement .)
+    IF              reduce using rule 23 (statement_list -> statement_list statement .)
+    WHILE           reduce using rule 23 (statement_list -> statement_list statement .)
+    RETURN          reduce using rule 23 (statement_list -> statement_list statement .)
+    ID              reduce using rule 23 (statement_list -> statement_list statement .)
+    (               reduce using rule 23 (statement_list -> statement_list statement .)
+    NUM             reduce using rule 23 (statement_list -> statement_list statement .)
+
+
+state 33
+
+    (25) statement -> expression_stmt .
+
+    }               reduce using rule 25 (statement -> expression_stmt .)
+    ;               reduce using rule 25 (statement -> expression_stmt .)
+    {               reduce using rule 25 (statement -> expression_stmt .)
+    IF              reduce using rule 25 (statement -> expression_stmt .)
+    WHILE           reduce using rule 25 (statement -> expression_stmt .)
+    RETURN          reduce using rule 25 (statement -> expression_stmt .)
+    ID              reduce using rule 25 (statement -> expression_stmt .)
+    (               reduce using rule 25 (statement -> expression_stmt .)
+    NUM             reduce using rule 25 (statement -> expression_stmt .)
+    ELSE            reduce using rule 25 (statement -> expression_stmt .)
 
 
 state 34
 
-    (18) compound_stmt -> { local_declarations statement_list } .
+    (26) statement -> compound_stmt .
 
-    INT             reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    VOID            reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    $end            reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    }               reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    ;               reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    {               reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    IF              reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    WHILE           reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    RETURN          reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    ID              reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    (               reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    NUM             reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
-    ELSE            reduce using rule 18 (compound_stmt -> { local_declarations statement_list } .)
+    }               reduce using rule 26 (statement -> compound_stmt .)
+    ;               reduce using rule 26 (statement -> compound_stmt .)
+    {               reduce using rule 26 (statement -> compound_stmt .)
+    IF              reduce using rule 26 (statement -> compound_stmt .)
+    WHILE           reduce using rule 26 (statement -> compound_stmt .)
+    RETURN          reduce using rule 26 (statement -> compound_stmt .)
+    ID              reduce using rule 26 (statement -> compound_stmt .)
+    (               reduce using rule 26 (statement -> compound_stmt .)
+    NUM             reduce using rule 26 (statement -> compound_stmt .)
+    ELSE            reduce using rule 26 (statement -> compound_stmt .)
 
 
 state 35
 
-    (21) statement_list -> statement_list statement .
+    (27) statement -> selection_stmt .
 
-    }               reduce using rule 21 (statement_list -> statement_list statement .)
-    ;               reduce using rule 21 (statement_list -> statement_list statement .)
-    {               reduce using rule 21 (statement_list -> statement_list statement .)
-    IF              reduce using rule 21 (statement_list -> statement_list statement .)
-    WHILE           reduce using rule 21 (statement_list -> statement_list statement .)
-    RETURN          reduce using rule 21 (statement_list -> statement_list statement .)
-    ID              reduce using rule 21 (statement_list -> statement_list statement .)
-    (               reduce using rule 21 (statement_list -> statement_list statement .)
-    NUM             reduce using rule 21 (statement_list -> statement_list statement .)
+    }               reduce using rule 27 (statement -> selection_stmt .)
+    ;               reduce using rule 27 (statement -> selection_stmt .)
+    {               reduce using rule 27 (statement -> selection_stmt .)
+    IF              reduce using rule 27 (statement -> selection_stmt .)
+    WHILE           reduce using rule 27 (statement -> selection_stmt .)
+    RETURN          reduce using rule 27 (statement -> selection_stmt .)
+    ID              reduce using rule 27 (statement -> selection_stmt .)
+    (               reduce using rule 27 (statement -> selection_stmt .)
+    NUM             reduce using rule 27 (statement -> selection_stmt .)
+    ELSE            reduce using rule 27 (statement -> selection_stmt .)
 
 
 state 36
 
-    (23) statement -> expression_stmt .
+    (28) statement -> iteration_stmt .
 
-    }               reduce using rule 23 (statement -> expression_stmt .)
-    ;               reduce using rule 23 (statement -> expression_stmt .)
-    {               reduce using rule 23 (statement -> expression_stmt .)
-    IF              reduce using rule 23 (statement -> expression_stmt .)
-    WHILE           reduce using rule 23 (statement -> expression_stmt .)
-    RETURN          reduce using rule 23 (statement -> expression_stmt .)
-    ID              reduce using rule 23 (statement -> expression_stmt .)
-    (               reduce using rule 23 (statement -> expression_stmt .)
-    NUM             reduce using rule 23 (statement -> expression_stmt .)
-    ELSE            reduce using rule 23 (statement -> expression_stmt .)
+    }               reduce using rule 28 (statement -> iteration_stmt .)
+    ;               reduce using rule 28 (statement -> iteration_stmt .)
+    {               reduce using rule 28 (statement -> iteration_stmt .)
+    IF              reduce using rule 28 (statement -> iteration_stmt .)
+    WHILE           reduce using rule 28 (statement -> iteration_stmt .)
+    RETURN          reduce using rule 28 (statement -> iteration_stmt .)
+    ID              reduce using rule 28 (statement -> iteration_stmt .)
+    (               reduce using rule 28 (statement -> iteration_stmt .)
+    NUM             reduce using rule 28 (statement -> iteration_stmt .)
+    ELSE            reduce using rule 28 (statement -> iteration_stmt .)
 
 
 state 37
 
-    (24) statement -> compound_stmt .
+    (29) statement -> return_stmt .
 
-    }               reduce using rule 24 (statement -> compound_stmt .)
-    ;               reduce using rule 24 (statement -> compound_stmt .)
-    {               reduce using rule 24 (statement -> compound_stmt .)
-    IF              reduce using rule 24 (statement -> compound_stmt .)
-    WHILE           reduce using rule 24 (statement -> compound_stmt .)
-    RETURN          reduce using rule 24 (statement -> compound_stmt .)
-    ID              reduce using rule 24 (statement -> compound_stmt .)
-    (               reduce using rule 24 (statement -> compound_stmt .)
-    NUM             reduce using rule 24 (statement -> compound_stmt .)
-    ELSE            reduce using rule 24 (statement -> compound_stmt .)
+    }               reduce using rule 29 (statement -> return_stmt .)
+    ;               reduce using rule 29 (statement -> return_stmt .)
+    {               reduce using rule 29 (statement -> return_stmt .)
+    IF              reduce using rule 29 (statement -> return_stmt .)
+    WHILE           reduce using rule 29 (statement -> return_stmt .)
+    RETURN          reduce using rule 29 (statement -> return_stmt .)
+    ID              reduce using rule 29 (statement -> return_stmt .)
+    (               reduce using rule 29 (statement -> return_stmt .)
+    NUM             reduce using rule 29 (statement -> return_stmt .)
+    ELSE            reduce using rule 29 (statement -> return_stmt .)
 
 
 state 38
 
-    (25) statement -> selection_stmt .
-
-    }               reduce using rule 25 (statement -> selection_stmt .)
-    ;               reduce using rule 25 (statement -> selection_stmt .)
-    {               reduce using rule 25 (statement -> selection_stmt .)
-    IF              reduce using rule 25 (statement -> selection_stmt .)
-    WHILE           reduce using rule 25 (statement -> selection_stmt .)
-    RETURN          reduce using rule 25 (statement -> selection_stmt .)
-    ID              reduce using rule 25 (statement -> selection_stmt .)
-    (               reduce using rule 25 (statement -> selection_stmt .)
-    NUM             reduce using rule 25 (statement -> selection_stmt .)
-    ELSE            reduce using rule 25 (statement -> selection_stmt .)
-
-
-state 39
-
-    (26) statement -> iteration_stmt .
-
-    }               reduce using rule 26 (statement -> iteration_stmt .)
-    ;               reduce using rule 26 (statement -> iteration_stmt .)
-    {               reduce using rule 26 (statement -> iteration_stmt .)
-    IF              reduce using rule 26 (statement -> iteration_stmt .)
-    WHILE           reduce using rule 26 (statement -> iteration_stmt .)
-    RETURN          reduce using rule 26 (statement -> iteration_stmt .)
-    ID              reduce using rule 26 (statement -> iteration_stmt .)
-    (               reduce using rule 26 (statement -> iteration_stmt .)
-    NUM             reduce using rule 26 (statement -> iteration_stmt .)
-    ELSE            reduce using rule 26 (statement -> iteration_stmt .)
-
-
-state 40
-
-    (27) statement -> return_stmt .
-
-    }               reduce using rule 27 (statement -> return_stmt .)
-    ;               reduce using rule 27 (statement -> return_stmt .)
-    {               reduce using rule 27 (statement -> return_stmt .)
-    IF              reduce using rule 27 (statement -> return_stmt .)
-    WHILE           reduce using rule 27 (statement -> return_stmt .)
-    RETURN          reduce using rule 27 (statement -> return_stmt .)
-    ID              reduce using rule 27 (statement -> return_stmt .)
-    (               reduce using rule 27 (statement -> return_stmt .)
-    NUM             reduce using rule 27 (statement -> return_stmt .)
-    ELSE            reduce using rule 27 (statement -> return_stmt .)
-
-
-state 41
-
-    (28) expression_stmt -> expression . ;
+    (30) expression_stmt -> expression . ;
 
     ;               shift and go to state 56
 
 
-state 42
+state 39
 
-    (29) expression_stmt -> ; .
+    (31) expression_stmt -> ; .
 
-    }               reduce using rule 29 (expression_stmt -> ; .)
-    ;               reduce using rule 29 (expression_stmt -> ; .)
-    {               reduce using rule 29 (expression_stmt -> ; .)
-    IF              reduce using rule 29 (expression_stmt -> ; .)
-    WHILE           reduce using rule 29 (expression_stmt -> ; .)
-    RETURN          reduce using rule 29 (expression_stmt -> ; .)
-    ID              reduce using rule 29 (expression_stmt -> ; .)
-    (               reduce using rule 29 (expression_stmt -> ; .)
-    NUM             reduce using rule 29 (expression_stmt -> ; .)
-    ELSE            reduce using rule 29 (expression_stmt -> ; .)
+    }               reduce using rule 31 (expression_stmt -> ; .)
+    ;               reduce using rule 31 (expression_stmt -> ; .)
+    {               reduce using rule 31 (expression_stmt -> ; .)
+    IF              reduce using rule 31 (expression_stmt -> ; .)
+    WHILE           reduce using rule 31 (expression_stmt -> ; .)
+    RETURN          reduce using rule 31 (expression_stmt -> ; .)
+    ID              reduce using rule 31 (expression_stmt -> ; .)
+    (               reduce using rule 31 (expression_stmt -> ; .)
+    NUM             reduce using rule 31 (expression_stmt -> ; .)
+    ELSE            reduce using rule 31 (expression_stmt -> ; .)
 
 
-state 43
+state 40
 
-    (30) selection_stmt -> IF . ( expression ) M statement N
-    (31) selection_stmt -> IF . ( expression ) M statement N ELSE M statement M
+    (32) selection_stmt -> IF . ( expression ) M statement N
+    (33) selection_stmt -> IF . ( expression ) M statement N ELSE M statement M
 
     (               shift and go to state 57
 
 
-state 44
+state 41
 
-    (57) factor -> ( . expression )
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (59) factor -> ( . expression )
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
     expression                     shift and go to state 58
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
-state 45
+state 42
 
-    (34) iteration_stmt -> WHILE . M ( expression ) M statement M
-    (32) M -> .
+    (36) iteration_stmt -> WHILE . M ( expression ) M statement M
+    (34) M -> .
 
-    (               reduce using rule 32 (M -> .)
+    (               reduce using rule 34 (M -> .)
 
     M                              shift and go to state 59
 
-state 46
+state 43
 
-    (35) return_stmt -> RETURN . ;
-    (36) return_stmt -> RETURN . expression ;
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (37) return_stmt -> RETURN . ;
+    (38) return_stmt -> RETURN . expression ;
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
     ;               shift and go to state 60
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
     expression                     shift and go to state 61
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
-state 47
+state 44
 
-    (37) expression -> var . = expression
-    (58) factor -> var .
+    (39) expression -> var . = expression
+    (60) factor -> var .
 
     =               shift and go to state 62
-    *               reduce using rule 58 (factor -> var .)
-    /               reduce using rule 58 (factor -> var .)
-    LE              reduce using rule 58 (factor -> var .)
-    <               reduce using rule 58 (factor -> var .)
-    >               reduce using rule 58 (factor -> var .)
-    GE              reduce using rule 58 (factor -> var .)
-    EE              reduce using rule 58 (factor -> var .)
-    NE              reduce using rule 58 (factor -> var .)
-    +               reduce using rule 58 (factor -> var .)
-    -               reduce using rule 58 (factor -> var .)
-    ;               reduce using rule 58 (factor -> var .)
-    )               reduce using rule 58 (factor -> var .)
-    ]               reduce using rule 58 (factor -> var .)
-    ,               reduce using rule 58 (factor -> var .)
+    *               reduce using rule 60 (factor -> var .)
+    /               reduce using rule 60 (factor -> var .)
+    LE              reduce using rule 60 (factor -> var .)
+    <               reduce using rule 60 (factor -> var .)
+    >               reduce using rule 60 (factor -> var .)
+    GE              reduce using rule 60 (factor -> var .)
+    EE              reduce using rule 60 (factor -> var .)
+    NE              reduce using rule 60 (factor -> var .)
+    +               reduce using rule 60 (factor -> var .)
+    -               reduce using rule 60 (factor -> var .)
+    ;               reduce using rule 60 (factor -> var .)
+    )               reduce using rule 60 (factor -> var .)
+    ]               reduce using rule 60 (factor -> var .)
+    ,               reduce using rule 60 (factor -> var .)
 
 
-state 48
+state 45
 
-    (38) expression -> simple_expression .
+    (40) expression -> simple_expression .
 
-    ;               reduce using rule 38 (expression -> simple_expression .)
-    )               reduce using rule 38 (expression -> simple_expression .)
-    ]               reduce using rule 38 (expression -> simple_expression .)
-    ,               reduce using rule 38 (expression -> simple_expression .)
+    ;               reduce using rule 40 (expression -> simple_expression .)
+    )               reduce using rule 40 (expression -> simple_expression .)
+    ]               reduce using rule 40 (expression -> simple_expression .)
+    ,               reduce using rule 40 (expression -> simple_expression .)
 
 
-state 49
+state 46
 
-    (39) var -> ID .
-    (40) var -> ID . [ expression ]
-    (61) call -> ID . ( args )
+    (41) var -> ID .
+    (42) var -> ID . [ expression ]
+    (63) call -> ID . ( args )
 
-    =               reduce using rule 39 (var -> ID .)
-    *               reduce using rule 39 (var -> ID .)
-    /               reduce using rule 39 (var -> ID .)
-    LE              reduce using rule 39 (var -> ID .)
-    <               reduce using rule 39 (var -> ID .)
-    >               reduce using rule 39 (var -> ID .)
-    GE              reduce using rule 39 (var -> ID .)
-    EE              reduce using rule 39 (var -> ID .)
-    NE              reduce using rule 39 (var -> ID .)
-    +               reduce using rule 39 (var -> ID .)
-    -               reduce using rule 39 (var -> ID .)
-    ;               reduce using rule 39 (var -> ID .)
-    )               reduce using rule 39 (var -> ID .)
-    ]               reduce using rule 39 (var -> ID .)
-    ,               reduce using rule 39 (var -> ID .)
+    =               reduce using rule 41 (var -> ID .)
+    *               reduce using rule 41 (var -> ID .)
+    /               reduce using rule 41 (var -> ID .)
+    LE              reduce using rule 41 (var -> ID .)
+    <               reduce using rule 41 (var -> ID .)
+    >               reduce using rule 41 (var -> ID .)
+    GE              reduce using rule 41 (var -> ID .)
+    EE              reduce using rule 41 (var -> ID .)
+    NE              reduce using rule 41 (var -> ID .)
+    +               reduce using rule 41 (var -> ID .)
+    -               reduce using rule 41 (var -> ID .)
+    ;               reduce using rule 41 (var -> ID .)
+    )               reduce using rule 41 (var -> ID .)
+    ]               reduce using rule 41 (var -> ID .)
+    ,               reduce using rule 41 (var -> ID .)
     [               shift and go to state 63
     (               shift and go to state 64
 
 
-state 50
+state 47
 
-    (41) simple_expression -> additive_expression . relop additive_expression
-    (42) simple_expression -> additive_expression .
-    (49) additive_expression -> additive_expression . addop term
-    (43) relop -> . LE
-    (44) relop -> . <
-    (45) relop -> . >
-    (46) relop -> . GE
-    (47) relop -> . EE
-    (48) relop -> . NE
-    (51) addop -> . +
-    (52) addop -> . -
+    (43) simple_expression -> additive_expression . relop additive_expression
+    (44) simple_expression -> additive_expression .
+    (51) additive_expression -> additive_expression . addop term
+    (45) relop -> . LE
+    (46) relop -> . <
+    (47) relop -> . >
+    (48) relop -> . GE
+    (49) relop -> . EE
+    (50) relop -> . NE
+    (53) addop -> . +
+    (54) addop -> . -
 
-    ;               reduce using rule 42 (simple_expression -> additive_expression .)
-    )               reduce using rule 42 (simple_expression -> additive_expression .)
-    ]               reduce using rule 42 (simple_expression -> additive_expression .)
-    ,               reduce using rule 42 (simple_expression -> additive_expression .)
+    ;               reduce using rule 44 (simple_expression -> additive_expression .)
+    )               reduce using rule 44 (simple_expression -> additive_expression .)
+    ]               reduce using rule 44 (simple_expression -> additive_expression .)
+    ,               reduce using rule 44 (simple_expression -> additive_expression .)
     LE              shift and go to state 67
     <               shift and go to state 68
     >               shift and go to state 69
@@ -881,1045 +876,1086 @@ state 50
     relop                          shift and go to state 65
     addop                          shift and go to state 66
 
-state 51
+state 48
 
-    (50) additive_expression -> term .
-    (53) term -> term . mulop factor
-    (55) mulop -> . *
-    (56) mulop -> . /
+    (52) additive_expression -> term .
+    (55) term -> term . mulop factor
+    (57) mulop -> . *
+    (58) mulop -> . /
 
-    LE              reduce using rule 50 (additive_expression -> term .)
-    <               reduce using rule 50 (additive_expression -> term .)
-    >               reduce using rule 50 (additive_expression -> term .)
-    GE              reduce using rule 50 (additive_expression -> term .)
-    EE              reduce using rule 50 (additive_expression -> term .)
-    NE              reduce using rule 50 (additive_expression -> term .)
-    +               reduce using rule 50 (additive_expression -> term .)
-    -               reduce using rule 50 (additive_expression -> term .)
-    ;               reduce using rule 50 (additive_expression -> term .)
-    )               reduce using rule 50 (additive_expression -> term .)
-    ]               reduce using rule 50 (additive_expression -> term .)
-    ,               reduce using rule 50 (additive_expression -> term .)
+    LE              reduce using rule 52 (additive_expression -> term .)
+    <               reduce using rule 52 (additive_expression -> term .)
+    >               reduce using rule 52 (additive_expression -> term .)
+    GE              reduce using rule 52 (additive_expression -> term .)
+    EE              reduce using rule 52 (additive_expression -> term .)
+    NE              reduce using rule 52 (additive_expression -> term .)
+    +               reduce using rule 52 (additive_expression -> term .)
+    -               reduce using rule 52 (additive_expression -> term .)
+    ;               reduce using rule 52 (additive_expression -> term .)
+    )               reduce using rule 52 (additive_expression -> term .)
+    ]               reduce using rule 52 (additive_expression -> term .)
+    ,               reduce using rule 52 (additive_expression -> term .)
     *               shift and go to state 76
     /               shift and go to state 77
 
     mulop                          shift and go to state 75
 
+state 49
+
+    (56) term -> factor .
+
+    *               reduce using rule 56 (term -> factor .)
+    /               reduce using rule 56 (term -> factor .)
+    LE              reduce using rule 56 (term -> factor .)
+    <               reduce using rule 56 (term -> factor .)
+    >               reduce using rule 56 (term -> factor .)
+    GE              reduce using rule 56 (term -> factor .)
+    EE              reduce using rule 56 (term -> factor .)
+    NE              reduce using rule 56 (term -> factor .)
+    +               reduce using rule 56 (term -> factor .)
+    -               reduce using rule 56 (term -> factor .)
+    ;               reduce using rule 56 (term -> factor .)
+    )               reduce using rule 56 (term -> factor .)
+    ]               reduce using rule 56 (term -> factor .)
+    ,               reduce using rule 56 (term -> factor .)
+
+
+state 50
+
+    (61) factor -> call .
+
+    *               reduce using rule 61 (factor -> call .)
+    /               reduce using rule 61 (factor -> call .)
+    LE              reduce using rule 61 (factor -> call .)
+    <               reduce using rule 61 (factor -> call .)
+    >               reduce using rule 61 (factor -> call .)
+    GE              reduce using rule 61 (factor -> call .)
+    EE              reduce using rule 61 (factor -> call .)
+    NE              reduce using rule 61 (factor -> call .)
+    +               reduce using rule 61 (factor -> call .)
+    -               reduce using rule 61 (factor -> call .)
+    ;               reduce using rule 61 (factor -> call .)
+    )               reduce using rule 61 (factor -> call .)
+    ]               reduce using rule 61 (factor -> call .)
+    ,               reduce using rule 61 (factor -> call .)
+
+
+state 51
+
+    (62) factor -> NUM .
+
+    *               reduce using rule 62 (factor -> NUM .)
+    /               reduce using rule 62 (factor -> NUM .)
+    LE              reduce using rule 62 (factor -> NUM .)
+    <               reduce using rule 62 (factor -> NUM .)
+    >               reduce using rule 62 (factor -> NUM .)
+    GE              reduce using rule 62 (factor -> NUM .)
+    EE              reduce using rule 62 (factor -> NUM .)
+    NE              reduce using rule 62 (factor -> NUM .)
+    +               reduce using rule 62 (factor -> NUM .)
+    -               reduce using rule 62 (factor -> NUM .)
+    ;               reduce using rule 62 (factor -> NUM .)
+    )               reduce using rule 62 (factor -> NUM .)
+    ]               reduce using rule 62 (factor -> NUM .)
+    ,               reduce using rule 62 (factor -> NUM .)
+
+
 state 52
-
-    (54) term -> factor .
-
-    *               reduce using rule 54 (term -> factor .)
-    /               reduce using rule 54 (term -> factor .)
-    LE              reduce using rule 54 (term -> factor .)
-    <               reduce using rule 54 (term -> factor .)
-    >               reduce using rule 54 (term -> factor .)
-    GE              reduce using rule 54 (term -> factor .)
-    EE              reduce using rule 54 (term -> factor .)
-    NE              reduce using rule 54 (term -> factor .)
-    +               reduce using rule 54 (term -> factor .)
-    -               reduce using rule 54 (term -> factor .)
-    ;               reduce using rule 54 (term -> factor .)
-    )               reduce using rule 54 (term -> factor .)
-    ]               reduce using rule 54 (term -> factor .)
-    ,               reduce using rule 54 (term -> factor .)
-
-
-state 53
-
-    (59) factor -> call .
-
-    *               reduce using rule 59 (factor -> call .)
-    /               reduce using rule 59 (factor -> call .)
-    LE              reduce using rule 59 (factor -> call .)
-    <               reduce using rule 59 (factor -> call .)
-    >               reduce using rule 59 (factor -> call .)
-    GE              reduce using rule 59 (factor -> call .)
-    EE              reduce using rule 59 (factor -> call .)
-    NE              reduce using rule 59 (factor -> call .)
-    +               reduce using rule 59 (factor -> call .)
-    -               reduce using rule 59 (factor -> call .)
-    ;               reduce using rule 59 (factor -> call .)
-    )               reduce using rule 59 (factor -> call .)
-    ]               reduce using rule 59 (factor -> call .)
-    ,               reduce using rule 59 (factor -> call .)
-
-
-state 54
-
-    (60) factor -> NUM .
-
-    *               reduce using rule 60 (factor -> NUM .)
-    /               reduce using rule 60 (factor -> NUM .)
-    LE              reduce using rule 60 (factor -> NUM .)
-    <               reduce using rule 60 (factor -> NUM .)
-    >               reduce using rule 60 (factor -> NUM .)
-    GE              reduce using rule 60 (factor -> NUM .)
-    EE              reduce using rule 60 (factor -> NUM .)
-    NE              reduce using rule 60 (factor -> NUM .)
-    +               reduce using rule 60 (factor -> NUM .)
-    -               reduce using rule 60 (factor -> NUM .)
-    ;               reduce using rule 60 (factor -> NUM .)
-    )               reduce using rule 60 (factor -> NUM .)
-    ]               reduce using rule 60 (factor -> NUM .)
-    ,               reduce using rule 60 (factor -> NUM .)
-
-
-state 55
 
     (6) var_declaration -> type_specifier ID . ;
     (7) var_declaration -> type_specifier ID . [ NUM ] ;
 
-    ;               shift and go to state 11
-    [               shift and go to state 12
+    ;               shift and go to state 14
+    [               shift and go to state 15
+
+
+state 53
+
+    (7) var_declaration -> type_specifier ID [ NUM ] ; .
+
+    INT             reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    VOID            reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    {               reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    $end            reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    }               reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    ;               reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    IF              reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    WHILE           reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    RETURN          reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    ID              reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    (               reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+    NUM             reduce using rule 7 (var_declaration -> type_specifier ID [ NUM ] ; .)
+
+
+state 54
+
+    (18) param -> type_specifier ID [ . ]
+
+    ]               shift and go to state 78
+
+
+state 55
+
+    (15) param_list -> param_list , param .
+
+    ,               reduce using rule 15 (param_list -> param_list , param .)
+    )               reduce using rule 15 (param_list -> param_list , param .)
 
 
 state 56
 
-    (28) expression_stmt -> expression ; .
+    (30) expression_stmt -> expression ; .
 
-    }               reduce using rule 28 (expression_stmt -> expression ; .)
-    ;               reduce using rule 28 (expression_stmt -> expression ; .)
-    {               reduce using rule 28 (expression_stmt -> expression ; .)
-    IF              reduce using rule 28 (expression_stmt -> expression ; .)
-    WHILE           reduce using rule 28 (expression_stmt -> expression ; .)
-    RETURN          reduce using rule 28 (expression_stmt -> expression ; .)
-    ID              reduce using rule 28 (expression_stmt -> expression ; .)
-    (               reduce using rule 28 (expression_stmt -> expression ; .)
-    NUM             reduce using rule 28 (expression_stmt -> expression ; .)
-    ELSE            reduce using rule 28 (expression_stmt -> expression ; .)
+    }               reduce using rule 30 (expression_stmt -> expression ; .)
+    ;               reduce using rule 30 (expression_stmt -> expression ; .)
+    {               reduce using rule 30 (expression_stmt -> expression ; .)
+    IF              reduce using rule 30 (expression_stmt -> expression ; .)
+    WHILE           reduce using rule 30 (expression_stmt -> expression ; .)
+    RETURN          reduce using rule 30 (expression_stmt -> expression ; .)
+    ID              reduce using rule 30 (expression_stmt -> expression ; .)
+    (               reduce using rule 30 (expression_stmt -> expression ; .)
+    NUM             reduce using rule 30 (expression_stmt -> expression ; .)
+    ELSE            reduce using rule 30 (expression_stmt -> expression ; .)
 
 
 state 57
 
-    (30) selection_stmt -> IF ( . expression ) M statement N
-    (31) selection_stmt -> IF ( . expression ) M statement N ELSE M statement M
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (32) selection_stmt -> IF ( . expression ) M statement N
+    (33) selection_stmt -> IF ( . expression ) M statement N ELSE M statement M
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
-    expression                     shift and go to state 78
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
+    expression                     shift and go to state 79
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
 state 58
 
-    (57) factor -> ( expression . )
+    (59) factor -> ( expression . )
 
-    )               shift and go to state 79
+    )               shift and go to state 80
 
 
 state 59
 
-    (34) iteration_stmt -> WHILE M . ( expression ) M statement M
+    (36) iteration_stmt -> WHILE M . ( expression ) M statement M
 
-    (               shift and go to state 80
+    (               shift and go to state 81
 
 
 state 60
 
-    (35) return_stmt -> RETURN ; .
+    (37) return_stmt -> RETURN ; .
 
-    }               reduce using rule 35 (return_stmt -> RETURN ; .)
-    ;               reduce using rule 35 (return_stmt -> RETURN ; .)
-    {               reduce using rule 35 (return_stmt -> RETURN ; .)
-    IF              reduce using rule 35 (return_stmt -> RETURN ; .)
-    WHILE           reduce using rule 35 (return_stmt -> RETURN ; .)
-    RETURN          reduce using rule 35 (return_stmt -> RETURN ; .)
-    ID              reduce using rule 35 (return_stmt -> RETURN ; .)
-    (               reduce using rule 35 (return_stmt -> RETURN ; .)
-    NUM             reduce using rule 35 (return_stmt -> RETURN ; .)
-    ELSE            reduce using rule 35 (return_stmt -> RETURN ; .)
+    }               reduce using rule 37 (return_stmt -> RETURN ; .)
+    ;               reduce using rule 37 (return_stmt -> RETURN ; .)
+    {               reduce using rule 37 (return_stmt -> RETURN ; .)
+    IF              reduce using rule 37 (return_stmt -> RETURN ; .)
+    WHILE           reduce using rule 37 (return_stmt -> RETURN ; .)
+    RETURN          reduce using rule 37 (return_stmt -> RETURN ; .)
+    ID              reduce using rule 37 (return_stmt -> RETURN ; .)
+    (               reduce using rule 37 (return_stmt -> RETURN ; .)
+    NUM             reduce using rule 37 (return_stmt -> RETURN ; .)
+    ELSE            reduce using rule 37 (return_stmt -> RETURN ; .)
 
 
 state 61
 
-    (36) return_stmt -> RETURN expression . ;
+    (38) return_stmt -> RETURN expression . ;
 
-    ;               shift and go to state 81
+    ;               shift and go to state 82
 
 
 state 62
 
-    (37) expression -> var = . expression
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (39) expression -> var = . expression
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
-    var                            shift and go to state 47
-    expression                     shift and go to state 82
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
+    var                            shift and go to state 44
+    expression                     shift and go to state 83
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
 state 63
 
-    (40) var -> ID [ . expression ]
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (42) var -> ID [ . expression ]
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
-    expression                     shift and go to state 83
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
+    expression                     shift and go to state 84
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
 state 64
 
-    (61) call -> ID ( . args )
-    (62) args -> . arg_list
-    (63) args -> .
-    (64) arg_list -> . arg_list , expression
-    (65) arg_list -> . expression
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (63) call -> ID ( . args )
+    (64) args -> . arg_list
+    (65) args -> .
+    (66) arg_list -> . arg_list , expression
+    (67) arg_list -> . expression
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
-    )               reduce using rule 63 (args -> .)
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    )               reduce using rule 65 (args -> .)
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
-    args                           shift and go to state 84
-    arg_list                       shift and go to state 85
-    expression                     shift and go to state 86
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
+    args                           shift and go to state 85
+    arg_list                       shift and go to state 86
+    expression                     shift and go to state 87
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
 state 65
 
-    (41) simple_expression -> additive_expression relop . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (61) call -> . ID ( args )
+    (43) simple_expression -> additive_expression relop . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (63) call -> . ID ( args )
 
-    (               shift and go to state 44
-    NUM             shift and go to state 54
-    ID              shift and go to state 49
+    (               shift and go to state 41
+    NUM             shift and go to state 51
+    ID              shift and go to state 46
 
-    additive_expression            shift and go to state 87
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    var                            shift and go to state 88
-    call                           shift and go to state 53
+    additive_expression            shift and go to state 88
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    var                            shift and go to state 89
+    call                           shift and go to state 50
 
 state 66
 
-    (49) additive_expression -> additive_expression addop . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (61) call -> . ID ( args )
+    (51) additive_expression -> additive_expression addop . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (63) call -> . ID ( args )
 
-    (               shift and go to state 44
-    NUM             shift and go to state 54
-    ID              shift and go to state 49
+    (               shift and go to state 41
+    NUM             shift and go to state 51
+    ID              shift and go to state 46
 
-    term                           shift and go to state 89
-    factor                         shift and go to state 52
-    var                            shift and go to state 88
-    call                           shift and go to state 53
+    term                           shift and go to state 90
+    factor                         shift and go to state 49
+    var                            shift and go to state 89
+    call                           shift and go to state 50
 
 state 67
 
-    (43) relop -> LE .
+    (45) relop -> LE .
 
-    (               reduce using rule 43 (relop -> LE .)
-    NUM             reduce using rule 43 (relop -> LE .)
-    ID              reduce using rule 43 (relop -> LE .)
+    (               reduce using rule 45 (relop -> LE .)
+    NUM             reduce using rule 45 (relop -> LE .)
+    ID              reduce using rule 45 (relop -> LE .)
 
 
 state 68
 
-    (44) relop -> < .
+    (46) relop -> < .
 
-    (               reduce using rule 44 (relop -> < .)
-    NUM             reduce using rule 44 (relop -> < .)
-    ID              reduce using rule 44 (relop -> < .)
+    (               reduce using rule 46 (relop -> < .)
+    NUM             reduce using rule 46 (relop -> < .)
+    ID              reduce using rule 46 (relop -> < .)
 
 
 state 69
 
-    (45) relop -> > .
+    (47) relop -> > .
 
-    (               reduce using rule 45 (relop -> > .)
-    NUM             reduce using rule 45 (relop -> > .)
-    ID              reduce using rule 45 (relop -> > .)
+    (               reduce using rule 47 (relop -> > .)
+    NUM             reduce using rule 47 (relop -> > .)
+    ID              reduce using rule 47 (relop -> > .)
 
 
 state 70
 
-    (46) relop -> GE .
+    (48) relop -> GE .
 
-    (               reduce using rule 46 (relop -> GE .)
-    NUM             reduce using rule 46 (relop -> GE .)
-    ID              reduce using rule 46 (relop -> GE .)
+    (               reduce using rule 48 (relop -> GE .)
+    NUM             reduce using rule 48 (relop -> GE .)
+    ID              reduce using rule 48 (relop -> GE .)
 
 
 state 71
 
-    (47) relop -> EE .
+    (49) relop -> EE .
 
-    (               reduce using rule 47 (relop -> EE .)
-    NUM             reduce using rule 47 (relop -> EE .)
-    ID              reduce using rule 47 (relop -> EE .)
+    (               reduce using rule 49 (relop -> EE .)
+    NUM             reduce using rule 49 (relop -> EE .)
+    ID              reduce using rule 49 (relop -> EE .)
 
 
 state 72
 
-    (48) relop -> NE .
+    (50) relop -> NE .
 
-    (               reduce using rule 48 (relop -> NE .)
-    NUM             reduce using rule 48 (relop -> NE .)
-    ID              reduce using rule 48 (relop -> NE .)
+    (               reduce using rule 50 (relop -> NE .)
+    NUM             reduce using rule 50 (relop -> NE .)
+    ID              reduce using rule 50 (relop -> NE .)
 
 
 state 73
 
-    (51) addop -> + .
+    (53) addop -> + .
 
-    (               reduce using rule 51 (addop -> + .)
-    NUM             reduce using rule 51 (addop -> + .)
-    ID              reduce using rule 51 (addop -> + .)
+    (               reduce using rule 53 (addop -> + .)
+    NUM             reduce using rule 53 (addop -> + .)
+    ID              reduce using rule 53 (addop -> + .)
 
 
 state 74
 
-    (52) addop -> - .
+    (54) addop -> - .
 
-    (               reduce using rule 52 (addop -> - .)
-    NUM             reduce using rule 52 (addop -> - .)
-    ID              reduce using rule 52 (addop -> - .)
+    (               reduce using rule 54 (addop -> - .)
+    NUM             reduce using rule 54 (addop -> - .)
+    ID              reduce using rule 54 (addop -> - .)
 
 
 state 75
 
-    (53) term -> term mulop . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (61) call -> . ID ( args )
+    (55) term -> term mulop . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (63) call -> . ID ( args )
 
-    (               shift and go to state 44
-    NUM             shift and go to state 54
-    ID              shift and go to state 49
+    (               shift and go to state 41
+    NUM             shift and go to state 51
+    ID              shift and go to state 46
 
-    factor                         shift and go to state 90
-    var                            shift and go to state 88
-    call                           shift and go to state 53
+    factor                         shift and go to state 91
+    var                            shift and go to state 89
+    call                           shift and go to state 50
 
 state 76
 
-    (55) mulop -> * .
+    (57) mulop -> * .
 
-    (               reduce using rule 55 (mulop -> * .)
-    NUM             reduce using rule 55 (mulop -> * .)
-    ID              reduce using rule 55 (mulop -> * .)
+    (               reduce using rule 57 (mulop -> * .)
+    NUM             reduce using rule 57 (mulop -> * .)
+    ID              reduce using rule 57 (mulop -> * .)
 
 
 state 77
 
-    (56) mulop -> / .
+    (58) mulop -> / .
 
-    (               reduce using rule 56 (mulop -> / .)
-    NUM             reduce using rule 56 (mulop -> / .)
-    ID              reduce using rule 56 (mulop -> / .)
+    (               reduce using rule 58 (mulop -> / .)
+    NUM             reduce using rule 58 (mulop -> / .)
+    ID              reduce using rule 58 (mulop -> / .)
 
 
 state 78
 
-    (30) selection_stmt -> IF ( expression . ) M statement N
-    (31) selection_stmt -> IF ( expression . ) M statement N ELSE M statement M
+    (18) param -> type_specifier ID [ ] .
 
-    )               shift and go to state 91
+    ,               reduce using rule 18 (param -> type_specifier ID [ ] .)
+    )               reduce using rule 18 (param -> type_specifier ID [ ] .)
 
 
 state 79
 
-    (57) factor -> ( expression ) .
+    (32) selection_stmt -> IF ( expression . ) M statement N
+    (33) selection_stmt -> IF ( expression . ) M statement N ELSE M statement M
 
-    *               reduce using rule 57 (factor -> ( expression ) .)
-    /               reduce using rule 57 (factor -> ( expression ) .)
-    LE              reduce using rule 57 (factor -> ( expression ) .)
-    <               reduce using rule 57 (factor -> ( expression ) .)
-    >               reduce using rule 57 (factor -> ( expression ) .)
-    GE              reduce using rule 57 (factor -> ( expression ) .)
-    EE              reduce using rule 57 (factor -> ( expression ) .)
-    NE              reduce using rule 57 (factor -> ( expression ) .)
-    +               reduce using rule 57 (factor -> ( expression ) .)
-    -               reduce using rule 57 (factor -> ( expression ) .)
-    ;               reduce using rule 57 (factor -> ( expression ) .)
-    )               reduce using rule 57 (factor -> ( expression ) .)
-    ]               reduce using rule 57 (factor -> ( expression ) .)
-    ,               reduce using rule 57 (factor -> ( expression ) .)
+    )               shift and go to state 92
 
 
 state 80
 
-    (34) iteration_stmt -> WHILE M ( . expression ) M statement M
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (59) factor -> ( expression ) .
 
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    *               reduce using rule 59 (factor -> ( expression ) .)
+    /               reduce using rule 59 (factor -> ( expression ) .)
+    LE              reduce using rule 59 (factor -> ( expression ) .)
+    <               reduce using rule 59 (factor -> ( expression ) .)
+    >               reduce using rule 59 (factor -> ( expression ) .)
+    GE              reduce using rule 59 (factor -> ( expression ) .)
+    EE              reduce using rule 59 (factor -> ( expression ) .)
+    NE              reduce using rule 59 (factor -> ( expression ) .)
+    +               reduce using rule 59 (factor -> ( expression ) .)
+    -               reduce using rule 59 (factor -> ( expression ) .)
+    ;               reduce using rule 59 (factor -> ( expression ) .)
+    )               reduce using rule 59 (factor -> ( expression ) .)
+    ]               reduce using rule 59 (factor -> ( expression ) .)
+    ,               reduce using rule 59 (factor -> ( expression ) .)
 
-    expression                     shift and go to state 92
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
 
 state 81
 
-    (36) return_stmt -> RETURN expression ; .
+    (36) iteration_stmt -> WHILE M ( . expression ) M statement M
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
-    }               reduce using rule 36 (return_stmt -> RETURN expression ; .)
-    ;               reduce using rule 36 (return_stmt -> RETURN expression ; .)
-    {               reduce using rule 36 (return_stmt -> RETURN expression ; .)
-    IF              reduce using rule 36 (return_stmt -> RETURN expression ; .)
-    WHILE           reduce using rule 36 (return_stmt -> RETURN expression ; .)
-    RETURN          reduce using rule 36 (return_stmt -> RETURN expression ; .)
-    ID              reduce using rule 36 (return_stmt -> RETURN expression ; .)
-    (               reduce using rule 36 (return_stmt -> RETURN expression ; .)
-    NUM             reduce using rule 36 (return_stmt -> RETURN expression ; .)
-    ELSE            reduce using rule 36 (return_stmt -> RETURN expression ; .)
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
+    expression                     shift and go to state 93
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
 state 82
 
-    (37) expression -> var = expression .
+    (38) return_stmt -> RETURN expression ; .
 
-    ;               reduce using rule 37 (expression -> var = expression .)
-    )               reduce using rule 37 (expression -> var = expression .)
-    ]               reduce using rule 37 (expression -> var = expression .)
-    ,               reduce using rule 37 (expression -> var = expression .)
+    }               reduce using rule 38 (return_stmt -> RETURN expression ; .)
+    ;               reduce using rule 38 (return_stmt -> RETURN expression ; .)
+    {               reduce using rule 38 (return_stmt -> RETURN expression ; .)
+    IF              reduce using rule 38 (return_stmt -> RETURN expression ; .)
+    WHILE           reduce using rule 38 (return_stmt -> RETURN expression ; .)
+    RETURN          reduce using rule 38 (return_stmt -> RETURN expression ; .)
+    ID              reduce using rule 38 (return_stmt -> RETURN expression ; .)
+    (               reduce using rule 38 (return_stmt -> RETURN expression ; .)
+    NUM             reduce using rule 38 (return_stmt -> RETURN expression ; .)
+    ELSE            reduce using rule 38 (return_stmt -> RETURN expression ; .)
 
 
 state 83
 
-    (40) var -> ID [ expression . ]
+    (39) expression -> var = expression .
 
-    ]               shift and go to state 93
+    ;               reduce using rule 39 (expression -> var = expression .)
+    )               reduce using rule 39 (expression -> var = expression .)
+    ]               reduce using rule 39 (expression -> var = expression .)
+    ,               reduce using rule 39 (expression -> var = expression .)
 
 
 state 84
 
-    (61) call -> ID ( args . )
+    (42) var -> ID [ expression . ]
 
-    )               shift and go to state 94
+    ]               shift and go to state 94
 
 
 state 85
 
-    (62) args -> arg_list .
-    (64) arg_list -> arg_list . , expression
+    (63) call -> ID ( args . )
 
-    )               reduce using rule 62 (args -> arg_list .)
-    ,               shift and go to state 95
+    )               shift and go to state 95
 
 
 state 86
 
-    (65) arg_list -> expression .
+    (64) args -> arg_list .
+    (66) arg_list -> arg_list . , expression
 
-    ,               reduce using rule 65 (arg_list -> expression .)
-    )               reduce using rule 65 (arg_list -> expression .)
+    )               reduce using rule 64 (args -> arg_list .)
+    ,               shift and go to state 96
 
 
 state 87
 
-    (41) simple_expression -> additive_expression relop additive_expression .
-    (49) additive_expression -> additive_expression . addop term
-    (51) addop -> . +
-    (52) addop -> . -
+    (67) arg_list -> expression .
 
-    ;               reduce using rule 41 (simple_expression -> additive_expression relop additive_expression .)
-    )               reduce using rule 41 (simple_expression -> additive_expression relop additive_expression .)
-    ]               reduce using rule 41 (simple_expression -> additive_expression relop additive_expression .)
-    ,               reduce using rule 41 (simple_expression -> additive_expression relop additive_expression .)
+    ,               reduce using rule 67 (arg_list -> expression .)
+    )               reduce using rule 67 (arg_list -> expression .)
+
+
+state 88
+
+    (43) simple_expression -> additive_expression relop additive_expression .
+    (51) additive_expression -> additive_expression . addop term
+    (53) addop -> . +
+    (54) addop -> . -
+
+    ;               reduce using rule 43 (simple_expression -> additive_expression relop additive_expression .)
+    )               reduce using rule 43 (simple_expression -> additive_expression relop additive_expression .)
+    ]               reduce using rule 43 (simple_expression -> additive_expression relop additive_expression .)
+    ,               reduce using rule 43 (simple_expression -> additive_expression relop additive_expression .)
     +               shift and go to state 73
     -               shift and go to state 74
 
     addop                          shift and go to state 66
 
-state 88
-
-    (58) factor -> var .
-
-    *               reduce using rule 58 (factor -> var .)
-    /               reduce using rule 58 (factor -> var .)
-    +               reduce using rule 58 (factor -> var .)
-    -               reduce using rule 58 (factor -> var .)
-    ;               reduce using rule 58 (factor -> var .)
-    )               reduce using rule 58 (factor -> var .)
-    ]               reduce using rule 58 (factor -> var .)
-    ,               reduce using rule 58 (factor -> var .)
-    LE              reduce using rule 58 (factor -> var .)
-    <               reduce using rule 58 (factor -> var .)
-    >               reduce using rule 58 (factor -> var .)
-    GE              reduce using rule 58 (factor -> var .)
-    EE              reduce using rule 58 (factor -> var .)
-    NE              reduce using rule 58 (factor -> var .)
-
-
 state 89
 
-    (49) additive_expression -> additive_expression addop term .
-    (53) term -> term . mulop factor
-    (55) mulop -> . *
-    (56) mulop -> . /
+    (60) factor -> var .
 
-    LE              reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    <               reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    >               reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    GE              reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    EE              reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    NE              reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    +               reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    -               reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    ;               reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    )               reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    ]               reduce using rule 49 (additive_expression -> additive_expression addop term .)
-    ,               reduce using rule 49 (additive_expression -> additive_expression addop term .)
+    *               reduce using rule 60 (factor -> var .)
+    /               reduce using rule 60 (factor -> var .)
+    +               reduce using rule 60 (factor -> var .)
+    -               reduce using rule 60 (factor -> var .)
+    ;               reduce using rule 60 (factor -> var .)
+    )               reduce using rule 60 (factor -> var .)
+    ]               reduce using rule 60 (factor -> var .)
+    ,               reduce using rule 60 (factor -> var .)
+    LE              reduce using rule 60 (factor -> var .)
+    <               reduce using rule 60 (factor -> var .)
+    >               reduce using rule 60 (factor -> var .)
+    GE              reduce using rule 60 (factor -> var .)
+    EE              reduce using rule 60 (factor -> var .)
+    NE              reduce using rule 60 (factor -> var .)
+
+
+state 90
+
+    (51) additive_expression -> additive_expression addop term .
+    (55) term -> term . mulop factor
+    (57) mulop -> . *
+    (58) mulop -> . /
+
+    LE              reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    <               reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    >               reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    GE              reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    EE              reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    NE              reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    +               reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    -               reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    ;               reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    )               reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    ]               reduce using rule 51 (additive_expression -> additive_expression addop term .)
+    ,               reduce using rule 51 (additive_expression -> additive_expression addop term .)
     *               shift and go to state 76
     /               shift and go to state 77
 
     mulop                          shift and go to state 75
 
-state 90
-
-    (53) term -> term mulop factor .
-
-    *               reduce using rule 53 (term -> term mulop factor .)
-    /               reduce using rule 53 (term -> term mulop factor .)
-    LE              reduce using rule 53 (term -> term mulop factor .)
-    <               reduce using rule 53 (term -> term mulop factor .)
-    >               reduce using rule 53 (term -> term mulop factor .)
-    GE              reduce using rule 53 (term -> term mulop factor .)
-    EE              reduce using rule 53 (term -> term mulop factor .)
-    NE              reduce using rule 53 (term -> term mulop factor .)
-    +               reduce using rule 53 (term -> term mulop factor .)
-    -               reduce using rule 53 (term -> term mulop factor .)
-    ;               reduce using rule 53 (term -> term mulop factor .)
-    )               reduce using rule 53 (term -> term mulop factor .)
-    ]               reduce using rule 53 (term -> term mulop factor .)
-    ,               reduce using rule 53 (term -> term mulop factor .)
-
-
 state 91
 
-    (30) selection_stmt -> IF ( expression ) . M statement N
-    (31) selection_stmt -> IF ( expression ) . M statement N ELSE M statement M
-    (32) M -> .
+    (55) term -> term mulop factor .
 
-    ;               reduce using rule 32 (M -> .)
-    {               reduce using rule 32 (M -> .)
-    IF              reduce using rule 32 (M -> .)
-    WHILE           reduce using rule 32 (M -> .)
-    RETURN          reduce using rule 32 (M -> .)
-    ID              reduce using rule 32 (M -> .)
-    (               reduce using rule 32 (M -> .)
-    NUM             reduce using rule 32 (M -> .)
+    *               reduce using rule 55 (term -> term mulop factor .)
+    /               reduce using rule 55 (term -> term mulop factor .)
+    LE              reduce using rule 55 (term -> term mulop factor .)
+    <               reduce using rule 55 (term -> term mulop factor .)
+    >               reduce using rule 55 (term -> term mulop factor .)
+    GE              reduce using rule 55 (term -> term mulop factor .)
+    EE              reduce using rule 55 (term -> term mulop factor .)
+    NE              reduce using rule 55 (term -> term mulop factor .)
+    +               reduce using rule 55 (term -> term mulop factor .)
+    -               reduce using rule 55 (term -> term mulop factor .)
+    ;               reduce using rule 55 (term -> term mulop factor .)
+    )               reduce using rule 55 (term -> term mulop factor .)
+    ]               reduce using rule 55 (term -> term mulop factor .)
+    ,               reduce using rule 55 (term -> term mulop factor .)
 
-    M                              shift and go to state 96
 
 state 92
 
-    (34) iteration_stmt -> WHILE M ( expression . ) M statement M
+    (32) selection_stmt -> IF ( expression ) . M statement N
+    (33) selection_stmt -> IF ( expression ) . M statement N ELSE M statement M
+    (34) M -> .
 
-    )               shift and go to state 97
+    ;               reduce using rule 34 (M -> .)
+    {               reduce using rule 34 (M -> .)
+    IF              reduce using rule 34 (M -> .)
+    WHILE           reduce using rule 34 (M -> .)
+    RETURN          reduce using rule 34 (M -> .)
+    ID              reduce using rule 34 (M -> .)
+    (               reduce using rule 34 (M -> .)
+    NUM             reduce using rule 34 (M -> .)
 
+    M                              shift and go to state 97
 
 state 93
 
-    (40) var -> ID [ expression ] .
+    (36) iteration_stmt -> WHILE M ( expression . ) M statement M
 
-    =               reduce using rule 40 (var -> ID [ expression ] .)
-    *               reduce using rule 40 (var -> ID [ expression ] .)
-    /               reduce using rule 40 (var -> ID [ expression ] .)
-    LE              reduce using rule 40 (var -> ID [ expression ] .)
-    <               reduce using rule 40 (var -> ID [ expression ] .)
-    >               reduce using rule 40 (var -> ID [ expression ] .)
-    GE              reduce using rule 40 (var -> ID [ expression ] .)
-    EE              reduce using rule 40 (var -> ID [ expression ] .)
-    NE              reduce using rule 40 (var -> ID [ expression ] .)
-    +               reduce using rule 40 (var -> ID [ expression ] .)
-    -               reduce using rule 40 (var -> ID [ expression ] .)
-    ;               reduce using rule 40 (var -> ID [ expression ] .)
-    )               reduce using rule 40 (var -> ID [ expression ] .)
-    ]               reduce using rule 40 (var -> ID [ expression ] .)
-    ,               reduce using rule 40 (var -> ID [ expression ] .)
+    )               shift and go to state 98
 
 
 state 94
 
-    (61) call -> ID ( args ) .
+    (42) var -> ID [ expression ] .
 
-    *               reduce using rule 61 (call -> ID ( args ) .)
-    /               reduce using rule 61 (call -> ID ( args ) .)
-    LE              reduce using rule 61 (call -> ID ( args ) .)
-    <               reduce using rule 61 (call -> ID ( args ) .)
-    >               reduce using rule 61 (call -> ID ( args ) .)
-    GE              reduce using rule 61 (call -> ID ( args ) .)
-    EE              reduce using rule 61 (call -> ID ( args ) .)
-    NE              reduce using rule 61 (call -> ID ( args ) .)
-    +               reduce using rule 61 (call -> ID ( args ) .)
-    -               reduce using rule 61 (call -> ID ( args ) .)
-    ;               reduce using rule 61 (call -> ID ( args ) .)
-    )               reduce using rule 61 (call -> ID ( args ) .)
-    ]               reduce using rule 61 (call -> ID ( args ) .)
-    ,               reduce using rule 61 (call -> ID ( args ) .)
+    =               reduce using rule 42 (var -> ID [ expression ] .)
+    *               reduce using rule 42 (var -> ID [ expression ] .)
+    /               reduce using rule 42 (var -> ID [ expression ] .)
+    LE              reduce using rule 42 (var -> ID [ expression ] .)
+    <               reduce using rule 42 (var -> ID [ expression ] .)
+    >               reduce using rule 42 (var -> ID [ expression ] .)
+    GE              reduce using rule 42 (var -> ID [ expression ] .)
+    EE              reduce using rule 42 (var -> ID [ expression ] .)
+    NE              reduce using rule 42 (var -> ID [ expression ] .)
+    +               reduce using rule 42 (var -> ID [ expression ] .)
+    -               reduce using rule 42 (var -> ID [ expression ] .)
+    ;               reduce using rule 42 (var -> ID [ expression ] .)
+    )               reduce using rule 42 (var -> ID [ expression ] .)
+    ]               reduce using rule 42 (var -> ID [ expression ] .)
+    ,               reduce using rule 42 (var -> ID [ expression ] .)
 
 
 state 95
 
-    (64) arg_list -> arg_list , . expression
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (63) call -> ID ( args ) .
 
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    *               reduce using rule 63 (call -> ID ( args ) .)
+    /               reduce using rule 63 (call -> ID ( args ) .)
+    LE              reduce using rule 63 (call -> ID ( args ) .)
+    <               reduce using rule 63 (call -> ID ( args ) .)
+    >               reduce using rule 63 (call -> ID ( args ) .)
+    GE              reduce using rule 63 (call -> ID ( args ) .)
+    EE              reduce using rule 63 (call -> ID ( args ) .)
+    NE              reduce using rule 63 (call -> ID ( args ) .)
+    +               reduce using rule 63 (call -> ID ( args ) .)
+    -               reduce using rule 63 (call -> ID ( args ) .)
+    ;               reduce using rule 63 (call -> ID ( args ) .)
+    )               reduce using rule 63 (call -> ID ( args ) .)
+    ]               reduce using rule 63 (call -> ID ( args ) .)
+    ,               reduce using rule 63 (call -> ID ( args ) .)
 
-    expression                     shift and go to state 98
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
 
 state 96
 
-    (30) selection_stmt -> IF ( expression ) M . statement N
-    (31) selection_stmt -> IF ( expression ) M . statement N ELSE M statement M
-    (23) statement -> . expression_stmt
-    (24) statement -> . compound_stmt
-    (25) statement -> . selection_stmt
-    (26) statement -> . iteration_stmt
-    (27) statement -> . return_stmt
-    (28) expression_stmt -> . expression ;
-    (29) expression_stmt -> . ;
-    (18) compound_stmt -> . { local_declarations statement_list }
-    (30) selection_stmt -> . IF ( expression ) M statement N
-    (31) selection_stmt -> . IF ( expression ) M statement N ELSE M statement M
-    (34) iteration_stmt -> . WHILE M ( expression ) M statement M
-    (35) return_stmt -> . RETURN ;
-    (36) return_stmt -> . RETURN expression ;
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (66) arg_list -> arg_list , . expression
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
-    ;               shift and go to state 42
-    {               shift and go to state 27
-    IF              shift and go to state 43
-    WHILE           shift and go to state 45
-    RETURN          shift and go to state 46
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
-    expression                     shift and go to state 41
-    statement                      shift and go to state 99
-    expression_stmt                shift and go to state 36
-    compound_stmt                  shift and go to state 37
-    selection_stmt                 shift and go to state 38
-    iteration_stmt                 shift and go to state 39
-    return_stmt                    shift and go to state 40
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
+    expression                     shift and go to state 99
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
 state 97
 
-    (34) iteration_stmt -> WHILE M ( expression ) . M statement M
-    (32) M -> .
+    (32) selection_stmt -> IF ( expression ) M . statement N
+    (33) selection_stmt -> IF ( expression ) M . statement N ELSE M statement M
+    (25) statement -> . expression_stmt
+    (26) statement -> . compound_stmt
+    (27) statement -> . selection_stmt
+    (28) statement -> . iteration_stmt
+    (29) statement -> . return_stmt
+    (30) expression_stmt -> . expression ;
+    (31) expression_stmt -> . ;
+    (19) compound_stmt -> . { E1 local_declarations statement_list }
+    (32) selection_stmt -> . IF ( expression ) M statement N
+    (33) selection_stmt -> . IF ( expression ) M statement N ELSE M statement M
+    (36) iteration_stmt -> . WHILE M ( expression ) M statement M
+    (37) return_stmt -> . RETURN ;
+    (38) return_stmt -> . RETURN expression ;
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
-    ;               reduce using rule 32 (M -> .)
-    {               reduce using rule 32 (M -> .)
-    IF              reduce using rule 32 (M -> .)
-    WHILE           reduce using rule 32 (M -> .)
-    RETURN          reduce using rule 32 (M -> .)
-    ID              reduce using rule 32 (M -> .)
-    (               reduce using rule 32 (M -> .)
-    NUM             reduce using rule 32 (M -> .)
+    ;               shift and go to state 39
+    {               shift and go to state 10
+    IF              shift and go to state 40
+    WHILE           shift and go to state 42
+    RETURN          shift and go to state 43
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
-    M                              shift and go to state 100
+    expression                     shift and go to state 38
+    statement                      shift and go to state 100
+    expression_stmt                shift and go to state 33
+    compound_stmt                  shift and go to state 34
+    selection_stmt                 shift and go to state 35
+    iteration_stmt                 shift and go to state 36
+    return_stmt                    shift and go to state 37
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
 state 98
 
-    (64) arg_list -> arg_list , expression .
+    (36) iteration_stmt -> WHILE M ( expression ) . M statement M
+    (34) M -> .
 
-    ,               reduce using rule 64 (arg_list -> arg_list , expression .)
-    )               reduce using rule 64 (arg_list -> arg_list , expression .)
+    ;               reduce using rule 34 (M -> .)
+    {               reduce using rule 34 (M -> .)
+    IF              reduce using rule 34 (M -> .)
+    WHILE           reduce using rule 34 (M -> .)
+    RETURN          reduce using rule 34 (M -> .)
+    ID              reduce using rule 34 (M -> .)
+    (               reduce using rule 34 (M -> .)
+    NUM             reduce using rule 34 (M -> .)
 
+    M                              shift and go to state 101
 
 state 99
 
-    (30) selection_stmt -> IF ( expression ) M statement . N
-    (31) selection_stmt -> IF ( expression ) M statement . N ELSE M statement M
-    (33) N -> .
+    (66) arg_list -> arg_list , expression .
 
-    ELSE            reduce using rule 33 (N -> .)
-    }               reduce using rule 33 (N -> .)
-    ;               reduce using rule 33 (N -> .)
-    {               reduce using rule 33 (N -> .)
-    IF              reduce using rule 33 (N -> .)
-    WHILE           reduce using rule 33 (N -> .)
-    RETURN          reduce using rule 33 (N -> .)
-    ID              reduce using rule 33 (N -> .)
-    (               reduce using rule 33 (N -> .)
-    NUM             reduce using rule 33 (N -> .)
+    ,               reduce using rule 66 (arg_list -> arg_list , expression .)
+    )               reduce using rule 66 (arg_list -> arg_list , expression .)
 
-    N                              shift and go to state 101
 
 state 100
 
-    (34) iteration_stmt -> WHILE M ( expression ) M . statement M
-    (23) statement -> . expression_stmt
-    (24) statement -> . compound_stmt
-    (25) statement -> . selection_stmt
-    (26) statement -> . iteration_stmt
-    (27) statement -> . return_stmt
-    (28) expression_stmt -> . expression ;
-    (29) expression_stmt -> . ;
-    (18) compound_stmt -> . { local_declarations statement_list }
-    (30) selection_stmt -> . IF ( expression ) M statement N
-    (31) selection_stmt -> . IF ( expression ) M statement N ELSE M statement M
-    (34) iteration_stmt -> . WHILE M ( expression ) M statement M
-    (35) return_stmt -> . RETURN ;
-    (36) return_stmt -> . RETURN expression ;
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (32) selection_stmt -> IF ( expression ) M statement . N
+    (33) selection_stmt -> IF ( expression ) M statement . N ELSE M statement M
+    (35) N -> .
 
-    ;               shift and go to state 42
-    {               shift and go to state 27
-    IF              shift and go to state 43
-    WHILE           shift and go to state 45
-    RETURN          shift and go to state 46
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    ELSE            reduce using rule 35 (N -> .)
+    }               reduce using rule 35 (N -> .)
+    ;               reduce using rule 35 (N -> .)
+    {               reduce using rule 35 (N -> .)
+    IF              reduce using rule 35 (N -> .)
+    WHILE           reduce using rule 35 (N -> .)
+    RETURN          reduce using rule 35 (N -> .)
+    ID              reduce using rule 35 (N -> .)
+    (               reduce using rule 35 (N -> .)
+    NUM             reduce using rule 35 (N -> .)
 
-    expression                     shift and go to state 41
-    statement                      shift and go to state 102
-    expression_stmt                shift and go to state 36
-    compound_stmt                  shift and go to state 37
-    selection_stmt                 shift and go to state 38
-    iteration_stmt                 shift and go to state 39
-    return_stmt                    shift and go to state 40
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
+    N                              shift and go to state 102
 
 state 101
 
-    (30) selection_stmt -> IF ( expression ) M statement N .
-    (31) selection_stmt -> IF ( expression ) M statement N . ELSE M statement M
+    (36) iteration_stmt -> WHILE M ( expression ) M . statement M
+    (25) statement -> . expression_stmt
+    (26) statement -> . compound_stmt
+    (27) statement -> . selection_stmt
+    (28) statement -> . iteration_stmt
+    (29) statement -> . return_stmt
+    (30) expression_stmt -> . expression ;
+    (31) expression_stmt -> . ;
+    (19) compound_stmt -> . { E1 local_declarations statement_list }
+    (32) selection_stmt -> . IF ( expression ) M statement N
+    (33) selection_stmt -> . IF ( expression ) M statement N ELSE M statement M
+    (36) iteration_stmt -> . WHILE M ( expression ) M statement M
+    (37) return_stmt -> . RETURN ;
+    (38) return_stmt -> . RETURN expression ;
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
-  ! shift/reduce conflict for ELSE resolved as shift
-    }               reduce using rule 30 (selection_stmt -> IF ( expression ) M statement N .)
-    ;               reduce using rule 30 (selection_stmt -> IF ( expression ) M statement N .)
-    {               reduce using rule 30 (selection_stmt -> IF ( expression ) M statement N .)
-    IF              reduce using rule 30 (selection_stmt -> IF ( expression ) M statement N .)
-    WHILE           reduce using rule 30 (selection_stmt -> IF ( expression ) M statement N .)
-    RETURN          reduce using rule 30 (selection_stmt -> IF ( expression ) M statement N .)
-    ID              reduce using rule 30 (selection_stmt -> IF ( expression ) M statement N .)
-    (               reduce using rule 30 (selection_stmt -> IF ( expression ) M statement N .)
-    NUM             reduce using rule 30 (selection_stmt -> IF ( expression ) M statement N .)
-    ELSE            shift and go to state 103
+    ;               shift and go to state 39
+    {               shift and go to state 10
+    IF              shift and go to state 40
+    WHILE           shift and go to state 42
+    RETURN          shift and go to state 43
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
-  ! ELSE            [ reduce using rule 30 (selection_stmt -> IF ( expression ) M statement N .) ]
-
+    expression                     shift and go to state 38
+    statement                      shift and go to state 103
+    expression_stmt                shift and go to state 33
+    compound_stmt                  shift and go to state 34
+    selection_stmt                 shift and go to state 35
+    iteration_stmt                 shift and go to state 36
+    return_stmt                    shift and go to state 37
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
 state 102
 
-    (34) iteration_stmt -> WHILE M ( expression ) M statement . M
-    (32) M -> .
+    (32) selection_stmt -> IF ( expression ) M statement N .
+    (33) selection_stmt -> IF ( expression ) M statement N . ELSE M statement M
 
-    }               reduce using rule 32 (M -> .)
-    ;               reduce using rule 32 (M -> .)
-    {               reduce using rule 32 (M -> .)
-    IF              reduce using rule 32 (M -> .)
-    WHILE           reduce using rule 32 (M -> .)
-    RETURN          reduce using rule 32 (M -> .)
-    ID              reduce using rule 32 (M -> .)
-    (               reduce using rule 32 (M -> .)
-    NUM             reduce using rule 32 (M -> .)
-    ELSE            reduce using rule 32 (M -> .)
+  ! shift/reduce conflict for ELSE resolved as shift
+    }               reduce using rule 32 (selection_stmt -> IF ( expression ) M statement N .)
+    ;               reduce using rule 32 (selection_stmt -> IF ( expression ) M statement N .)
+    {               reduce using rule 32 (selection_stmt -> IF ( expression ) M statement N .)
+    IF              reduce using rule 32 (selection_stmt -> IF ( expression ) M statement N .)
+    WHILE           reduce using rule 32 (selection_stmt -> IF ( expression ) M statement N .)
+    RETURN          reduce using rule 32 (selection_stmt -> IF ( expression ) M statement N .)
+    ID              reduce using rule 32 (selection_stmt -> IF ( expression ) M statement N .)
+    (               reduce using rule 32 (selection_stmt -> IF ( expression ) M statement N .)
+    NUM             reduce using rule 32 (selection_stmt -> IF ( expression ) M statement N .)
+    ELSE            shift and go to state 104
 
-    M                              shift and go to state 104
+  ! ELSE            [ reduce using rule 32 (selection_stmt -> IF ( expression ) M statement N .) ]
+
 
 state 103
 
-    (31) selection_stmt -> IF ( expression ) M statement N ELSE . M statement M
-    (32) M -> .
+    (36) iteration_stmt -> WHILE M ( expression ) M statement . M
+    (34) M -> .
 
-    ;               reduce using rule 32 (M -> .)
-    {               reduce using rule 32 (M -> .)
-    IF              reduce using rule 32 (M -> .)
-    WHILE           reduce using rule 32 (M -> .)
-    RETURN          reduce using rule 32 (M -> .)
-    ID              reduce using rule 32 (M -> .)
-    (               reduce using rule 32 (M -> .)
-    NUM             reduce using rule 32 (M -> .)
+    }               reduce using rule 34 (M -> .)
+    ;               reduce using rule 34 (M -> .)
+    {               reduce using rule 34 (M -> .)
+    IF              reduce using rule 34 (M -> .)
+    WHILE           reduce using rule 34 (M -> .)
+    RETURN          reduce using rule 34 (M -> .)
+    ID              reduce using rule 34 (M -> .)
+    (               reduce using rule 34 (M -> .)
+    NUM             reduce using rule 34 (M -> .)
+    ELSE            reduce using rule 34 (M -> .)
 
     M                              shift and go to state 105
 
 state 104
 
-    (34) iteration_stmt -> WHILE M ( expression ) M statement M .
+    (33) selection_stmt -> IF ( expression ) M statement N ELSE . M statement M
+    (34) M -> .
 
-    }               reduce using rule 34 (iteration_stmt -> WHILE M ( expression ) M statement M .)
-    ;               reduce using rule 34 (iteration_stmt -> WHILE M ( expression ) M statement M .)
-    {               reduce using rule 34 (iteration_stmt -> WHILE M ( expression ) M statement M .)
-    IF              reduce using rule 34 (iteration_stmt -> WHILE M ( expression ) M statement M .)
-    WHILE           reduce using rule 34 (iteration_stmt -> WHILE M ( expression ) M statement M .)
-    RETURN          reduce using rule 34 (iteration_stmt -> WHILE M ( expression ) M statement M .)
-    ID              reduce using rule 34 (iteration_stmt -> WHILE M ( expression ) M statement M .)
-    (               reduce using rule 34 (iteration_stmt -> WHILE M ( expression ) M statement M .)
-    NUM             reduce using rule 34 (iteration_stmt -> WHILE M ( expression ) M statement M .)
-    ELSE            reduce using rule 34 (iteration_stmt -> WHILE M ( expression ) M statement M .)
+    ;               reduce using rule 34 (M -> .)
+    {               reduce using rule 34 (M -> .)
+    IF              reduce using rule 34 (M -> .)
+    WHILE           reduce using rule 34 (M -> .)
+    RETURN          reduce using rule 34 (M -> .)
+    ID              reduce using rule 34 (M -> .)
+    (               reduce using rule 34 (M -> .)
+    NUM             reduce using rule 34 (M -> .)
 
+    M                              shift and go to state 106
 
 state 105
 
-    (31) selection_stmt -> IF ( expression ) M statement N ELSE M . statement M
-    (23) statement -> . expression_stmt
-    (24) statement -> . compound_stmt
-    (25) statement -> . selection_stmt
-    (26) statement -> . iteration_stmt
-    (27) statement -> . return_stmt
-    (28) expression_stmt -> . expression ;
-    (29) expression_stmt -> . ;
-    (18) compound_stmt -> . { local_declarations statement_list }
-    (30) selection_stmt -> . IF ( expression ) M statement N
-    (31) selection_stmt -> . IF ( expression ) M statement N ELSE M statement M
-    (34) iteration_stmt -> . WHILE M ( expression ) M statement M
-    (35) return_stmt -> . RETURN ;
-    (36) return_stmt -> . RETURN expression ;
-    (37) expression -> . var = expression
-    (38) expression -> . simple_expression
-    (39) var -> . ID
-    (40) var -> . ID [ expression ]
-    (41) simple_expression -> . additive_expression relop additive_expression
-    (42) simple_expression -> . additive_expression
-    (49) additive_expression -> . additive_expression addop term
-    (50) additive_expression -> . term
-    (53) term -> . term mulop factor
-    (54) term -> . factor
-    (57) factor -> . ( expression )
-    (58) factor -> . var
-    (59) factor -> . call
-    (60) factor -> . NUM
-    (61) call -> . ID ( args )
+    (36) iteration_stmt -> WHILE M ( expression ) M statement M .
 
-    ;               shift and go to state 42
-    {               shift and go to state 27
-    IF              shift and go to state 43
-    WHILE           shift and go to state 45
-    RETURN          shift and go to state 46
-    ID              shift and go to state 49
-    (               shift and go to state 44
-    NUM             shift and go to state 54
+    }               reduce using rule 36 (iteration_stmt -> WHILE M ( expression ) M statement M .)
+    ;               reduce using rule 36 (iteration_stmt -> WHILE M ( expression ) M statement M .)
+    {               reduce using rule 36 (iteration_stmt -> WHILE M ( expression ) M statement M .)
+    IF              reduce using rule 36 (iteration_stmt -> WHILE M ( expression ) M statement M .)
+    WHILE           reduce using rule 36 (iteration_stmt -> WHILE M ( expression ) M statement M .)
+    RETURN          reduce using rule 36 (iteration_stmt -> WHILE M ( expression ) M statement M .)
+    ID              reduce using rule 36 (iteration_stmt -> WHILE M ( expression ) M statement M .)
+    (               reduce using rule 36 (iteration_stmt -> WHILE M ( expression ) M statement M .)
+    NUM             reduce using rule 36 (iteration_stmt -> WHILE M ( expression ) M statement M .)
+    ELSE            reduce using rule 36 (iteration_stmt -> WHILE M ( expression ) M statement M .)
 
-    expression                     shift and go to state 41
-    statement                      shift and go to state 106
-    expression_stmt                shift and go to state 36
-    compound_stmt                  shift and go to state 37
-    selection_stmt                 shift and go to state 38
-    iteration_stmt                 shift and go to state 39
-    return_stmt                    shift and go to state 40
-    var                            shift and go to state 47
-    simple_expression              shift and go to state 48
-    additive_expression            shift and go to state 50
-    term                           shift and go to state 51
-    factor                         shift and go to state 52
-    call                           shift and go to state 53
 
 state 106
 
-    (31) selection_stmt -> IF ( expression ) M statement N ELSE M statement . M
-    (32) M -> .
+    (33) selection_stmt -> IF ( expression ) M statement N ELSE M . statement M
+    (25) statement -> . expression_stmt
+    (26) statement -> . compound_stmt
+    (27) statement -> . selection_stmt
+    (28) statement -> . iteration_stmt
+    (29) statement -> . return_stmt
+    (30) expression_stmt -> . expression ;
+    (31) expression_stmt -> . ;
+    (19) compound_stmt -> . { E1 local_declarations statement_list }
+    (32) selection_stmt -> . IF ( expression ) M statement N
+    (33) selection_stmt -> . IF ( expression ) M statement N ELSE M statement M
+    (36) iteration_stmt -> . WHILE M ( expression ) M statement M
+    (37) return_stmt -> . RETURN ;
+    (38) return_stmt -> . RETURN expression ;
+    (39) expression -> . var = expression
+    (40) expression -> . simple_expression
+    (41) var -> . ID
+    (42) var -> . ID [ expression ]
+    (43) simple_expression -> . additive_expression relop additive_expression
+    (44) simple_expression -> . additive_expression
+    (51) additive_expression -> . additive_expression addop term
+    (52) additive_expression -> . term
+    (55) term -> . term mulop factor
+    (56) term -> . factor
+    (59) factor -> . ( expression )
+    (60) factor -> . var
+    (61) factor -> . call
+    (62) factor -> . NUM
+    (63) call -> . ID ( args )
 
-    }               reduce using rule 32 (M -> .)
-    ;               reduce using rule 32 (M -> .)
-    {               reduce using rule 32 (M -> .)
-    IF              reduce using rule 32 (M -> .)
-    WHILE           reduce using rule 32 (M -> .)
-    RETURN          reduce using rule 32 (M -> .)
-    ID              reduce using rule 32 (M -> .)
-    (               reduce using rule 32 (M -> .)
-    NUM             reduce using rule 32 (M -> .)
-    ELSE            reduce using rule 32 (M -> .)
+    ;               shift and go to state 39
+    {               shift and go to state 10
+    IF              shift and go to state 40
+    WHILE           shift and go to state 42
+    RETURN          shift and go to state 43
+    ID              shift and go to state 46
+    (               shift and go to state 41
+    NUM             shift and go to state 51
 
-    M                              shift and go to state 107
+    expression                     shift and go to state 38
+    statement                      shift and go to state 107
+    expression_stmt                shift and go to state 33
+    compound_stmt                  shift and go to state 34
+    selection_stmt                 shift and go to state 35
+    iteration_stmt                 shift and go to state 36
+    return_stmt                    shift and go to state 37
+    var                            shift and go to state 44
+    simple_expression              shift and go to state 45
+    additive_expression            shift and go to state 47
+    term                           shift and go to state 48
+    factor                         shift and go to state 49
+    call                           shift and go to state 50
 
 state 107
 
-    (31) selection_stmt -> IF ( expression ) M statement N ELSE M statement M .
+    (33) selection_stmt -> IF ( expression ) M statement N ELSE M statement . M
+    (34) M -> .
 
-    }               reduce using rule 31 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
-    ;               reduce using rule 31 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
-    {               reduce using rule 31 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
-    IF              reduce using rule 31 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
-    WHILE           reduce using rule 31 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
-    RETURN          reduce using rule 31 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
-    ID              reduce using rule 31 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
-    (               reduce using rule 31 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
-    NUM             reduce using rule 31 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
-    ELSE            reduce using rule 31 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
+    }               reduce using rule 34 (M -> .)
+    ;               reduce using rule 34 (M -> .)
+    {               reduce using rule 34 (M -> .)
+    IF              reduce using rule 34 (M -> .)
+    WHILE           reduce using rule 34 (M -> .)
+    RETURN          reduce using rule 34 (M -> .)
+    ID              reduce using rule 34 (M -> .)
+    (               reduce using rule 34 (M -> .)
+    NUM             reduce using rule 34 (M -> .)
+    ELSE            reduce using rule 34 (M -> .)
+
+    M                              shift and go to state 108
+
+state 108
+
+    (33) selection_stmt -> IF ( expression ) M statement N ELSE M statement M .
+
+    }               reduce using rule 33 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
+    ;               reduce using rule 33 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
+    {               reduce using rule 33 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
+    IF              reduce using rule 33 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
+    WHILE           reduce using rule 33 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
+    RETURN          reduce using rule 33 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
+    ID              reduce using rule 33 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
+    (               reduce using rule 33 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
+    NUM             reduce using rule 33 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
+    ELSE            reduce using rule 33 (selection_stmt -> IF ( expression ) M statement N ELSE M statement M .)
 
 WARNING: 
 WARNING: Conflicts:
 WARNING: 
-WARNING: shift/reduce conflict for ELSE in state 101 resolved as shift
+WARNING: shift/reduce conflict for ELSE in state 102 resolved as shift

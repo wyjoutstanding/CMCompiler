@@ -3,15 +3,24 @@
 */
 int x;
 int a;
-
-int fun(int b,int c) {
+int array[8];
+int x;
+int fun(int b,int c, int m[]) {
+    int a;
+    int a; // 同一作用域中重定义
     while(a<1) {
+        int aa;int dd;
         if (a < 2) x = 1; // 无else的分支；注释1
-        x= 2;
+        x = 2;
+        j = 2;
+        aa = 1; // 作用域检查
+        b = 1; // 作用域检查
     /*    if (a < 1) x = 1;
         else x = 2;*/
         if (v == 0) { // 嵌套的条件分支测试
+            int cc;
             if (x < 2) {
+                int cc; // 作用域测试，变量声明只能写在’{‘最开始
                 x =2;
             }
             else {
@@ -30,9 +39,15 @@ int fun(int b,int c) {
     return a+1;
 }
 void funvoid(void) {
-
+    int x1;
+    int x2[10];
+    x = 1;
+    aa = 2;
+    x=array[8];
+    fun = 1; // 函数作左值测试
 }
 void main() {
+    int mm;
     funvoid(); // 空函数测试
     x=2*fun(a,2); // 函数调用测试
     /*表达式，数组，四则运算，括号测试*/
