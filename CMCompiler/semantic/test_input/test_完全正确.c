@@ -42,6 +42,7 @@ void funvoid(void) {
 //    aa = 2;
 //    x=array[8];
 //    fun = 1; // 函数作左值测试
+    return;
 }
 void main() {
     int mm;
@@ -50,4 +51,5 @@ void main() {
     /*表达式，数组，四则运算，括号测试*/
    x = array[2-x]+x*2-(5-(12+a))/2-(a+2)/12*1; 
 //   x = a[2-x]+x*2-(5-(12+a))/2-(a+2)/12*1; 
+    return 0;
 }
