@@ -16,7 +16,8 @@
 #   - 英文文档：http://www.dabeaz.com/ply/ply.html （强烈推荐）
 #   - 中文文档：https://www.cnblogs.com/P_Chou/p/python-lex-yacc.html
 # =============================================================================
-# *实现思路*
+# *实现思路*impo
+
 #   三步走：1.定义tokens 2.对每个token定义正则表达式 3.输入字符串，调用lex构建分析器
 # =============================================================================
 
@@ -37,7 +38,7 @@ tokens = [
     #界符
     'bracel', 'bracer', 'parenl', 'parenr', 'bracketl', 'bracketr', 'comma', 'semi', 'annotation',
     #常量
-    'NUMBER',
+    'NUMINT','NUMFLOAT',
     #标识符
     'ID',
     #换行符
@@ -52,7 +53,8 @@ reserved = {
     'return' : 'RETURN',
     'void' : 'VOID',
     'while' : 'WHILE',
-    'int' : 'INT'
+    'int' : 'INT',
+    'float':'FLOAT'
 }
 
 # 将保留字添加到tokens，因为lex只识别关键字tokens
@@ -111,9 +113,14 @@ def t_tab(t):
     pass
 
 # 识别数字
-def t_NUMBER(t):
+def t_NUMINT(t):
     r'[0-9]+'
     t.value = int(t.value) # 返回时字符串类型，需转为整型
+    return t
+
+def t_NUMFLOAT(t):
+    r'[0-9]*\.?[0-9]+$'
+    t.value = float(t.value)  # 返回时字符串类型，需转为float型
     return t
 
 #识别标识符
@@ -142,7 +149,7 @@ def t_error(t):
 lexer = lex.lex()
 
 # 测试输入文件与结果输出文件
-f = open('test_input/test.c', 'r', encoding='UTF-8')
+f = open('test_input/testcase3/curTest.c', 'r', encoding='UTF-8')
 f1 = open('output.txt', 'w')   #输出结果
 
 data = f.read() # 获取输入串
